@@ -2,245 +2,331 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>You're Approved — NEBO UltraWash</title>
-<meta name="description" content="Your 0% financing plan is locked in. Reference code and next steps inside.">
-<meta name="robots" content="noindex,nofollow">
-<meta name="theme-color" content="#0d3fd6">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:ital,wght@0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>You're Approved · NEBO 0% Financing</title>
+<meta name="theme-color" content="#06208f">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Archivo:ital,wght@0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --blue:#0d3fd6;--blue-deep:#06208f;--blue-bright:#1f63ff;
-    --cyan:#36ccff;--gold:#ffc21a;--magenta:#ff2e6e;
-    --ink:#0a1530;--mut:#5d6b8f;--good:#16a34a;
-    --line:#e2e8f3;--card:#fff;--bg:#06208f;
+  :root {
+    --ink:#0a1530; --cobalt:#0d3fd6; --cobalt-deep:#06208f;
+    --cyan:#36ccff; --magenta:#ff2e6e;
   }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:var(--bg);
-    background:linear-gradient(180deg,#0d3fd6 0%,#06208f 60%);min-height:100vh;
-    -webkit-font-smoothing:antialiased;line-height:1.55}
-  img{display:block;max-width:100%}
-  a{color:var(--blue);text-decoration:none}
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  html,body { height:100%; }
+  html, body { background: #0a2891; }
+  body {
+    font-family:'Inter',-apple-system,"Helvetica Neue",Arial,sans-serif;
+    color:#fff; -webkit-font-smoothing:antialiased;
+    min-height:100vh; overflow-x:hidden;
+    background-color: #0a2891;
+    /* Deeper cobalt base with a crisp cyan crown at the top and a subtle diagonal sheen.
+       Single-falloff radials only, no multi-stop linear, so no banding. */
+    background-image:
+      linear-gradient(135deg, rgba(54,204,255,0.06) 0%, rgba(54,204,255,0) 38%),
+      radial-gradient(ellipse 90% 50% at 50% 0%,
+        rgba(54,204,255,0.30) 0%,
+        rgba(54,204,255,0) 70%);
+    background-repeat: no-repeat;
+  }
 
-  .wrap{max-width:560px;margin:0 auto;padding:clamp(20px,5vw,42px) clamp(14px,4vw,24px) 60px}
+  /* HOME chip */
+  .home {
+    position:fixed; top:24px; left:24px; z-index:10;
+    display:inline-flex; align-items:center; gap:7px;
+    padding:9px 16px; border-radius:99px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.16);
+    color:rgba(255,255,255,0.78); font-size:11px; font-weight:700;
+    letter-spacing:0.14em; text-transform:uppercase;
+    text-decoration:none; backdrop-filter:blur(10px);
+    transition:all 0.2s;
+  }
+  .home:hover { color:#fff; border-color:rgba(255,255,255,0.4); }
+  .home svg { width:9px; height:9px; }
 
-  /* main card */
-  .card{background:#fff;border-radius:clamp(16px,3.5vw,24px);overflow:hidden;
-    box-shadow:0 30px 70px -16px rgba(0,0,0,.5);animation:pop .45s cubic-bezier(.2,1.2,.3,1)}
-  @keyframes pop{from{transform:scale(.94);opacity:0}to{transform:scale(1);opacity:1}}
+  /* THE MOMENT — five elements, generous whitespace */
+  .stage {
+    min-height:100vh;
+    display:flex; flex-direction:column;
+    align-items:center; justify-content:center;
+    text-align:center;
+    padding: 96px 32px 80px;
+    position:relative;
+    gap: 0;
+  }
 
-  /* header section — cobalt + bubbles + logo + check */
-  .head{position:relative;padding:clamp(28px,6vw,42px) clamp(18px,4vw,28px);
-    background:linear-gradient(160deg,#1a4cf0,#0a2db0);color:#fff;text-align:center;overflow:hidden}
-  .head:before{content:"";position:absolute;inset:0;
-    background:url("/assets/bg-bubbles.jpg") repeat;background-size:120% auto;opacity:.55;
-    -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 75%,transparent 100%);
-    mask-image:linear-gradient(to bottom,#000 0,#000 75%,transparent 100%)}
-  .head>*{position:relative;z-index:2}
-  .logo{height:clamp(42px,11vw,58px);width:auto;display:block;margin:0 auto clamp(14px,3vw,22px);
-    filter:drop-shadow(0 2px 6px rgba(0,8,40,.5))}
-  .check{width:clamp(60px,16vw,80px);height:clamp(60px,16vw,80px);border-radius:50%;
-    margin:0 auto clamp(12px,3vw,18px);
-    background:linear-gradient(180deg,#36ccff,#1f63ff);display:grid;place-items:center;
-    color:#fff;font-size:clamp(32px,9vw,42px);font-weight:900;line-height:1;
-    box-shadow:0 0 0 7px rgba(54,204,255,.22),0 14px 30px -10px rgba(13,63,214,.6)}
-  .head h1{font-family:"Archivo";font-style:italic;font-weight:900;
-    font-size:clamp(28px,7vw,40px);letter-spacing:-.5px;line-height:1.05}
-  .head h1 em{color:#9fe5ff;font-style:italic}
-  .tag{display:inline-block;background:var(--gold);color:#3a2600;font-weight:800;
-    font-size:clamp(10px,2.8vw,12px);letter-spacing:.12em;padding:5px clamp(10px,2.4vw,14px);
-    border-radius:999px;text-transform:uppercase;margin-top:clamp(10px,2.4vw,14px)}
+  /* LOGO — clean, no chip, with soft cyan halo */
+  .logo {
+    width: clamp(170px, 24vw, 240px); height: auto; display:block;
+    margin-bottom: 56px;
+    filter:
+      drop-shadow(0 12px 36px rgba(54,204,255,0.32))
+      drop-shadow(0 4px 12px rgba(3,17,76,0.45));
+    opacity:0; transform: translateY(8px);
+    animation: fadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
 
-  /* body */
-  .body{padding:clamp(20px,4vw,30px) clamp(18px,4vw,28px) clamp(16px,3.5vw,24px)}
-  .greet{font-size:clamp(15px,3.5vw,17px);color:var(--mut);text-align:center;line-height:1.55;margin-bottom:clamp(18px,3.5vw,24px)}
-  .greet b{color:var(--ink)}
+  /* HEADLINE — single confident line */
+  .headline {
+    font-family:'Archivo','Inter',sans-serif;
+    font-style:italic; font-weight:900;
+    font-size: clamp(46px, 8vw, 84px);
+    line-height: 0.95; letter-spacing: -1.2px;
+    color:#fff; text-transform:uppercase;
+    margin: 0;
+    opacity:0;
+    animation: fadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 180ms forwards;
+  }
 
-  /* reference code */
-  .ref{background:#f3f6ff;border:1.5px dashed #b9c8ee;border-radius:14px;
-    padding:clamp(14px,3vw,18px);text-align:center;margin-bottom:clamp(18px,3.5vw,24px)}
-  .ref .lbl{font-size:clamp(10px,2.6vw,11px);font-weight:800;letter-spacing:.18em;
-    text-transform:uppercase;color:var(--mut);margin-bottom:5px}
-  .ref .code{font-family:"Archivo";font-style:italic;font-weight:900;
-    font-size:clamp(24px,7vw,32px);letter-spacing:.04em;color:var(--blue);user-select:all;word-break:break-all}
-  .ref .save{font-size:clamp(11px,2.6vw,12px);color:var(--mut);margin-top:6px}
+  /* SUBHEAD — the deposit-credit reassurance, one paragraph, breathable */
+  .subhead {
+    margin-top: 26px;
+    font-size: clamp(14.5px, 1.5vw, 16.5px);
+    font-weight: 400; line-height: 1.6;
+    color: rgba(255,255,255,0.62);
+    max-width: 500px;
+    opacity:0;
+    animation: fadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 340ms forwards;
+  }
+  .subhead .em { color:#fff; font-weight:600; }
+  .subhead .credit { color: var(--cyan); font-weight:600; }
 
-  /* check-email banner */
-  .mail{display:flex;align-items:center;gap:12px;background:#e7eeff;border-radius:12px;
-    padding:14px 16px;margin-bottom:clamp(18px,3.5vw,24px);font-size:13.5px;color:var(--ink)}
-  .mail .ic{flex:none;width:36px;height:36px;border-radius:50%;background:#fff;
-    display:grid;place-items:center;color:var(--blue);font-weight:900;font-size:20px}
-  .mail b{font-weight:700}
-  .mail .em{color:var(--blue);font-weight:700;word-break:break-all}
+  /* REFERENCE — the keepsake. Treated like a quote, not a UI widget. */
+  .ref {
+    margin-top: 56px;
+    display:flex; flex-direction:column; align-items:center;
+    gap: 10px;
+    opacity:0;
+    animation: fadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 500ms forwards;
+  }
+  .ref .lbl {
+    font-size: 10px; font-weight: 700;
+    letter-spacing: 0.32em; text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+  }
+  .ref .code {
+    position: relative;
+    background: transparent; border: none; border-bottom: 1px solid rgba(54,204,255,0.45);
+    font-family: 'Archivo', sans-serif; font-style: italic; font-weight: 900;
+    font-size: clamp(28px, 4.4vw, 40px);
+    letter-spacing: 0.06em; color: #fff;
+    padding: 0 0 8px;
+    cursor: pointer;
+    transition: color 0.2s, border-color 0.2s;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .ref .code:focus { outline: none; }
+  .ref .code:focus-visible { outline: 2px solid rgba(54,204,255,0.5); outline-offset: 6px; }
+  .ref .code:hover { color: var(--cyan); border-color: var(--cyan); }
+  .ref .copy-hint {
+    font-size: 10.5px; color: rgba(255,255,255,0.35);
+    letter-spacing: 0.12em; text-transform: uppercase;
+    font-weight: 600;
+  }
 
-  /* summary block */
-  .label{font-family:"Archivo";font-style:italic;font-weight:900;font-size:11px;
-    letter-spacing:.18em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
-  .summary{background:#f3f6ff;border:1px solid var(--line);border-radius:14px;overflow:hidden;
-    margin-bottom:clamp(18px,3.5vw,24px)}
-  .row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
-    padding:12px 16px;border-top:1px solid #e7eaf1;font-size:13.5px}
-  .row:first-child{border-top:0}
-  .row span{color:var(--mut);font-weight:600;text-transform:uppercase;font-size:11.5px;letter-spacing:.06em}
-  .row b{color:var(--ink);font-weight:700;text-align:right}
-  .row.big{background:rgba(54,204,255,.10)}
-  .row.big b{color:var(--blue);font-family:"Archivo";font-style:italic;font-weight:900;font-size:18px}
+  /* signature — only if signed, small below ref */
+  .sig {
+    margin-top: 40px;
+    background:#fff; color: var(--ink);
+    border-radius: 10px; padding: 12px 16px 9px;
+    box-shadow: 0 18px 40px -14px rgba(0,0,0,0.5);
+    width: 280px; max-width: 100%;
+    opacity:0;
+    animation: fadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 620ms forwards;
+  }
+  .sig .cap {
+    font-size: 9px; font-weight:800; letter-spacing:0.22em;
+    text-transform:uppercase; color:#6b6d83;
+    margin-bottom: 4px; text-align:left;
+  }
+  .sig img {
+    display:block; width:100%; height:auto; max-height: 70px;
+    border-top: 1px solid #e8e9f0; padding-top: 6px; object-fit:contain;
+  }
 
-  /* signature */
-  .sig{background:#0a2db0;background:linear-gradient(160deg,#1a4cf0,#0a2db0);
-    border-radius:14px;padding:14px 16px;text-align:center;color:#fff;margin-bottom:clamp(18px,3.5vw,24px);
-    overflow:hidden;position:relative}
-  .sig:before{content:"";position:absolute;inset:0;background:url("/assets/bg-bubbles.jpg") repeat;
-    background-size:300px auto;opacity:.18;pointer-events:none}
-  .sig>*{position:relative;z-index:2}
-  .sig .lbl{font-size:10.5px;font-weight:800;letter-spacing:.18em;text-transform:uppercase;color:#9fe5ff;margin-bottom:8px}
-  .sig img{max-width:100%;height:auto;display:block;margin:0 auto;filter:drop-shadow(0 0 6px rgba(54,204,255,.25))}
+  /* CTA — single cyan-outlined pill. Clean, no gradient noise. */
+  .cta {
+    margin-top: 56px;
+    display:inline-flex; align-items:center; gap:10px;
+    padding: 16px 30px; border-radius: 99px;
+    background:rgba(54,204,255,0.10);
+    border: 1.5px solid var(--cyan);
+    color:#fff; font-weight:800; font-size: 13px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    text-decoration: none;
+    backdrop-filter: blur(8px);
+    opacity:0;
+    animation: fadeUp 700ms cubic-bezier(0.22, 1, 0.36, 1) 740ms forwards;
+    transition: background 0.2s, transform 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .cta:hover {
+    background: var(--cyan); color: var(--ink);
+    transform: translateY(-2px);
+  }
+  .cta svg { width: 13px; height: 13px; }
 
-  /* steps */
-  .steps{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:clamp(18px,3.5vw,22px)}
-  .steps li{display:flex;align-items:center;gap:12px;padding:12px 14px;background:#fff;
-    border:1px solid var(--line);border-radius:11px;font-size:13.5px;font-weight:600;color:var(--ink)}
-  .steps li .n{flex:none;width:26px;height:26px;border-radius:50%;
-    background:linear-gradient(160deg,#3a78ff,#0d3fd6);color:#fff;display:grid;place-items:center;
-    font-family:"Archivo";font-style:italic;font-weight:900;font-size:13px}
+  /* email caption — small, calm */
+  .email-line {
+    margin-top: 28px;
+    font-size: 12px; color: rgba(255,255,255,0.4);
+    letter-spacing: 0.04em;
+    opacity:0;
+    animation: fadeUp 600ms cubic-bezier(0.22, 1, 0.36, 1) 880ms forwards;
+  }
+  .email-line .em { color: rgba(255,255,255,0.75); font-weight: 600; }
 
-  /* trust */
-  .trust{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;padding-top:16px;border-top:1px solid #eef2fb;
-    font-size:12.5px;font-weight:600;color:var(--mut)}
-  .trust span{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
-  .trust .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);
-    font-size:10px;font-weight:900;display:grid;place-items:center}
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(12px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
 
-  /* footer */
-  .foot{text-align:center;padding:clamp(22px,4vw,30px) clamp(18px,4vw,28px);background:#f7f9fd}
-  .foot p{font-size:13px;color:var(--mut);margin-bottom:14px}
-  .home-btn{display:inline-flex;align-items:center;gap:8px;font-family:"Archivo";font-style:italic;
-    font-weight:800;font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);
-    background:#e7eeff;padding:10px 18px;border-radius:999px;transition:.16s}
-  .home-btn:hover{background:#d8e3ff}
+  /* COPIED toast */
+  .toast {
+    position:fixed; left:50%; bottom:48px;
+    transform: translateX(-50%) translateY(20px);
+    padding: 9px 18px; border-radius: 99px;
+    background: rgba(54,204,255,0.94); color: var(--ink);
+    font-weight: 800; font-size: 11px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    opacity: 0; pointer-events: none; z-index: 20;
+    box-shadow: 0 14px 30px -10px rgba(54,204,255,0.55);
+    transition: opacity 0.22s, transform 0.22s;
+  }
+  .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
 
-  /* no-data fallback */
-  .empty{text-align:center;padding:60px 20px;color:#cdd9e4}
-  .empty h2{font-family:"Archivo";font-style:italic;font-weight:900;font-size:24px;margin-bottom:10px}
-  .empty p{font-size:14px;margin-bottom:18px;color:#a8b6d1}
-  .empty a{display:inline-block;background:#fff;color:var(--blue);font-weight:700;padding:12px 22px;border-radius:10px}
+  /* EMPTY STATE */
+  .empty {
+    min-height: 100vh;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center; padding: 80px 28px; gap: 14px;
+  }
+  .empty h2 {
+    font-family:'Archivo'; font-style:italic; font-weight:900;
+    font-size: 30px; letter-spacing: -0.4px;
+  }
+  .empty p { color: rgba(255,255,255,0.55); max-width: 360px; font-size: 14.5px; line-height: 1.55; }
+  .empty a {
+    margin-top: 14px; display: inline-flex; align-items: center;
+    padding: 13px 24px; border-radius: 99px;
+    background: var(--cyan); color: var(--ink);
+    font-weight: 900; font-size: 12.5px; text-decoration: none;
+    letter-spacing: 0.18em; text-transform: uppercase;
+  }
+
+  @media (max-width: 520px) {
+    .stage { padding: 88px 24px 70px; }
+    .logo { margin-bottom: 40px; }
+    .ref { margin-top: 44px; }
+    .cta { margin-top: 44px; }
+  }
 </style>
 </head>
 <body>
 
-<div class="wrap" id="wrap">
-  <!-- Filled in by JS from sessionStorage. Empty fallback shown if no data. -->
-</div>
+  <a href="/" class="home">
+    <svg viewBox="0 0 10 10" fill="none">
+      <path d="M6.5 1L2.5 5L6.5 9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    Home
+  </a>
 
-<template id="tpl-card">
-  <div class="card">
-    <div class="head">
-      <img class="logo" src="/assets/nebo-logo.png" alt="NEBO UltraWash">
-      <div class="check">✓</div>
-      <h1>You're <em>Approved</em>.</h1>
-      <span class="tag">Instant Approval</span>
-    </div>
-    <div class="body">
-      <p class="greet">Hi <b data-fld="firstName">there</b> — your <b>0% financing</b> plan is locked in. <b data-fld="depositLine">Your deposit was received</b>; monthly installments start after your appointment.</p>
+  <div id="root"></div>
+
+  <template id="tpl-card">
+    <main class="stage">
+
+      <img class="logo" src="../assets/nebo-logo.png" alt="NEBO UltraWash">
+
+      <h1 class="headline">You're Approved.</h1>
+
+      <p class="subhead">
+        Your <span class="em" data-fld="depositAmt">deposit</span> is in. At drop-off, we confirm the final price. <span class="credit">Your deposit comes off the total</span>, and you pay the rest in equal monthly payments at 0% interest.
+      </p>
 
       <div class="ref">
-        <div class="lbl">Your Reference Code</div>
-        <div class="code" data-fld="referenceCode">NEBO-XXXXXX</div>
-        <div class="save">Save this — show it at your appointment.</div>
-      </div>
-
-      <div class="mail">
-        <span class="ic">✉</span>
-        <div><b>Check your email</b> &mdash; we sent a confirmation to <span class="em" data-fld="email">you@email.com</span></div>
-      </div>
-
-      <div class="label">Your Plan</div>
-      <div class="summary">
-        <div class="row"><span>Vehicle</span><b data-fld="vehicle">—</b></div>
-        <div class="row"><span>Service(s)</span><b data-fld="services">—</b></div>
-        <div class="row"><span>Plan length</span><b data-fld="plan">—</b></div>
-        <div class="row"><span>Service total</span><b data-fld="serviceTotal">—</b></div>
-        <div class="row big"><span>Deposit paid</span><b data-fld="deposit">—</b></div>
-        <div class="row"><span>Monthly payment</span><b data-fld="monthly">—</b></div>
+        <div class="lbl">Reference</div>
+        <button class="code" id="copyBtn" data-fld="referenceCode" type="button" aria-label="Copy reference code">NEBO-XXXXXX</button>
+        <div class="copy-hint">Tap to copy</div>
       </div>
 
       <div class="sig" data-fld="sigBlock">
-        <div class="lbl">Signed by <span data-fld="sigName">—</span></div>
+        <div class="cap">Signed by <span data-fld="sigName">—</span></div>
         <img data-fld="signatureImage" alt="Signature">
       </div>
 
-      <div class="label">What Happens Next</div>
-      <ol class="steps">
-        <li><span class="n">1</span>Save your reference code (sent in your email too).</li>
-        <li><span class="n">2</span><a href="/detailing" style="color:inherit">Book your appointment</a> at our scheduling page.</li>
-        <li><span class="n">3</span>Drop off your car — we verify ID and start your service.</li>
-      </ol>
+      <a href="/detailing" class="cta">
+        Book your appointment
+        <svg viewBox="0 0 14 14" fill="none">
+          <path d="M2 7H12M12 7L7.5 2.5M12 7L7.5 11.5" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
 
-      <div class="trust">
-        <span><span class="ck">✓</span>0% interest</span>
-        <span><span class="ck">✓</span>Locked in</span>
-        <span><span class="ck">✓</span>No surprises</span>
-      </div>
-    </div>
-    <div class="foot">
-      <p>Questions? Reply to your confirmation email or call us.</p>
-      <a class="home-btn" href="/">← Back to home</a>
-    </div>
-  </div>
-</template>
+      <p class="email-line">
+        Confirmation sent to <span class="em" data-fld="email">you@email.com</span>
+      </p>
 
-<template id="tpl-empty">
-  <div class="empty">
-    <h2>No application found</h2>
-    <p>We couldn't find a recent application in this browser. If you just submitted, refresh — otherwise start a new one.</p>
-    <a href="/">Start a 0% financing application →</a>
-  </div>
-</template>
+    </main>
+  </template>
+
+  <template id="tpl-empty">
+    <div class="empty">
+      <h2>No application found</h2>
+      <p>We couldn't find a recent application in this browser. If you just submitted, refresh — otherwise start a new one.</p>
+      <a href="/">Start application</a>
+    </div>
+  </template>
+
+  <div class="toast" id="toast">Copied ✓</div>
 
 <script>
 (function(){
-  const wrap=document.getElementById('wrap');
-  let data={};
-  try{data=JSON.parse(sessionStorage.getItem('nebo_confirmation')||'{}');}catch(e){}
-  if(!data || !data.referenceCode){
-    wrap.appendChild(document.getElementById('tpl-empty').content.cloneNode(true));
+  const root = document.getElementById('root');
+  let data = {};
+  try { data = JSON.parse(sessionStorage.getItem('nebo_confirmation') || '{}'); } catch (e) {}
+
+  if (!data || !data.referenceCode) {
+    root.appendChild(document.getElementById('tpl-empty').content.cloneNode(true));
     return;
   }
 
-  const card=document.getElementById('tpl-card').content.cloneNode(true);
+  const card = document.getElementById('tpl-card').content.cloneNode(true);
 
-  // Fill fields
-  const set=(key,val)=>{
-    card.querySelectorAll(`[data-fld="${key}"]`).forEach(el=>{
-      if(el.tagName==='IMG') el.src=val||'';
-      else el.textContent=val;
+  // Buttons aren't queried by tagName==='IMG' so handle text + img separately
+  const set = (key, val) => {
+    card.querySelectorAll(`[data-fld="${key}"]`).forEach(el => {
+      if (el.tagName === 'IMG') el.src = val || '';
+      else el.textContent = val;
     });
   };
-  const fmt=n=>'$'+Math.round(+n||0).toLocaleString();
+  const fmt = n => '$' + Math.round(+n || 0).toLocaleString();
 
-  set('firstName', data.firstName||'there');
   set('referenceCode', data.referenceCode);
-  set('email', data.email||'');
-  set('vehicle', data.vehicle||'—');
-  set('services', Array.isArray(data.services)?data.services.join(' + '):(data.services||'—'));
-  set('plan', data.plan||'—');
-  set('serviceTotal', data.serviceTotal?fmt(data.serviceTotal):'—');
-  set('deposit', data.deposit?fmt(data.deposit)+' ✓':'—');
-  set('monthly', data.monthly?fmt(data.monthly)+'/mo':'—');
-  set('depositLine', data.deposit?`Your ${fmt(data.deposit)} deposit was received`:'Your application was received');
+  set('email', data.email || '');
+  set('depositAmt', data.deposit ? fmt(data.deposit) + ' deposit' : 'deposit');
 
-  if(data.signatureImage){
+  const sigBlock = card.querySelector('[data-fld="sigBlock"]');
+  if (data.signatureImage) {
     set('signatureImage', data.signatureImage);
-    set('sigName', ((data.firstName||'')+' '+(data.lastName||'')).trim()||'You');
-  }else{
-    card.querySelector('[data-fld="sigBlock"]').style.display='none';
+    set('sigName', ((data.firstName || '') + ' ' + (data.lastName || '')).trim() || 'You');
+  } else {
+    sigBlock.remove();
   }
 
-  wrap.appendChild(card);
-  // Optional: clear once consumed so refresh doesn't replay
-  // sessionStorage.removeItem('nebo_confirmation');
+  root.appendChild(card);
+
+  // Copy reference code
+  const copyBtn = document.getElementById('copyBtn');
+  const toast = document.getElementById('toast');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(data.referenceCode);
+        toast.classList.add('show');
+        setTimeout(() => toast.classList.remove('show'), 1600);
+      } catch (e) {}
+    });
+  }
 })();
 </script>
 </body>

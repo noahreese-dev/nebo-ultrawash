@@ -3,201 +3,369 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Book Your Detailing — NEBO UltraWash</title>
-<meta name="description" content="Book your auto detailing appointment with NEBO UltraWash. Pick your vehicle, package, date and time.">
+<title>Book Your Detail — NEBO UltraWash</title>
+<meta name="description" content="Book your auto detailing appointment with NEBO UltraWash. Pick your vehicle, choose a package, lock a time. Confirmation by text and email, no deposit to book.">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <meta name="theme-color" content="#0d3fd6">
 <link rel="canonical" href="https://nebo-financing-form.vercel.app/detailing">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NEBO UltraWash">
-<meta property="og:title" content="Book Your Detailing — NEBO UltraWash">
-<meta property="og:description" content="Pick your vehicle, package, and time. Simple, clean detailing booking.">
+<meta property="og:title" content="Book Your Detail — NEBO UltraWash">
+<meta property="og:description" content="Pick your vehicle, choose a package, lock a time. Auto detailing, booked in about a minute.">
 <meta property="og:image" content="https://nebo-financing-form.vercel.app/assets/nebo-financing-banner.jpg">
 <meta property="og:url" content="https://nebo-financing-form.vercel.app/detailing">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Book Your Detail — NEBO UltraWash">
+<meta name="twitter:description" content="Auto detailing, booked in about a minute. Pick your vehicle, package and time.">
+<meta name="twitter:image" content="https://nebo-financing-form.vercel.app/assets/nebo-financing-banner.jpg">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"AutoDetailing","name":"NEBO UltraWash","url":"https://nebo-financing-form.vercel.app/detailing","logo":"https://nebo-financing-form.vercel.app/assets/nebo-logo.png","description":"Auto detailing appointment booking."}
+{"@context":"https://schema.org","@type":"AutoDetailing","name":"NEBO UltraWash","url":"https://nebo-financing-form.vercel.app/detailing","logo":"https://nebo-financing-form.vercel.app/assets/nebo-logo.png","image":"https://nebo-financing-form.vercel.app/assets/nebo-financing-banner.jpg","description":"Premium auto detailing — book your appointment online."}
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:ital,wght@0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:ital,wght@0,600;0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
 <style>
+  /* ============ NEBO UltraWash brand system ============ */
   :root{
-    --blue:#0d3fd6;--blue-deep:#06208f;--blue-bright:#1f63ff;
-    --cyan:#36ccff;--magenta:#ff2e6e;
-    --ink:#0a1530;--mut:#5d6b8f;--mut2:#8b97a4;--good:#16a34a;
-    --bg:#f4f6fb;--card:#ffffff;--line:#e4e9f2;--line2:#cfd9f5;
-    --field-bg:#f3f6ff;--field-line:#cfd9f5;--field-line-on:#1f63ff;
-    --r:14px;
+    --blue:#0d3fd6; --blue-deep:#06208f; --blue-bright:#1f63ff;
+    --cyan:#36ccff; --cyan-soft:rgba(54,204,255,.5);
+    --gold:#ffc21a; --magenta:#ff2e6e;
+    --ink:#0a1530; --white:#ffffff;
+    --field-bg:#f3f6ff; --field-line:#cfd9f5; --field-line-on:#1f63ff;
+    --txt:#0a1530; --mut:#5d6b8f; --good:#16a34a;
+    --r:16px; --rs:12px;
+    --shadow:0 10px 30px -8px rgba(6,32,143,.35);
+    --glow:0 0 0 3px rgba(54,204,255,.25),0 8px 24px -6px rgba(13,63,214,.45);
   }
   *{box-sizing:border-box;margin:0;padding:0}
-  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
-  body{font-family:"Inter",system-ui,sans-serif;color:var(--ink);background:var(--bg);
-    -webkit-font-smoothing:antialiased;line-height:1.55;min-height:100vh}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Inter",system-ui,sans-serif;color:var(--txt);
+    background:#06208f;
+    -webkit-font-smoothing:antialiased;line-height:1.55;
+  }
   img{max-width:100%;display:block}
-  a{color:var(--blue);text-decoration:none}
+  .display{font-family:"Archivo",system-ui,sans-serif;font-style:italic;font-weight:900;letter-spacing:-.02em;line-height:.92}
 
-  /* ---- slim top bar ---- */
-  .topbar{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.92);
-    backdrop-filter:saturate(140%) blur(10px);border-bottom:1px solid var(--line)}
-  .topbar .inner{max-width:1100px;margin:0 auto;padding:14px 20px;
-    display:flex;align-items:center;justify-content:space-between;gap:16px}
-  .brand{display:flex;align-items:center;gap:10px;text-decoration:none}
-  .brand img{height:30px;width:auto;filter:invert(15%) sepia(98%) saturate(3500%) hue-rotate(218deg) brightness(85%)}
-  .brand .nm{font-family:"Archivo";font-style:italic;font-weight:900;font-size:15px;letter-spacing:-.01em;color:var(--ink)}
-  .brand .nm small{display:block;font-size:9px;font-weight:800;letter-spacing:.32em;color:var(--blue);margin-top:-2px}
-  .topbar .tools a{font-size:13px;font-weight:600;color:var(--mut);padding:8px 10px}
-  .topbar .tools a:hover{color:var(--ink)}
+  /* Bubble texture lives at the TOP of the page only and SCROLLS with content. */
+  .bg{position:absolute;top:0;left:0;right:0;height:480px;z-index:-1;pointer-events:none;
+    background:linear-gradient(180deg,#1340de 0%,#0d3fd6 60%,#06208f 100%)}
+  .bg:before{content:"";position:absolute;inset:0;
+    background:url("/assets/bg-bubbles.jpg") repeat;background-size:560px auto;opacity:.3;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 180px,transparent 380px);
+    mask-image:linear-gradient(to bottom,#000 0,#000 180px,transparent 380px)}
+  @media(min-width:880px){
+    .bg{height:760px}
+    .bg:before{background-size:700px auto;
+      -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 320px,transparent 620px);
+      mask-image:linear-gradient(to bottom,#000 0,#000 320px,transparent 620px)}
+  }
 
-  /* ---- page shell ---- */
-  .wrap{max-width:1100px;margin:0 auto;padding:32px 20px 80px}
+  /* layout */
+  .shell{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
+  .grid{display:grid;grid-template-columns:1fr;gap:18px}
 
-  /* ---- hero (simple) ---- */
-  .hero{text-align:center;padding:24px 16px 36px}
-  .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;
-    color:var(--blue);background:#e7eeff;border-radius:999px;padding:5px 12px;
-    letter-spacing:.14em;text-transform:uppercase;margin-bottom:14px}
-  .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--good);
-    box-shadow:0 0 0 3px rgba(22,163,74,.18);animation:pulse 1.8s ease-in-out infinite}
-  @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(22,163,74,0)}}
-  .hero h1{font-family:"Archivo";font-style:italic;font-weight:900;
-    font-size:clamp(30px,5.6vw,52px);letter-spacing:-1.2px;line-height:1.05;color:var(--ink)}
-  .hero h1 em{font-style:italic;color:var(--blue);font-weight:900}
-  .hero p{margin-top:14px;color:var(--mut);font-size:clamp(15px,2.4vw,17px);max-width:60ch;
-    margin-left:auto;margin-right:auto;line-height:1.55}
+  /* ---- hero panel ---- */
+  .hero{position:relative;border-radius:var(--r);overflow:hidden;background:transparent;
+    color:#fff;text-align:center}
+  .hero .hero-inner{padding:30px 22px 26px;position:relative;z-index:2}
+  .logo{height:84px;width:auto;display:block;margin:0 auto 4px;
+    filter:
+      drop-shadow(0 0 28px rgba(6,32,143,.95))
+      drop-shadow(0 0 14px rgba(6,32,143,.85))
+      drop-shadow(0 3px 8px rgba(0,8,40,.55))
+      drop-shadow(0 0 18px rgba(54,204,255,.28))}
+  @media(max-width:520px){.logo{height:74px}}
+  .hero h1{margin:18px 0 4px}
+  .hero h1 .big{font-size:clamp(66px,18vw,116px);display:block;color:#fff;
+    text-shadow:0 8px 26px rgba(2,10,46,.4)}
+  .hero h1 .sub{font-size:clamp(34px,9.4vw,58px);display:block;color:#fff;margin-top:2px;
+    text-shadow:0 5px 18px rgba(2,10,46,.35)}
+  .tagpill{display:inline-block;background:var(--gold);color:#3a2600;
+    font-weight:800;font-size:11.5px;letter-spacing:.06em;padding:8px 16px;border-radius:999px;
+    margin-top:16px;text-transform:uppercase}
+  .svc-line{margin-top:18px;font-family:"Archivo";font-style:italic;font-weight:800;
+    font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(220,235,255,.88);
+    line-height:1.7}
+  .svc-line span{display:inline-block}
+  .svc-line i{display:inline-block;width:5px;height:5px;border-radius:50%;
+    background:var(--cyan);vertical-align:middle;margin:0 9px 3px;opacity:.75}
+  .trust{display:flex;gap:9px;margin-top:26px}
+  .trust>div{flex:1;text-align:center;padding:13px 8px 11px;border-radius:12px;
+    background:rgba(255,255,255,.055);border:1px solid rgba(120,200,255,.15)}
+  .trust .t{font-family:"Archivo";font-style:italic;font-weight:900;font-size:19px;color:#fff;line-height:1}
+  .trust .s{display:block;font-size:9px;color:var(--cyan);font-weight:800;
+    letter-spacing:.18em;text-transform:uppercase;margin-top:6px}
 
-  /* ---- step section (replace each other) ---- */
-  .step{display:none;animation:in .4s ease}
-  .step.on{display:block}
-  @keyframes in{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
-  .step-head{display:flex;align-items:baseline;justify-content:space-between;gap:14px;
-    flex-wrap:wrap;margin:8px 0 22px}
-  .step-head h2{font-family:"Archivo";font-style:italic;font-weight:800;font-size:clamp(22px,3.8vw,28px);
-    letter-spacing:-.5px;color:var(--ink)}
-  .step-head .step-num{font-family:"Archivo";font-style:italic;font-weight:900;font-size:11px;
-    color:var(--mut);letter-spacing:.16em;text-transform:uppercase}
-  .step-head .step-num b{color:var(--blue)}
-  .change{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;
-    color:var(--mut);background:transparent;border:0;cursor:pointer;padding:0;margin-bottom:14px}
-  .change:hover{color:var(--blue)}
+  /* ---- form card ---- */
+  .card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+  .card-head{padding:24px 22px 18px;background:linear-gradient(180deg,#f5f8ff,#fff);border-bottom:1px solid #eef2fb}
+  .card-head h2{font-family:"Archivo";font-style:italic;font-weight:800;font-size:24px;color:var(--ink);letter-spacing:-.02em}
+  .card-head p{color:var(--mut);font-size:14px;margin-top:5px}
+  form{padding:22px}
 
-  /* ---- summary chips (shown after selection) ---- */
-  .chosen{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
-  .chosen .chip{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;
-    color:var(--ink);background:#fff;border:1px solid var(--line);border-radius:999px;
-    padding:6px 10px 6px 14px;line-height:1}
-  .chosen .chip .lbl{font-size:10px;font-weight:800;color:var(--mut);letter-spacing:.12em;text-transform:uppercase}
-  .chosen .chip button{font:inherit;font-size:11px;font-weight:700;color:var(--blue);background:#e7eeff;
-    border:0;border-radius:999px;padding:3px 8px;cursor:pointer}
-  .chosen .chip button:hover{background:#d8e3ff}
-
-  /* ---- vehicle grid (autospa-style cards) ---- */
-  .veh-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-  @media(min-width:680px){.veh-grid{grid-template-columns:repeat(3,1fr)}}
-  .veh{position:relative;cursor:pointer;border:1px solid var(--line);border-radius:18px;
-    background:var(--card);padding:24px 18px 22px;text-align:center;
-    transition:transform .2s cubic-bezier(.2,.8,.25,1),box-shadow .2s,border-color .18s;
-    box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 8px 20px -14px rgba(13,42,120,.18)}
-  .veh:hover{transform:translateY(-3px);border-color:var(--blue);
-    box-shadow:0 1px 0 rgba(255,255,255,.9) inset,0 18px 30px -14px rgba(13,42,120,.3)}
-  .veh .ic{width:88px;height:56px;margin:0 auto 12px;display:grid;place-items:center}
-  .veh .ic svg{width:100%;height:100%}
-  .veh .ic .stk{stroke:var(--blue);stroke-width:2.2;stroke-linejoin:round;stroke-linecap:round;fill:none}
-  .veh .ic .fil{fill:var(--cyan);opacity:.18}
-  .veh .nm{font-family:"Archivo";font-style:italic;font-weight:800;font-size:17px;
-    color:var(--ink);letter-spacing:-.01em;text-transform:uppercase}
-  .veh .ex{font-size:12px;color:var(--mut);margin-top:5px;line-height:1.45}
-  .veh .from{margin-top:12px;font-size:12px;font-weight:700;color:var(--blue);
-    letter-spacing:.06em;text-transform:uppercase}
-  .veh .from b{font-family:"Archivo";font-style:italic;font-weight:900;font-size:15px;letter-spacing:0}
-  .veh .cta{margin-top:14px;display:inline-block;font-family:"Archivo";font-style:italic;font-weight:800;
-    font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:#fff;
-    background:linear-gradient(180deg,#3a78ff,#0d3fd6);padding:9px 18px;border-radius:10px;
-    box-shadow:0 8px 18px -8px rgba(13,63,214,.45)}
-
-  /* ---- package cards (shown after vehicle picked) ---- */
-  .pkg-list{display:flex;flex-direction:column;gap:12px}
-  .pkg{position:relative;cursor:pointer;border:1px solid var(--line);border-radius:18px;
-    background:var(--card);padding:22px 22px 20px;
-    transition:border-color .18s,box-shadow .2s,transform .2s;
-    box-shadow:0 8px 20px -14px rgba(13,42,120,.15)}
-  .pkg:hover{border-color:var(--blue);transform:translateY(-1px);
-    box-shadow:0 14px 30px -14px rgba(13,42,120,.25)}
-  .pkg .pop{position:absolute;top:-10px;left:22px;font-family:"Archivo";font-style:italic;font-weight:900;
-    font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#fff;
-    background:linear-gradient(180deg,#ff5b8e,#ff2e6e);padding:4px 10px;border-radius:7px;
-    box-shadow:0 4px 10px -2px rgba(255,46,110,.55)}
-  .pkg-row{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}
-  .pkg-name{font-family:"Archivo";font-style:italic;font-weight:800;font-size:20px;letter-spacing:-.3px;color:var(--ink)}
-  .pkg-price{font-family:"Archivo";font-style:italic;font-weight:900;font-size:24px;color:var(--blue);white-space:nowrap;line-height:1}
-  .pkg-from{font-size:10.5px;color:var(--mut);font-weight:700;text-transform:uppercase;letter-spacing:.06em;text-align:right}
-  .pkg-desc{margin-top:6px;font-size:14px;color:var(--mut);line-height:1.55}
-  .pkg-feat{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px}
-  .pkg-feat span{font-size:11px;font-weight:700;color:var(--blue);background:#e7eeff;padding:4px 10px;border-radius:999px}
-
-  /* ---- date + slots ---- */
-  .when-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;
-    box-shadow:0 8px 20px -14px rgba(13,42,120,.15)}
-  .field-label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:8px}
-  .field-input{width:100%;font:inherit;font-size:16px;color:var(--ink);background:var(--field-bg);
-    border:1.5px solid var(--field-line);border-radius:10px;padding:13px 14px;outline:none;
-    transition:.16s;-webkit-appearance:none;appearance:none}
-  .field-input:focus{border-color:var(--field-line-on);box-shadow:0 0 0 3px rgba(54,204,255,.25);background:#fff}
-  .field-input.err{border-color:var(--magenta);background:#fff5f8}
-  .err-msg{display:none;color:var(--magenta);font-size:12px;font-weight:600;margin-top:5px}
-  .err-msg.show{display:block}
-  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:6px}
-  @media(min-width:560px){.slots{grid-template-columns:repeat(4,1fr)}}
-  .slot{position:relative;cursor:pointer;border:1.5px solid var(--field-line);border-radius:10px;padding:11px 8px;
-    text-align:center;font-weight:700;font-size:13.5px;color:var(--ink);background:#fff;
-    transition:.16s;user-select:none}
-  .slot input{position:absolute;opacity:0;pointer-events:none}
-  .slot:hover{border-color:var(--blue);background:#fafcff}
-  .slot.on{border-color:var(--blue);background:var(--blue);color:#fff;box-shadow:0 0 0 3px rgba(31,99,255,.18)}
-
-  /* ---- contact form ---- */
-  .form-card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px;
-    box-shadow:0 8px 20px -14px rgba(13,42,120,.15)}
   .row{display:grid;grid-template-columns:1fr;gap:14px}
   .row.two{grid-template-columns:1fr 1fr}
-  @media(max-width:480px){.row.two{grid-template-columns:1fr}}
-  .consent{display:flex;gap:9px;align-items:flex-start;background:var(--field-bg);border:1px solid var(--field-line);
-    border-radius:10px;padding:9px 12px;font-size:12px;color:var(--mut);line-height:1.45;margin-top:18px}
+  .row.three{grid-template-columns:1fr 1fr 1fr}
+  .field-label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .field-label .req{color:var(--magenta)}
+  .field-input{
+    width:100%;font:inherit;font-size:16px;color:var(--ink);
+    background:var(--field-bg);border:1.5px solid var(--field-line);
+    border-radius:var(--rs);padding:13px 14px;transition:.16s;outline:none;-webkit-appearance:none;appearance:none
+  }
+  .field-input:focus{border-color:var(--field-line-on);box-shadow:var(--glow);background:#fff}
+  .field-input::placeholder{color:#9aa6c5}
+  .field-input.err{border-color:var(--magenta);background:#fff5f8}
+  textarea.field-input{resize:vertical;min-height:84px}
+  .err-msg{display:none;color:var(--magenta);font-size:12px;font-weight:600;margin-top:5px}
+  .err-msg.show{display:block}
+
+  /* ---- vehicle selector — single-column rows ---- */
+  .svc-grid{display:flex;flex-direction:column;gap:10px}
+  .svc{position:relative;cursor:pointer;border:1.5px solid #e7ecf6;border-radius:14px;
+    padding:13px 15px;background:#fff;user-select:none;
+    display:flex;align-items:center;gap:14px;
+    transition:border-color .18s,background .18s,box-shadow .18s}
+  .svc:hover{border-color:#c2cfee;background:#fbfcff}
+  .svc input{position:absolute;opacity:0;pointer-events:none}
+  .svc.on{border-color:var(--blue);background:#f3f6ff;box-shadow:0 0 0 3px rgba(31,99,255,.18)}
+  .vic{flex:none;width:68px;height:48px;border-radius:10px;background:#eef3ff;
+    display:grid;place-items:center;transition:.18s}
+  .svc.on .vic{background:#fff}
+  .vic svg{width:52px;height:auto;display:block}
+  .vic .stk{stroke:var(--blue);stroke-width:2.6;stroke-linejoin:round;stroke-linecap:round;fill:none}
+  .vic .fil{fill:var(--cyan);opacity:.18}
+  .svc .txt{flex:1;min-width:0}
+  .svc .nm{font-family:"Archivo";font-style:italic;font-weight:800;font-size:15.5px;color:var(--ink);
+    text-transform:uppercase;letter-spacing:.01em;line-height:1.1}
+  .svc .ds{font-size:12px;color:var(--mut);margin-top:3px}
+  .svc .right{flex:none;display:flex;align-items:center;gap:11px}
+  .svc .mo{font-size:11.5px;font-weight:800;color:var(--blue);background:#e7eeff;
+    border-radius:7px;padding:4px 9px;letter-spacing:.02em;white-space:nowrap}
+  .svc.on .mo{background:#fff}
+  .svc .chk{flex:none;width:23px;height:23px;border-radius:50%;
+    border:2px solid #c6d0e3;background:#fff;transition:.18s;display:grid;place-items:center}
+  .svc .chk:after{content:"";width:6px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;
+    transform:rotate(45deg) scale(0);opacity:0;margin-top:-2px;transition:.18s}
+  .svc.on .chk{border-color:var(--blue);background:var(--blue)}
+  .svc.on .chk:after{transform:rotate(45deg) scale(1);opacity:1}
+
+  /* ---- package cards ---- */
+  .pkg-list{display:flex;flex-direction:column;gap:13px}
+  .pkg{position:relative;cursor:pointer;border:1.5px solid #e7ecf6;border-radius:14px;
+    padding:18px 18px 16px;background:#fff;user-select:none;
+    transition:border-color .18s,background .18s,box-shadow .18s}
+  .pkg:hover{border-color:#c2cfee;background:#fbfcff}
+  .pkg input{position:absolute;opacity:0;pointer-events:none}
+  .pkg.on{border-color:var(--blue);background:#f3f6ff;box-shadow:0 0 0 3px rgba(31,99,255,.18)}
+  .pkg .chk{position:absolute;top:16px;right:16px;width:21px;height:21px;border-radius:50%;
+    border:2px solid #c6d0e3;background:#fff;transition:.18s;display:grid;place-items:center}
+  .pkg .chk:after{content:"";width:6px;height:10px;border:solid #fff;border-width:0 2.5px 2.5px 0;
+    transform:rotate(45deg) scale(0);opacity:0;margin-top:-2px;transition:.18s}
+  .pkg.on .chk{border-color:var(--blue);background:var(--blue)}
+  .pkg.on .chk:after{transform:rotate(45deg) scale(1);opacity:1}
+  .pkg .pop{position:absolute;top:-10px;left:18px;font-family:"Archivo";font-style:italic;
+    font-weight:900;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:#fff;
+    background:linear-gradient(180deg,#ff5b8e,#ff2e6e);padding:4px 10px;border-radius:7px;
+    box-shadow:0 4px 10px -2px rgba(255,46,110,.55)}
+  .pkg-top{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;
+    padding-right:30px}
+  .pkg-nm{font-family:"Archivo";font-style:italic;font-weight:800;font-size:18px;color:var(--ink);letter-spacing:-.01em}
+  .pkg-dur{font-size:12px;color:var(--mut);margin-top:2px}
+  .pkg-price{flex:none;text-align:right}
+  .pkg-price .amt{font-family:"Archivo";font-style:italic;font-weight:900;font-size:23px;color:var(--blue);line-height:1}
+  .pkg-price .pl{font-size:10px;font-weight:700;color:var(--mut);letter-spacing:.06em;text-transform:uppercase;margin-top:3px}
+  .pkg-desc{margin-top:9px;font-size:13px;color:var(--mut);line-height:1.55}
+  .pkg-feat{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .pkg-feat span{display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:600;
+    color:var(--ink);background:var(--field-bg);border:1px solid #e7ecf6;padding:4px 9px;border-radius:999px}
+  .pkg-feat span:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--cyan)}
+
+  /* ---- time slot cards ---- */
+  .slot-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .slot{position:relative;cursor:pointer;border:1.5px solid var(--field-line);border-radius:var(--rs);
+    padding:13px 6px;text-align:center;background:var(--field-bg);transition:.16s;user-select:none;
+    font-family:"Archivo";font-style:italic;font-weight:800;font-size:15px;color:var(--ink)}
+  .slot:hover{border-color:#a8b6dc}
+  .slot input{position:absolute;opacity:0;pointer-events:none}
+  .slot.on{border-color:var(--blue);background:#eaf0ff;box-shadow:var(--glow);color:var(--blue)}
+
+  /* ---- consent ---- */
+  .consent{display:flex;gap:9px;align-items:flex-start;background:var(--field-bg);
+    border:1px solid var(--field-line);border-radius:10px;padding:10px 12px;font-size:12px;
+    color:var(--mut);line-height:1.45;cursor:pointer}
   .consent input{width:17px;height:17px;margin-top:1px;accent-color:var(--blue);flex:none}
   .consent.err{border-color:var(--magenta);background:#fff5f8}
-  .consent-link{color:var(--blue);font-weight:600;text-decoration:underline}
+  .consent-link{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px}
 
-  /* ---- summary card (always visible after step 2) ---- */
-  .sum-card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;
-    margin-bottom:16px;font-size:13px}
-  .sum-card .sr{display:flex;justify-content:space-between;gap:14px;padding:5px 0}
-  .sum-card .sr span{color:var(--mut);font-weight:600}
-  .sum-card .sr b{color:var(--ink);font-weight:700;text-align:right}
-  .sum-card .total{border-top:1px dashed var(--line);margin-top:6px;padding-top:8px}
-  .sum-card .total b{color:var(--blue);font-family:"Archivo";font-style:italic;font-weight:900;font-size:17px}
-
-  /* ---- CTA ---- */
-  .btn{width:100%;margin-top:18px;font-family:"Archivo";font-style:italic;font-weight:900;font-size:18px;
+  /* ---- buttons ---- */
+  .btn{
+    width:100%;font-family:"Archivo";font-style:italic;font-weight:900;
+    font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:#fff;cursor:pointer;
+    background:linear-gradient(180deg,#ff5b8e,#ff2e6e);border:0;border-radius:14px;padding:18px;
+    box-shadow:0 10px 22px -6px rgba(255,46,110,.55);transition:.16s
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 14px 26px -6px rgba(255,46,110,.6)}
+  .btn:active{transform:translateY(0)}
+  .btn[disabled]{opacity:.7;cursor:wait}
+  .nav-row{display:flex;gap:10px;margin-top:20px}
+  .btn-next{flex:1;font-family:"Archivo";font-style:italic;font-weight:900;font-size:17px;
     letter-spacing:.01em;text-transform:uppercase;color:#fff;cursor:pointer;
-    background:linear-gradient(180deg,#3a78ff,#0d3fd6);border:0;border-radius:13px;padding:17px;
+    background:linear-gradient(180deg,#3a78ff,#0d3fd6);border:0;border-radius:13px;padding:16px;
     box-shadow:0 10px 22px -8px rgba(13,63,214,.55);transition:.16s}
-  .btn:hover{transform:translateY(-1px);box-shadow:0 14px 26px -8px rgba(13,63,214,.6)}
-  .btn.alt{background:linear-gradient(180deg,#ff5b8e,#ff2e6e);box-shadow:0 10px 22px -6px rgba(255,46,110,.55)}
-  .btn.alt:hover{box-shadow:0 14px 26px -6px rgba(255,46,110,.6)}
-  .trust-line{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:14px;
-    font-size:12.5px;font-weight:600;color:var(--mut)}
-  .trust-line span{display:inline-flex;align-items:center;gap:6px}
-  .trust-line .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);font-size:10px;font-weight:900;display:grid;place-items:center}
-  .fineprint{font-size:11.5px;color:var(--mut);text-align:center;margin-top:14px;line-height:1.6}
+  .btn-next:hover{transform:translateY(-1px);box-shadow:0 14px 26px -8px rgba(13,63,214,.6)}
+  .btn-back{font:inherit;font-size:14px;font-weight:700;color:var(--mut);cursor:pointer;
+    background:transparent;border:1.5px solid var(--field-line);border-radius:13px;padding:14px 22px;transition:.16s}
+  .btn-back:hover{color:var(--ink);border-color:#a8b6dc}
 
-  /* ---- success overlay (same responsive treatment as financing) ---- */
+  /* ---- progress + steps ---- */
+  .head-pill{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:800;
+    color:var(--blue);background:#e7eeff;border-radius:999px;padding:5px 12px;letter-spacing:.04em;
+    text-transform:uppercase;margin-bottom:10px}
+  .head-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--good);
+    box-shadow:0 0 0 3px rgba(22,163,74,.18);animation:pulse 1.8s ease-in-out infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(22,163,74,0)}}
+
+  .progress{display:flex;gap:8px;margin:0 0 20px;align-items:center}
+  .progress .seg{flex:1;height:6px;border-radius:99px;background:#eaeef9;overflow:hidden;position:relative}
+  .progress .seg i{position:absolute;inset:0;background:linear-gradient(90deg,#1f63ff,#36ccff);
+    transform:translateX(-100%);transition:transform .45s cubic-bezier(.2,.85,.25,1)}
+  .progress .seg.on i{transform:translateX(0)}
+  .progress .lbl{font-size:12px;font-weight:700;color:var(--mut);white-space:nowrap;letter-spacing:.02em}
+  .progress .lbl b{color:var(--blue)}
+
+  .step{display:none;animation:stepIn .35s cubic-bezier(.2,.85,.25,1)}
+  .step.on{display:block}
+  @keyframes stepIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .step-h{font-family:"Archivo";font-style:italic;font-weight:800;font-size:20px;color:var(--ink);
+    letter-spacing:-.01em;margin-bottom:4px}
+  .step-sub{color:var(--mut);font-size:13.5px;margin-bottom:18px}
+
+  .trust-line{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+    margin-top:14px;font-size:12.5px;font-weight:600;color:var(--mut)}
+  .trust-line span{display:inline-flex;align-items:center;gap:6px}
+  .trust-line .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);
+    font-size:10px;font-weight:900;display:grid;place-items:center}
+  .fineprint{font-size:11.5px;color:var(--mut);text-align:center;margin-top:14px;line-height:1.6}
+  .est-note{font-size:11px;color:var(--mut);margin-top:12px;text-align:center;font-style:italic}
+
+  /* ---- booking summary card ---- */
+  .price-card{margin-top:6px;border-radius:14px;overflow:hidden;
+    background:linear-gradient(160deg,#0d3fd6,#06208f);color:#fff;
+    box-shadow:0 14px 30px -14px rgba(13,63,214,.55)}
+  .price-card .pc-head{padding:13px 18px;display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    font-family:"Archivo";font-style:italic;font-weight:800;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:#bfd6ff}
+  .price-card .pc-head .live{display:inline-flex;align-items:center;gap:6px;font-size:10px;color:var(--cyan)}
+  .price-card .pc-head .live i{width:5px;height:5px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 0 3px rgba(54,204,255,.22)}
+  .price-row{display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+    padding:10px 18px;font-size:14px;color:rgba(220,235,255,.8)}
+  .price-row b{font-family:"Inter";font-weight:700;color:#fff;font-size:14px;text-align:right}
+  .price-row.big{background:rgba(54,204,255,.10);padding:14px 18px;
+    border-top:1px solid rgba(255,255,255,.10)}
+  .price-row.big span{color:#fff;font-weight:600;font-size:15px}
+  .price-row.big b{font-family:"Archivo";font-style:italic;font-weight:900;font-size:24px;color:var(--cyan)}
+
+  /* ---- cinematic entrance loader: bubbles → squeegee → reveal ---- */
+  .loader{position:fixed;inset:0;z-index:200;display:grid;place-items:center;overflow:hidden;
+    background-color:#082598;
+    background-image: radial-gradient(ellipse 100% 60% at 50% 0%,
+      rgba(54,204,255,0.24) 0%,
+      rgba(54,204,255,0.06) 35%,
+      rgba(54,204,255,0) 75%);
+    background-repeat:no-repeat;
+    transition:transform .8s cubic-bezier(.7,0,.18,1),visibility .8s}
+  .loader:before{content:"";position:absolute;width:140vmax;height:140vmax;
+    background:conic-gradient(from 0deg,transparent 0 18%,rgba(120,180,255,.08) 26%,transparent 34% 70%,rgba(120,180,255,.05) 80%,transparent 88%);
+    animation:studio 7s linear infinite;opacity:.7}
+  @keyframes studio{to{transform:rotate(360deg)}}
+  .l-frame{position:absolute;inset:18px;border-radius:18px;
+    border:1px solid rgba(150,200,255,.16);opacity:0;
+    animation:frameIn .9s ease-out .15s forwards}
+  @keyframes frameIn{0%{opacity:0;transform:scale(1.02)}100%{opacity:1;transform:scale(1)}}
+  .l-bubbles{position:absolute;inset:0;pointer-events:none;opacity:0;
+    animation:bubbleLife 2.3s cubic-bezier(.5,0,.25,1) 0s forwards;will-change:opacity,transform}
+  .l-bubbles svg{width:100%;height:100%;display:block;}
+  @keyframes bubbleLife{
+    0%{opacity:0;transform:scale(1.04)}
+    18%{opacity:1;transform:scale(1)}
+    55%{opacity:1;transform:scale(1)}
+    95%{opacity:0;transform:scale(1)}
+    100%{opacity:0;transform:scale(1)}
+  }
+  .l-sheen{position:absolute;top:-20%;bottom:-20%;left:-45%;width:42%;
+    background:linear-gradient(100deg,
+      transparent 0%,
+      rgba(190,225,255,.20) 25%,
+      rgba(255,255,255,.78) 48%,
+      rgba(150,210,255,.50) 56%,
+      rgba(20,55,170,.55) 68%,
+      rgba(10,38,128,.30) 82%,
+      transparent 100%);
+    transform:skewX(-14deg);filter:blur(2px);opacity:0;
+    animation:squeegee 1.0s cubic-bezier(.5,0,.2,1) 1.27s forwards}
+  @keyframes squeegee{
+    0%{left:-45%;opacity:0}
+    14%{opacity:1}
+    86%{opacity:1}
+    100%{left:140%;opacity:0}
+  }
+  .loader.done{transform:translateY(-101%);visibility:hidden}
+  .loader.done:after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:14px;
+    background:linear-gradient(180deg,rgba(190,240,255,.0),rgba(190,240,255,.55) 55%,#eafaff 78%,rgba(190,240,255,.2));
+    box-shadow:0 0 40px 10px rgba(120,225,255,.9),0 0 90px 30px rgba(54,150,255,.4);filter:blur(.4px)}
+  .l-flash{position:absolute;width:60vmax;height:60vmax;border-radius:50%;
+    background:radial-gradient(circle,rgba(190,240,255,.55),rgba(54,204,255,.12) 35%,transparent 62%);
+    opacity:0;animation:lflash 1.25s ease-out forwards}
+  @keyframes lflash{0%{opacity:0;transform:scale(.2)}12%{opacity:1}45%{opacity:.35}100%{opacity:0;transform:scale(1.15)}}
+  .l-ring{position:absolute;width:80px;height:80px;border-radius:50%;
+    border:2px solid rgba(150,225,255,.8);opacity:0;animation:lring 1.5s cubic-bezier(.2,.7,.3,1) forwards}
+  .l-ring.r2{animation-delay:.16s;border-color:rgba(255,255,255,.55)}
+  @keyframes lring{0%{opacity:0;transform:scale(.3)}14%{opacity:.9}100%{opacity:0;transform:scale(7)}}
+  .loader-core{position:relative;text-align:center;z-index:2}
+  .l-mark{position:relative;display:block;margin:0 auto;width:fit-content;line-height:0}
+  .l-logo{width:clamp(220px,52vw,320px);height:auto;display:block;margin:0 auto;transform-origin:center;
+    filter:drop-shadow(0 0 18px rgba(54,204,255,.5));
+    animation:strike 1.2s cubic-bezier(.16,1,.3,1) forwards}
+  @keyframes strike{
+    0%{opacity:0;transform:scale(1.9) rotate(-5deg);filter:drop-shadow(0 0 0 #fff) blur(9px)}
+    24%{opacity:1;filter:drop-shadow(0 0 36px #fff) blur(0)}
+    44%{transform:scale(.965) rotate(1deg)}
+    66%{transform:scale(1.025) rotate(-.5deg);filter:drop-shadow(0 0 28px rgba(120,225,255,.95))}
+    100%{transform:scale(1) rotate(0);filter:drop-shadow(0 0 16px rgba(54,204,255,.55))}}
+  .l-mark:before{content:"";position:absolute;top:-12%;bottom:-12%;left:-35%;width:36%;z-index:2;
+    background:linear-gradient(105deg,transparent,rgba(255,255,255,.85),transparent);
+    transform:skewX(-18deg);opacity:0;pointer-events:none;
+    animation:glint 1s ease-in-out .72s forwards;mix-blend-mode:overlay}
+  @keyframes glint{0%{left:-35%;opacity:0}30%{opacity:1}70%{opacity:1}100%{left:125%;opacity:0}}
+
+  .reveal{opacity:0;transform:translateY(26px) scale(.992);
+    transition:opacity .65s ease,transform .7s cubic-bezier(.2,.85,.25,1)}
+  body.in .reveal{opacity:1;transform:none}
+  body.in .hero{transition-delay:.04s}
+  body.in .card{transition-delay:.14s}
+  @media(prefers-reduced-motion:reduce){
+    .loader{display:none}
+    .reveal{opacity:1;transform:none;transition:none}
+    .loader:before,.l-frame,.l-sheen,.l-bubbles,.l-logo,.l-flash,.l-ring,.l-mark:before{animation:none;opacity:1}
+    .l-bubbles{opacity:0}
+  }
+
+  /* ---- confirmation overlay ---- */
   .ok{position:fixed;inset:0;z-index:100;background:rgba(6,32,143,.65);backdrop-filter:blur(8px);
-    display:none;padding:clamp(14px,4vw,28px) clamp(8px,3vw,22px);overflow-y:auto;overflow-x:hidden;-webkit-overflow-scrolling:touch}
+    -webkit-backdrop-filter:blur(8px);display:none;
+    padding:clamp(14px,4vw,28px) clamp(8px,3vw,22px);overflow-y:auto;overflow-x:hidden;
+    -webkit-overflow-scrolling:touch}
   .ok.on{display:block;animation:fade .25s ease}
   @keyframes fade{from{opacity:0}to{opacity:1}}
-  .ok-box{background:#fff;border-radius:clamp(14px,3vw,22px);max-width:440px;width:100%;margin:0 auto;
-    text-align:center;overflow:hidden;box-shadow:0 30px 70px -16px rgba(0,0,0,.5);animation:pop .4s cubic-bezier(.2,1.2,.3,1)}
-  @keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+  .ok-box{background:#fff;border-radius:clamp(14px,3vw,22px);max-width:440px;width:100%;
+    margin:0 auto;text-align:center;overflow:hidden;
+    box-shadow:0 30px 70px -16px rgba(0,0,0,.5);animation:pop .4s cubic-bezier(.2,1.2,.3,1)}
   @media(min-height:780px){.ok-box{margin-top:clamp(40px,8vh,140px)}}
+  @keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
   .ok-head{position:relative;padding:clamp(20px,5vw,30px) clamp(18px,4vw,26px);
     background:linear-gradient(160deg,#1a4cf0,#0a2db0);color:#fff;overflow:hidden}
   .ok-head:before{content:"";position:absolute;inset:0;
@@ -205,393 +373,615 @@
     -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 70%,transparent 100%);
     mask-image:linear-gradient(to bottom,#000 0,#000 70%,transparent 100%)}
   .ok-head>*{position:relative;z-index:2}
-  .ok-logo{height:clamp(38px,11vw,52px);width:auto;display:block;margin:0 auto clamp(10px,3vw,16px);
-    filter:drop-shadow(0 2px 6px rgba(0,8,40,.5))}
   .ok-check{width:clamp(54px,16vw,72px);height:clamp(54px,16vw,72px);border-radius:50%;
-    margin:clamp(2px,1vw,6px) auto clamp(8px,3vw,14px);
-    background:linear-gradient(180deg,#36ccff,#1f63ff);display:grid;place-items:center;color:#fff;
-    font-size:clamp(26px,8vw,36px);font-weight:900;line-height:1;
+    margin:0 auto clamp(8px,3vw,14px);
+    background:linear-gradient(180deg,#36ccff,#1f63ff);display:grid;place-items:center;
+    color:#fff;font-size:clamp(26px,8vw,36px);font-weight:900;line-height:1;
     box-shadow:0 0 0 6px rgba(54,204,255,.22),0 10px 24px -8px rgba(13,63,214,.6)}
-  .ok-head h3{font-family:"Archivo";font-style:italic;font-weight:900;font-size:clamp(22px,6vw,30px);letter-spacing:-.02em;line-height:1.1}
-  .ok-head .ok-tag{display:inline-block;background:#ffc21a;color:#3a2600;font-weight:800;
-    font-size:clamp(10px,2.8vw,12px);letter-spacing:.08em;padding:5px clamp(9px,2.4vw,12px);border-radius:999px;
+  .ok-head h3{font-family:"Archivo";font-style:italic;font-weight:900;
+    font-size:clamp(22px,6vw,30px);letter-spacing:-.02em;line-height:1.1}
+  .ok-head .ok-tag{display:inline-block;background:var(--gold);color:#3a2600;
+    font-weight:800;font-size:clamp(10px,2.8vw,12px);letter-spacing:.08em;
+    padding:5px clamp(9px,2.4vw,12px);border-radius:999px;
     text-transform:uppercase;margin-top:clamp(8px,2.4vw,12px)}
-  .ok-body{padding:clamp(16px,4vw,24px);color:var(--ink);text-align:left}
-  .ok-body>p{color:var(--mut);font-size:clamp(13px,3.5vw,14.5px);text-align:center;margin-bottom:clamp(14px,3.5vw,18px);line-height:1.55}
-  .ref-block{margin:clamp(8px,2vw,12px) 0 0;background:#f3f6ff;border:1.5px dashed #b9c8ee;border-radius:12px;
-    padding:clamp(11px,3vw,16px);text-align:center}
-  .ref-block .ref-lbl{font-size:clamp(10px,2.6vw,11px);font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-bottom:4px}
-  .ref-code{font-family:"Archivo";font-style:italic;font-weight:900;font-size:clamp(20px,6.2vw,26px);
-    letter-spacing:.04em;color:var(--blue);user-select:all;word-break:break-all}
-  .booking-block{margin-top:clamp(14px,3.5vw,18px);background:#f3f6ff;border:1px solid #e2e8f3;border-radius:12px;padding:clamp(12px,3vw,16px);font-size:13.5px}
-  .booking-block .br{display:flex;justify-content:space-between;gap:12px;padding:7px 0;border-top:1px solid #e7eaf1}
-  .booking-block .br:first-child{border-top:0;padding-top:0}
-  .booking-block .br span{color:var(--mut);font-weight:600}
-  .booking-block .br b{color:var(--ink);font-weight:700;text-align:right}
+  .ok-body{padding:clamp(16px,4vw,24px) clamp(16px,4vw,24px) clamp(14px,3.5vw,20px);
+    text-align:left;color:var(--ink)}
+  .ok-body>p{color:var(--mut);font-size:clamp(13px,3.5vw,14.5px);text-align:center;
+    margin-bottom:clamp(14px,3.5vw,18px);line-height:1.55}
+  .ref-block{margin:0 0 clamp(12px,3vw,16px);background:#f3f6ff;border:1.5px dashed #b9c8ee;
+    border-radius:12px;padding:clamp(11px,3vw,16px);text-align:center}
+  .ref-block .ref-lbl{font-size:clamp(10px,2.6vw,11px);font-weight:800;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--mut);margin-bottom:4px}
+  .ref-code{font-family:"Archivo";font-style:italic;font-weight:900;
+    font-size:clamp(20px,6.2vw,26px);letter-spacing:.04em;color:var(--blue);user-select:all}
+  .ok-lines{background:#f3f6ff;border:1px solid #e2e8f3;border-radius:12px;padding:4px 14px}
+  .ok-lines .ol{display:flex;justify-content:space-between;gap:12px;padding:9px 0;
+    border-top:1px solid #e4e9f4;font-size:13.5px}
+  .ok-lines .ol:first-child{border-top:0}
+  .ok-lines .ol span{color:var(--mut);font-weight:600}
+  .ok-lines .ol b{color:var(--ink);font-weight:700;text-align:right}
+  .ok-lines .ol b.tot{font-family:"Archivo";font-style:italic;font-weight:900;font-size:16px;color:var(--blue)}
+  .ok-trust{display:flex;justify-content:center;gap:clamp(10px,2.6vw,16px);flex-wrap:wrap;
+    margin-top:clamp(12px,3vw,16px);padding-top:clamp(12px,3vw,16px);
+    border-top:1px solid #eef2fb;font-size:clamp(11px,3vw,12.5px);font-weight:600;color:var(--mut)}
+  .ok-trust span{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+  .ok-trust .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);
+    font-size:9px;font-weight:900;display:grid;place-items:center}
+
+  /* Hero divider is desktop-only */
+  .hero-divider{display:none}
+
+  /* ---- desktop: fixed hero left, card scrolls right ---- */
+  @media(min-width:880px){
+    .bg, .bg:before{display:none}
+    body{
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 30%,rgba(54,204,255,.10),transparent 60%),
+        linear-gradient(180deg,#1340de 0%,#0d3fd6 30%,#06208f 70%,#04165d 100%);
+      background-attachment:fixed;
+      padding-left:clamp(440px,38vw,600px)}
+    .shell{max-width:820px;padding:60px 40px 90px;margin:0 auto}
+    .grid{display:block;gap:0}
+    .hero{position:fixed;top:0;left:0;
+      width:clamp(440px,38vw,600px);height:100vh;
+      margin:0;border-radius:0;overflow:visible;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(160deg,#1a4cf0 0%,#0d3fd6 55%,#06208f 100%);
+      box-shadow:36px 0 90px -28px rgba(0,8,40,.85)}
+    .hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;overflow:hidden;
+      background:url("/assets/bg-bubbles.jpg") repeat;background-size:640px auto;opacity:.24}
+    .hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+      background:
+        radial-gradient(ellipse at 50% 30%,rgba(54,204,255,.18),transparent 55%),
+        linear-gradient(180deg,transparent 60%,rgba(6,32,143,.5))}
+    .hero-divider{display:block;position:absolute;top:0;right:-30px;bottom:0;width:60px;z-index:3;
+      pointer-events:none;overflow:visible}
+    .hero-divider svg{width:100%;height:100%;display:block;
+      filter:drop-shadow(0 0 12px rgba(54,204,255,.55)) drop-shadow(0 0 28px rgba(54,204,255,.25))}
+    .hero .hero-inner{padding:0 44px;position:relative;z-index:2;width:100%;max-width:520px}
+    .hero h1 .big{font-size:clamp(86px,6.8vw,132px)}
+    .hero h1 .sub{font-size:clamp(44px,3.9vw,68px)}
+    .row.two,.row.three{gap:18px}
+    form{padding:34px 38px}
+    .card-head{padding:34px 38px 24px}
+  }
+  @media(max-width:420px){
+    .row.two{grid-template-columns:1fr}
+    .slot-grid{grid-template-columns:1fr 1fr}
+  }
 </style>
 </head>
 <body>
+<div class="bg"></div>
 
-<!-- slim top bar -->
-<div class="topbar">
-  <div class="inner">
-    <a class="brand" href="/">
-      <img src="/assets/nebo-logo.png" alt="NEBO">
-      <span class="nm">Detailing<small>NEBO ULTRAWASH</small></span>
-    </a>
-    <div class="tools">
-      <a href="/">0% Financing →</a>
-    </div>
+<div class="loader" id="loader">
+  <div class="l-bubbles" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bubGloss" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stop-color="#dcf5ff" stop-opacity="0.4"/>
+          <stop offset="55%" stop-color="#78d2ff" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#36ccff" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <g fill="url(#bubGloss)" stroke="#7adfff" stroke-width="2.5" stroke-opacity="0.9">
+        <circle cx="150"  cy="180" r="58"/>
+        <circle cx="380"  cy="90"  r="42"/>
+        <circle cx="560"  cy="240" r="72"/>
+        <circle cx="820"  cy="120" r="36"/>
+        <circle cx="1040" cy="200" r="56"/>
+        <circle cx="1250" cy="80"  r="48"/>
+        <circle cx="1340" cy="290" r="38"/>
+        <circle cx="80"   cy="400" r="40"/>
+        <circle cx="260"  cy="540" r="64"/>
+        <circle cx="480"  cy="450" r="34"/>
+        <circle cx="700"  cy="540" r="80"/>
+        <circle cx="920"  cy="430" r="44"/>
+        <circle cx="1150" cy="500" r="58"/>
+        <circle cx="1350" cy="430" r="32"/>
+        <circle cx="160"  cy="730" r="50"/>
+        <circle cx="370"  cy="800" r="36"/>
+        <circle cx="600"  cy="780" r="46"/>
+        <circle cx="850"  cy="730" r="56"/>
+        <circle cx="1080" cy="800" r="38"/>
+        <circle cx="1290" cy="700" r="62"/>
+      </g>
+      <g fill="rgba(160,230,255,0.55)" stroke="none">
+        <circle cx="220"  cy="280" r="3"/>
+        <circle cx="510"  cy="60"  r="2.5"/>
+        <circle cx="780"  cy="320" r="3.5"/>
+        <circle cx="1180" cy="290" r="2.5"/>
+        <circle cx="60"   cy="600" r="3"/>
+        <circle cx="430"  cy="640" r="2.5"/>
+        <circle cx="630"  cy="380" r="3.5"/>
+        <circle cx="990"  cy="610" r="3"/>
+        <circle cx="1250" cy="610" r="3.5"/>
+        <circle cx="320"  cy="120" r="2.5"/>
+        <circle cx="540"  cy="160" r="3"/>
+        <circle cx="900"  cy="240" r="2.5"/>
+        <circle cx="1080" cy="90"  r="3"/>
+      </g>
+    </svg>
+  </div>
+  <div class="l-frame"></div>
+  <div class="l-flash"></div>
+  <div class="l-ring"></div>
+  <div class="l-ring r2"></div>
+  <div class="l-sheen" aria-hidden="true"></div>
+  <div class="loader-core">
+    <div class="l-mark"><img class="l-logo" src="/assets/nebo-logo.png" alt="NEBO UltraWash" width="239" height="114"></div>
   </div>
 </div>
 
-<div class="wrap">
+<div class="shell">
+  <div class="grid">
 
-  <!-- simple hero -->
-  <header class="hero">
-    <span class="eyebrow"><span class="dot"></span>~60 seconds</span>
-    <h1>Book your <em>detailing</em>.</h1>
-    <p>Pick your vehicle, your package, your time. We'll send a confirmation by text and email.</p>
-  </header>
-
-  <!-- STEP 1 — VEHICLE -->
-  <section class="step on" data-step="1">
-    <div class="step-head">
-      <h2>Choose your vehicle</h2>
-      <div class="step-num">Step <b>1</b>/4</div>
-    </div>
-    <div class="veh-grid" id="vehGrid">
-      <div class="veh" data-veh="Sedan" data-mult="1.0">
-        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L12 18 L24 14 L42 14 L54 22 L58 28 Z"/><path class="stk" d="M6 28 L12 18 L24 14 L42 14 L54 22 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4" fill="#fff"/></svg></div>
-        <div class="nm">Sedan</div><div class="ex">Civic, Camry, BMW 3</div>
-        <div class="from">From <b>$120</b></div>
-        <div class="cta">Book →</div>
-      </div>
-      <div class="veh" data-veh="Hatchback" data-mult="0.95">
-        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 18 L20 14 L40 14 L52 24 L58 28 Z"/><path class="stk" d="M6 28 L10 18 L20 14 L40 14 L52 24 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4" fill="#fff"/></svg></div>
-        <div class="nm">Hatchback</div><div class="ex">Golf, Civic Hatch</div>
-        <div class="from">From <b>$114</b></div>
-        <div class="cta">Book →</div>
-      </div>
-      <div class="veh" data-veh="Small SUV" data-mult="1.15">
-        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 16 L22 12 L46 12 L56 22 L58 28 Z"/><path class="stk" d="M6 28 L10 16 L22 12 L46 12 L56 22 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4" fill="#fff"/></svg></div>
-        <div class="nm">Small SUV</div><div class="ex">RAV4, CR-V, Q3</div>
-        <div class="from">From <b>$138</b></div>
-        <div class="cta">Book →</div>
-      </div>
-      <div class="veh" data-veh="Truck" data-mult="1.25">
-        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 16 L22 14 L36 14 L36 22 L58 22 L58 28 Z"/><path class="stk" d="M6 28 L10 16 L22 14 L36 14 L36 22 L58 22 L58 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="48" cy="32" r="4" fill="#fff"/></svg></div>
-        <div class="nm">Truck</div><div class="ex">F-150, Silverado</div>
-        <div class="from">From <b>$150</b></div>
-        <div class="cta">Book →</div>
-      </div>
-      <div class="veh" data-veh="Large SUV / Van" data-mult="1.35">
-        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L8 14 L22 10 L52 10 L58 18 L60 28 Z"/><path class="stk" d="M6 28 L8 14 L22 10 L52 10 L58 18 L60 28"/><circle class="stk" cx="18" cy="32" r="4" fill="#fff"/><circle class="stk" cx="48" cy="32" r="4" fill="#fff"/></svg></div>
-        <div class="nm">Large SUV / Van</div><div class="ex">Tahoe, Sienna</div>
-        <div class="from">From <b>$162</b></div>
-        <div class="cta">Book →</div>
-      </div>
-      <div class="veh" data-veh="XL Vehicle" data-mult="1.5">
-        <div class="ic"><svg viewBox="0 0 64 42"><path class="fil" d="M4 28 L6 12 L22 8 L56 8 L62 18 L62 28 Z"/><path class="stk" d="M4 28 L6 12 L22 8 L56 8 L62 18 L62 28"/><circle class="stk" cx="16" cy="32" r="4" fill="#fff"/><circle class="stk" cx="50" cy="32" r="4" fill="#fff"/></svg></div>
-        <div class="nm">XL Vehicle</div><div class="ex">Suburban, Sprinter</div>
-        <div class="from">From <b>$180</b></div>
-        <div class="cta">Book →</div>
-      </div>
-    </div>
-  </section>
-
-  <!-- STEP 2 — PACKAGE -->
-  <section class="step" data-step="2">
-    <button class="change" data-goto="1">← Change vehicle (<span id="chgVeh">—</span>)</button>
-    <div class="step-head">
-      <h2>Choose your package</h2>
-      <div class="step-num">Step <b>2</b>/4</div>
-    </div>
-    <div class="pkg-list" id="pkgList">
-      <div class="pkg" data-pkg="Express Detail" data-base="120">
-        <div class="pkg-row">
-          <div><div class="pkg-name">Express Detail</div>
-            <div class="pkg-desc">Quick interior + exterior refresh. Vacuum, wipe-down, exterior wash + dry. About 60 minutes.</div></div>
-          <div><div class="pkg-from">FROM</div><div class="pkg-price" data-base="120">$120</div></div>
+    <!-- HERO -->
+    <aside class="hero reveal">
+      <span class="hero-divider" aria-hidden="true">
+        <svg viewBox="0 0 60 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="dvg-stroke" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#36ccff" stop-opacity="0"/>
+              <stop offset="12%" stop-color="#36ccff" stop-opacity=".35"/>
+              <stop offset="40%" stop-color="#9fe5ff" stop-opacity=".95"/>
+              <stop offset="60%" stop-color="#9fe5ff" stop-opacity=".95"/>
+              <stop offset="88%" stop-color="#36ccff" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#36ccff" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="dvg-thin" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#9fe5ff" stop-opacity="0"/>
+              <stop offset="25%" stop-color="#9fe5ff" stop-opacity=".4"/>
+              <stop offset="50%" stop-color="#ffffff" stop-opacity=".8"/>
+              <stop offset="75%" stop-color="#9fe5ff" stop-opacity=".4"/>
+              <stop offset="100%" stop-color="#9fe5ff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <path d="M30 0 C44 180 16 360 30 500 C44 640 16 820 30 1000" stroke="url(#dvg-stroke)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M30 0 C44 180 16 360 30 500 C44 640 16 820 30 1000" stroke="url(#dvg-thin)" stroke-width="1" fill="none" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <div class="hero-inner">
+        <img class="logo" src="/assets/nebo-logo.png" alt="NEBO UltraWash" width="239" height="114">
+        <h1 class="display">
+          <span class="big">DETAIL</span>
+          <span class="sub">YOUR CAR</span>
+        </h1>
+        <div class="tagpill"><span>Showroom clean. Booked in minutes.</span></div>
+        <div class="svc-line">
+          <span>Express</span><i></i><span>Premium</span><i></i><span>Complete</span>
         </div>
-        <div class="pkg-feat"><span>Vacuum</span><span>Hand wash</span><span>Tire shine</span><span>~60 min</span></div>
-      </div>
-      <div class="pkg" data-pkg="Premium Detail" data-base="280">
-        <div class="pop">Most Popular</div>
-        <div class="pkg-row">
-          <div><div class="pkg-name">Premium Detail</div>
-            <div class="pkg-desc">Full interior + exterior detail. Deep clean, clay-bar, wax, interior shampoo. 2–3 hours.</div></div>
-          <div><div class="pkg-from">FROM</div><div class="pkg-price" data-base="280">$280</div></div>
+        <div class="trust">
+          <div><div class="t">No</div><div class="s">Deposit</div></div>
+          <div><div class="t">Free</div><div class="s">Reschedule</div></div>
+          <div><div class="t">60s</div><div class="s">To Book</div></div>
         </div>
-        <div class="pkg-feat"><span>Clay-bar</span><span>Wax</span><span>Interior shampoo</span><span>Leather wipe</span><span>~2–3 hr</span></div>
       </div>
-      <div class="pkg" data-pkg="Complete Detail" data-base="480">
-        <div class="pkg-row">
-          <div><div class="pkg-name">Complete Detail</div>
-            <div class="pkg-desc">The works. Paint correction, ceramic sealant, steam clean, leather conditioning. 5–6 hours.</div></div>
-          <div><div class="pkg-from">FROM</div><div class="pkg-price" data-base="480">$480</div></div>
+    </aside>
+
+    <!-- BOOKING CARD -->
+    <main class="card reveal">
+      <div class="card-head">
+        <span class="head-pill"><span class="dot"></span>Book Online · ~60 seconds</span>
+        <h2>Book your detail</h2>
+        <p>Pick your vehicle, choose a package, lock a time. We confirm by text and email — no deposit to book.</p>
+      </div>
+
+      <form id="bookForm" novalidate>
+
+        <div class="progress" aria-label="Booking progress">
+          <div class="seg on" data-seg="1"><i></i></div>
+          <div class="seg" data-seg="2"><i></i></div>
+          <div class="seg" data-seg="3"><i></i></div>
+          <div class="seg" data-seg="4"><i></i></div>
+          <div class="lbl">Step <b id="stepCur">1</b>/4</div>
         </div>
-        <div class="pkg-feat"><span>Paint correction</span><span>Ceramic sealant</span><span>Steam clean</span><span>Leather care</span><span>~5–6 hr</span></div>
-      </div>
-    </div>
-  </section>
 
-  <!-- STEP 3 — DATE + TIME -->
-  <section class="step" data-step="3">
-    <button class="change" data-goto="2">← Change package (<span id="chgPkg">—</span>)</button>
+        <!-- STEP 1 — VEHICLE -->
+        <div class="step on" data-step="1">
+          <div class="step-h">What are we detailing?</div>
+          <div class="step-sub">Pick your vehicle — pricing scales with size.</div>
+          <div class="svc-grid" id="vehGrid">
+            <label class="svc"><input type="radio" name="vehicle" value="Sedan" data-mult="1.0">
+              <div class="vic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L12 19 L24 15 L42 15 L54 23 L58 28 Z"/><path class="stk" d="M6 28 L12 19 L24 15 L42 15 L54 23 L58 28"/><circle class="stk" cx="18" cy="32" r="4.4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4.4" fill="#fff"/></svg></div>
+              <div class="txt"><div class="nm">Sedan</div><div class="ds">Civic, Camry, BMW 3</div></div>
+              <div class="right"><div class="mo" data-from></div><span class="chk" aria-hidden="true"></span></div></label>
+            <label class="svc"><input type="radio" name="vehicle" value="Hatchback" data-mult="0.95">
+              <div class="vic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 19 L20 15 L40 15 L52 25 L58 28 Z"/><path class="stk" d="M6 28 L10 19 L20 15 L40 15 L52 25 L58 28"/><circle class="stk" cx="18" cy="32" r="4.4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4.4" fill="#fff"/></svg></div>
+              <div class="txt"><div class="nm">Hatchback</div><div class="ds">Golf, Civic Hatch</div></div>
+              <div class="right"><div class="mo" data-from></div><span class="chk" aria-hidden="true"></span></div></label>
+            <label class="svc"><input type="radio" name="vehicle" value="Small SUV" data-mult="1.15">
+              <div class="vic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 17 L22 13 L46 13 L56 23 L58 28 Z"/><path class="stk" d="M6 28 L10 17 L22 13 L46 13 L56 23 L58 28"/><circle class="stk" cx="18" cy="32" r="4.4" fill="#fff"/><circle class="stk" cx="46" cy="32" r="4.4" fill="#fff"/></svg></div>
+              <div class="txt"><div class="nm">Small SUV</div><div class="ds">RAV4, CR-V, Q3</div></div>
+              <div class="right"><div class="mo" data-from></div><span class="chk" aria-hidden="true"></span></div></label>
+            <label class="svc"><input type="radio" name="vehicle" value="Truck" data-mult="1.25">
+              <div class="vic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L10 16 L22 14 L36 14 L36 22 L58 22 L58 28 Z"/><path class="stk" d="M6 28 L10 16 L22 14 L36 14 L36 22 L58 22 L58 28"/><circle class="stk" cx="18" cy="32" r="4.4" fill="#fff"/><circle class="stk" cx="48" cy="32" r="4.4" fill="#fff"/></svg></div>
+              <div class="txt"><div class="nm">Truck</div><div class="ds">F-150, Silverado</div></div>
+              <div class="right"><div class="mo" data-from></div><span class="chk" aria-hidden="true"></span></div></label>
+            <label class="svc"><input type="radio" name="vehicle" value="Large SUV / Van" data-mult="1.35">
+              <div class="vic"><svg viewBox="0 0 64 42"><path class="fil" d="M6 28 L8 15 L22 11 L52 11 L58 19 L60 28 Z"/><path class="stk" d="M6 28 L8 15 L22 11 L52 11 L58 19 L60 28"/><circle class="stk" cx="18" cy="32" r="4.4" fill="#fff"/><circle class="stk" cx="48" cy="32" r="4.4" fill="#fff"/></svg></div>
+              <div class="txt"><div class="nm">Large SUV / Van</div><div class="ds">Tahoe, Sienna</div></div>
+              <div class="right"><div class="mo" data-from></div><span class="chk" aria-hidden="true"></span></div></label>
+            <label class="svc"><input type="radio" name="vehicle" value="XL Vehicle" data-mult="1.5">
+              <div class="vic"><svg viewBox="0 0 64 42"><path class="fil" d="M4 28 L6 13 L22 9 L56 9 L62 19 L62 28 Z"/><path class="stk" d="M4 28 L6 13 L22 9 L56 9 L62 19 L62 28"/><circle class="stk" cx="16" cy="32" r="4.4" fill="#fff"/><circle class="stk" cx="50" cy="32" r="4.4" fill="#fff"/></svg></div>
+              <div class="txt"><div class="nm">XL Vehicle</div><div class="ds">Suburban, Sprinter</div></div>
+              <div class="right"><div class="mo" data-from></div><span class="chk" aria-hidden="true"></span></div></label>
+          </div>
+          <div class="err-msg" data-for="vehicle" style="margin-top:10px">Pick your vehicle to continue</div>
+          <div class="nav-row"><button type="button" class="btn-next" data-next>Continue →</button></div>
+        </div>
 
-    <div class="sum-card">
-      <div class="sr"><span>Vehicle</span><b id="sumVeh">—</b></div>
-      <div class="sr"><span>Package</span><b id="sumPkg">—</b></div>
-      <div class="sr total"><span>Estimated price</span><b id="sumPrice">—</b></div>
-    </div>
+        <!-- STEP 2 — PACKAGE -->
+        <div class="step" data-step="2">
+          <div class="step-h">Choose your package</div>
+          <div class="step-sub" id="pkgSub">Prices shown for your vehicle.</div>
+          <div class="pkg-list" id="pkgList">
+            <label class="pkg" data-base="120">
+              <input type="radio" name="package" value="Express Detail">
+              <span class="chk" aria-hidden="true"></span>
+              <div class="pkg-top">
+                <div><div class="pkg-nm">Express Detail</div><div class="pkg-dur">About 60 minutes</div></div>
+                <div class="pkg-price"><div class="amt" data-amt></div><div class="pl">Total</div></div>
+              </div>
+              <div class="pkg-desc">A quick refresh inside and out — vacuum, interior wipe-down, exterior hand wash and dry.</div>
+              <div class="pkg-feat"><span>Vacuum</span><span>Hand wash</span><span>Tire shine</span></div>
+            </label>
+            <label class="pkg" data-base="280">
+              <input type="radio" name="package" value="Premium Detail">
+              <span class="pop">Most Popular</span>
+              <span class="chk" aria-hidden="true"></span>
+              <div class="pkg-top">
+                <div><div class="pkg-nm">Premium Detail</div><div class="pkg-dur">2 – 3 hours</div></div>
+                <div class="pkg-price"><div class="amt" data-amt></div><div class="pl">Total</div></div>
+              </div>
+              <div class="pkg-desc">A full interior and exterior detail — deep clean, clay-bar, wax, and an interior shampoo.</div>
+              <div class="pkg-feat"><span>Clay-bar</span><span>Wax</span><span>Interior shampoo</span><span>Leather wipe</span></div>
+            </label>
+            <label class="pkg" data-base="480">
+              <input type="radio" name="package" value="Complete Detail">
+              <span class="chk" aria-hidden="true"></span>
+              <div class="pkg-top">
+                <div><div class="pkg-nm">Complete Detail</div><div class="pkg-dur">5 – 6 hours</div></div>
+                <div class="pkg-price"><div class="amt" data-amt></div><div class="pl">Total</div></div>
+              </div>
+              <div class="pkg-desc">The works — paint correction, ceramic sealant, steam clean, and full leather conditioning.</div>
+              <div class="pkg-feat"><span>Paint correction</span><span>Ceramic sealant</span><span>Steam clean</span><span>Leather care</span></div>
+            </label>
+          </div>
+          <div class="err-msg" data-for="package" style="margin-top:10px">Choose a package to continue</div>
+          <div class="nav-row">
+            <button type="button" class="btn-back" data-back>← Back</button>
+            <button type="button" class="btn-next" data-next>Continue →</button>
+          </div>
+        </div>
 
-    <div class="step-head">
-      <h2>Pick a time</h2>
-      <div class="step-num">Step <b>3</b>/4</div>
-    </div>
-    <div class="when-card">
-      <label class="field-label" for="bookDate">Date</label>
-      <input class="field-input" type="date" id="bookDate" name="bookDate">
-      <div class="err-msg" data-for="bookDate">Pick a date</div>
+        <!-- STEP 3 — DATE & TIME -->
+        <div class="step" data-step="3">
+          <div class="step-h">Pick a date &amp; time</div>
+          <div class="step-sub">Times are requests — we'll text you to confirm the exact slot.</div>
+          <div class="row" style="margin-bottom:18px">
+            <div>
+              <label class="field-label" for="bookDate">Preferred date <span class="req">*</span></label>
+              <input class="field-input" type="date" id="bookDate" name="bookDate">
+              <div class="err-msg" data-for="bookDate">Please pick a date</div>
+            </div>
+          </div>
+          <label class="field-label" style="margin-bottom:10px;display:block">Preferred time <span class="req">*</span></label>
+          <div class="slot-grid" id="slotGrid" role="radiogroup" aria-label="Time slot">
+            <label class="slot"><input type="radio" name="slot" value="9:00 AM">9:00</label>
+            <label class="slot"><input type="radio" name="slot" value="10:30 AM">10:30</label>
+            <label class="slot"><input type="radio" name="slot" value="12:00 PM">12:00</label>
+            <label class="slot"><input type="radio" name="slot" value="1:30 PM">1:30</label>
+            <label class="slot"><input type="radio" name="slot" value="3:00 PM">3:00</label>
+            <label class="slot"><input type="radio" name="slot" value="4:30 PM">4:30</label>
+          </div>
+          <div class="err-msg" data-for="slot" style="margin-top:10px">Please pick a time slot</div>
+          <div class="nav-row">
+            <button type="button" class="btn-back" data-back>← Back</button>
+            <button type="button" class="btn-next" data-next>Continue →</button>
+          </div>
+        </div>
 
-      <label class="field-label" style="margin-top:16px">Available slots</label>
-      <div class="slots" id="slotGrid" role="radiogroup">
-        <label class="slot"><input type="radio" name="slot" value="9:00 AM">9:00 AM</label>
-        <label class="slot"><input type="radio" name="slot" value="10:30 AM">10:30 AM</label>
-        <label class="slot"><input type="radio" name="slot" value="12:00 PM">12:00 PM</label>
-        <label class="slot"><input type="radio" name="slot" value="1:30 PM">1:30 PM</label>
-        <label class="slot"><input type="radio" name="slot" value="3:00 PM">3:00 PM</label>
-        <label class="slot"><input type="radio" name="slot" value="4:30 PM">4:30 PM</label>
-      </div>
-      <div class="err-msg" data-for="slot" style="margin-top:8px">Pick a time slot</div>
+        <!-- STEP 4 — DETAILS -->
+        <div class="step" data-step="4">
+          <div class="step-h">Your details</div>
+          <div class="step-sub">Last step — confirm your booking below.</div>
 
-      <button type="button" class="btn" id="toStep4">Continue →</button>
-    </div>
-  </section>
+          <div class="row two">
+            <div>
+              <label class="field-label" for="firstName">First name <span class="req">*</span></label>
+              <input class="field-input" id="firstName" name="firstName" placeholder="Ahmad" autocomplete="given-name">
+              <div class="err-msg" data-for="firstName">Enter your first name</div>
+            </div>
+            <div>
+              <label class="field-label" for="lastName">Last name <span class="req">*</span></label>
+              <input class="field-input" id="lastName" name="lastName" placeholder="Khalil" autocomplete="family-name">
+              <div class="err-msg" data-for="lastName">Enter your last name</div>
+            </div>
+          </div>
+          <div class="row two" style="margin-top:14px">
+            <div>
+              <label class="field-label" for="email">Email <span class="req">*</span></label>
+              <input class="field-input" type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email">
+              <div class="err-msg" data-for="email">Enter a valid email</div>
+            </div>
+            <div>
+              <label class="field-label" for="phone">Phone <span class="req">*</span></label>
+              <input class="field-input" type="tel" id="phone" name="phone" placeholder="(519) 555-0142" autocomplete="tel">
+              <div class="err-msg" data-for="phone">Enter your phone number</div>
+            </div>
+          </div>
+          <div class="row" style="margin-top:14px">
+            <div>
+              <label class="field-label" for="notes">Anything we should know? (optional)</label>
+              <textarea class="field-input" id="notes" name="notes" rows="3" placeholder="Pet hair, tough stains, specific concerns…"></textarea>
+            </div>
+          </div>
 
-  <!-- STEP 4 — CONTACT + CONFIRM -->
-  <section class="step" data-step="4">
-    <button class="change" data-goto="3">← Change time (<span id="chgTime">—</span>)</button>
+          <!-- Booking summary -->
+          <div class="price-card" id="sumCard" style="margin-top:20px" aria-live="polite">
+            <div class="pc-head"><span>Your Booking</span><span class="live"><i></i>Review &amp; confirm</span></div>
+            <div class="price-row"><span>Vehicle</span><b id="sumVeh">—</b></div>
+            <div class="price-row"><span>Package</span><b id="sumPkg">—</b></div>
+            <div class="price-row"><span>When</span><b id="sumWhen">—</b></div>
+            <div class="price-row big"><span>Estimated total</span><b id="sumTotal">$0</b></div>
+          </div>
+          <div class="est-note">Estimate only — the final price is confirmed at drop-off. No deposit is taken to book.</div>
 
-    <div class="sum-card">
-      <div class="sr"><span>Vehicle</span><b id="sumVeh2">—</b></div>
-      <div class="sr"><span>Package</span><b id="sumPkg2">—</b></div>
-      <div class="sr"><span>When</span><b id="sumWhen">—</b></div>
-      <div class="sr total"><span>Estimated price</span><b id="sumPrice2">—</b></div>
-    </div>
+          <div style="margin-top:18px">
+            <label class="consent" id="termsBox">
+              <input type="checkbox" id="terms" name="terms">
+              <span>I agree to the <a href="#" class="consent-link">Terms</a> &amp; <a href="#" class="consent-link">Privacy Policy</a>, and to be contacted about this booking.</span>
+            </label>
+            <div class="err-msg" data-for="terms" style="margin-top:6px;margin-left:28px">Please agree to continue</div>
+          </div>
 
-    <div class="step-head">
-      <h2>Your details</h2>
-      <div class="step-num">Step <b>4</b>/4</div>
-    </div>
-    <form id="bookForm" class="form-card" novalidate>
-      <div class="row two">
-        <div><label class="field-label" for="firstName">First name</label>
-          <input class="field-input" id="firstName" name="firstName" placeholder="Ahmad" autocomplete="given-name">
-          <div class="err-msg" data-for="firstName">Enter your first name</div></div>
-        <div><label class="field-label" for="lastName">Last name</label>
-          <input class="field-input" id="lastName" name="lastName" placeholder="Khalil" autocomplete="family-name">
-          <div class="err-msg" data-for="lastName">Enter your last name</div></div>
-      </div>
-      <div class="row two" style="margin-top:14px">
-        <div><label class="field-label" for="email">Email</label>
-          <input class="field-input" type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email">
-          <div class="err-msg" data-for="email">Enter a valid email</div></div>
-        <div><label class="field-label" for="phone">Phone</label>
-          <input class="field-input" type="tel" id="phone" name="phone" placeholder="(519) 555-0142" autocomplete="tel">
-          <div class="err-msg" data-for="phone">Enter your phone number</div></div>
-      </div>
-      <div class="row" style="margin-top:14px">
-        <div><label class="field-label" for="notes">Anything else? (optional)</label>
-          <textarea class="field-input" id="notes" name="notes" rows="3" placeholder="Pet hair, stains, specific concerns…"></textarea></div>
-      </div>
+          <div class="nav-row">
+            <button type="button" class="btn-back" data-back>← Back</button>
+            <button type="submit" class="btn" id="submitBtn" style="flex:1.8;margin-top:0">Confirm Booking</button>
+          </div>
+          <div class="trust-line">
+            <span><span class="ck">✓</span> No deposit</span>
+            <span><span class="ck">✓</span> Free reschedule</span>
+            <span><span class="ck">✓</span> Text + email</span>
+          </div>
+          <div class="fineprint">
+            We'll send a confirmation by text and email, then reach out to lock the exact time.
+          </div>
+        </div>
 
-      <label class="consent" id="termsBox">
-        <input type="checkbox" id="terms" name="terms">
-        <span>I've read and agree to the <a href="#" class="consent-link">Terms</a> &amp; <a href="#" class="consent-link">Privacy Policy</a>.</span>
-      </label>
-      <div class="err-msg" data-for="terms" style="margin-top:6px;margin-left:30px">Please agree to the Terms &amp; Privacy Policy</div>
+      </form>
+    </main>
 
-      <button type="submit" class="btn alt">Confirm My Booking</button>
-      <div class="trust-line">
-        <span><span class="ck">✓</span> No deposit at booking</span>
-        <span><span class="ck">✓</span> Free reschedule</span>
-        <span><span class="ck">✓</span> Confirmation by text + email</span>
-      </div>
-      <div class="fineprint">Final price confirmed at drop-off. Payment due on completion unless using <a href="/" class="consent-link">0% financing</a>.</div>
-    </form>
-  </section>
-
+  </div>
 </div>
 
-<!-- success overlay -->
+<!-- confirmation overlay -->
 <div class="ok" id="okOverlay">
   <div class="ok-box">
     <div class="ok-head">
-      <img class="ok-logo" src="/assets/nebo-logo.png" alt="NEBO UltraWash">
       <div class="ok-check">✓</div>
       <h3>Booking Confirmed!</h3>
       <span class="ok-tag">See you soon</span>
     </div>
     <div class="ok-body">
-      <p>Your detailing appointment is locked in. We'll text and email you a confirmation.</p>
-      <div class="ref-block"><div class="ref-lbl">Booking Reference</div><div class="ref-code" id="refCode">NEBO-XXXXXX</div></div>
-      <div class="booking-block">
-        <div class="br"><span>Vehicle</span><b id="okVeh">—</b></div>
-        <div class="br"><span>Package</span><b id="okPkg">—</b></div>
-        <div class="br"><span>When</span><b id="okWhen">—</b></div>
-        <div class="br"><span>Estimated price</span><b id="okPrice">—</b></div>
+      <p>Your detail is locked in. We'll text and email you a confirmation shortly.</p>
+      <div class="ref-block">
+        <div class="ref-lbl">Booking Reference</div>
+        <div class="ref-code" id="refCode">NEBO-XXXXXX</div>
+      </div>
+      <div class="ok-lines">
+        <div class="ol"><span>Vehicle</span><b id="okVeh">—</b></div>
+        <div class="ol"><span>Package</span><b id="okPkg">—</b></div>
+        <div class="ol"><span>When</span><b id="okWhen">—</b></div>
+        <div class="ol"><span>Estimated total</span><b class="tot" id="okTotal">—</b></div>
+      </div>
+      <div class="ok-trust">
+        <span><span class="ck">✓</span>No deposit taken</span>
+        <span><span class="ck">✓</span>Free reschedule</span>
+        <span><span class="ck">✓</span>Text + email</span>
       </div>
     </div>
   </div>
 </div>
 
 <script>
-const SUBMIT={DEMO:true,ENDPOINT:"/api/booking"};
-const state={veh:null,vehMult:1,pkg:null,pkgBase:0,price:0,date:'',slot:''};
+/* ============================================================
+   SUBMIT — single swappable point. DEMO mode: no backend.
+   To go live: set DEMO:false and point ENDPOINT at the handler
+   (SiteGround PHP mail handler, Formspree, or Web3Forms).
+   ============================================================ */
+const SUBMIT = { DEMO:true, ENDPOINT:"/api/booking" };
 
-function fmt(n){return '$'+Math.round(n).toLocaleString();}
+/* cinematic loader: bubbles fade in, logo strikes, squeegee wipes, reveal */
+(function(){
+  let done=false;
+  const reveal=()=>{ if(done) return; done=true;
+    document.getElementById('loader').classList.add('done');
+    document.body.classList.add('in'); };
+  setTimeout(reveal,2400);
+})();
 
-function go(step){
-  document.querySelectorAll('.step').forEach(s=>s.classList.toggle('on',+s.dataset.step===step));
-  window.scrollTo({top:0,behavior:'smooth'});
-}
+const EXPRESS_BASE = 120;  /* cheapest package — drives the vehicle "from" price */
+const state = { veh:null, mult:1, pkg:null, base:0, price:0, date:'', slot:'' };
+const $  = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+const money = n => '$' + Math.round(n).toLocaleString();
 
-/* update package prices based on vehicle multiplier */
-function updatePkgPrices(){
-  document.querySelectorAll('.pkg-price').forEach(el=>{
-    const base=+el.dataset.base||0;
-    el.textContent=fmt(base*state.vehMult);
+/* vehicle "from" prices */
+$$('.svc').forEach(v=>{
+  const m = parseFloat(v.querySelector('input').dataset.mult) || 1;
+  v.querySelector('[data-from]').textContent = 'from ' + money(EXPRESS_BASE * m);
+});
+
+function calcPrice(){ state.price = state.base ? Math.round(state.base * state.mult) : 0; }
+function refreshPkgPrices(){
+  $$('.pkg').forEach(p=>{
+    const base = parseFloat(p.dataset.base) || 0;
+    p.querySelector('[data-amt]').textContent = money(base * state.mult);
   });
 }
-
-/* fill summary blocks */
-function fillSummary(){
-  document.getElementById('chgVeh').textContent=state.veh||'';
-  document.getElementById('chgPkg').textContent=state.pkg||'';
-  document.getElementById('sumVeh').textContent=state.veh||'—';
-  document.getElementById('sumPkg').textContent=state.pkg||'—';
-  document.getElementById('sumPrice').textContent=state.price?fmt(state.price)+' (est.)':'—';
-  document.getElementById('sumVeh2').textContent=state.veh||'—';
-  document.getElementById('sumPkg2').textContent=state.pkg||'—';
-  const w=state.date?(new Date(state.date+'T00:00:00').toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric'})):'';
-  const whenLbl=(w+' · '+(state.slot||'')).trim().replace(/^· /,'');
-  document.getElementById('sumWhen').textContent=whenLbl||'—';
-  document.getElementById('sumPrice2').textContent=state.price?fmt(state.price)+' (est.)':'—';
-  document.getElementById('chgTime').textContent=whenLbl||'';
+function whenLabel(){
+  if(!state.date) return '—';
+  const d = new Date(state.date + 'T00:00:00');
+  const ds = d.toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric'});
+  return state.slot ? ds + ' · ' + state.slot : ds;
+}
+function syncSummary(){
+  $('#sumVeh').textContent   = state.veh || '—';
+  $('#sumPkg').textContent   = state.pkg || '—';
+  $('#sumWhen').textContent  = whenLabel();
+  $('#sumTotal').textContent = money(state.price);
 }
 
-/* vehicle click — picks + advances */
-document.querySelectorAll('.veh').forEach(v=>{
-  v.addEventListener('click',()=>{
-    state.veh=v.dataset.veh;
-    state.vehMult=+v.dataset.mult||1;
-    updatePkgPrices(); fillSummary();
-    go(2);
+/* ---- vehicle select ---- */
+$$('.svc').forEach(el=>{
+  const input = el.querySelector('input');
+  input.addEventListener('change',()=>{
+    $$('.svc').forEach(x=>x.classList.remove('on'));
+    el.classList.add('on');
+    state.veh  = input.value;
+    state.mult = parseFloat(input.dataset.mult) || 1;
+    $('#pkgSub').textContent = 'Prices shown for your ' + state.veh + '.';
+    refreshPkgPrices(); calcPrice(); syncSummary();
+    showErr('vehicle', false);
   });
 });
 
-/* package click — picks + advances */
-document.querySelectorAll('.pkg').forEach(p=>{
-  p.addEventListener('click',()=>{
-    state.pkg=p.dataset.pkg;
-    state.pkgBase=+p.dataset.base||0;
-    state.price=Math.round(state.pkgBase*state.vehMult);
-    fillSummary();
-    go(3);
+/* ---- package select ---- */
+$$('.pkg').forEach(el=>{
+  const input = el.querySelector('input');
+  input.addEventListener('change',()=>{
+    $$('.pkg').forEach(x=>x.classList.remove('on'));
+    el.classList.add('on');
+    state.pkg  = input.value;
+    state.base = parseFloat(el.dataset.base) || 0;
+    calcPrice(); syncSummary();
+    showErr('package', false);
   });
 });
 
-/* change links */
-document.querySelectorAll('.change').forEach(b=>b.addEventListener('click',()=>go(+b.dataset.goto)));
-
-/* slots */
-document.querySelectorAll('.slot input').forEach(r=>{
+/* ---- date + time ---- */
+const dateEl = $('#bookDate');
+(function(){ const t=new Date(); t.setHours(0,0,0,0); dateEl.min = t.toISOString().split('T')[0]; })();
+dateEl.addEventListener('change',e=>{ state.date=e.target.value; showErr('bookDate',false); syncSummary(); });
+$$('.slot input').forEach(r=>{
   r.addEventListener('change',()=>{
-    document.querySelectorAll('.slot').forEach(s=>s.classList.remove('on'));
+    $$('.slot').forEach(s=>s.classList.remove('on'));
     r.closest('.slot').classList.add('on');
-    state.slot=r.value;
-    showErr('slot',false);
-    fillSummary();
+    state.slot = r.value;
+    showErr('slot', false); syncSummary();
   });
 });
-document.getElementById('bookDate').addEventListener('change',e=>{
-  state.date=e.target.value;
-  showErr('bookDate',false);
-  fillSummary();
-});
 
-/* min date today */
-(function(){const dt=document.getElementById('bookDate');const t=new Date();t.setHours(0,0,0,0);dt.min=t.toISOString().split('T')[0];})();
-
-/* step 3 → 4 */
-document.getElementById('toStep4').addEventListener('click',()=>{
-  let ok=true;
-  if(!state.date){showErr('bookDate',true);ok=false;}
-  if(!state.slot){showErr('slot',true);ok=false;}
-  if(!ok) return;
-  go(4);
-});
-
-/* phone format */
-const phone=document.getElementById('phone');
-phone.addEventListener('input',()=>{
-  let d=phone.value.replace(/\D/g,'').slice(0,10);
-  phone.value=d.length>6?`(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`
-    :d.length>3?`(${d.slice(0,3)}) ${d.slice(3)}`:d;
-});
-
-function showErr(k,on){
-  const m=document.querySelector('.err-msg[data-for="'+k+'"]');
-  if(m) m.classList.toggle('show',on);
-  const f=document.getElementById(k);
-  if(f) f.classList.toggle('err',on);
+/* ---- validation ---- */
+function showErr(key,on){
+  const m = document.querySelector('.err-msg[data-for="'+key+'"]');
+  if(m) m.classList.toggle('show', on);
+  const f = document.getElementById(key);
+  if(f) f.classList.toggle('err', on);
 }
-function vf(k){
-  const f=document.getElementById(k); if(!f) return true;
-  const v=f.value.trim();let bad=!v;
-  if(k==='email'&&v) bad=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
-  if(k==='phone'&&v) bad=v.replace(/\D/g,'').length<10;
-  showErr(k,bad); return !bad;
+function validateField(k){
+  const f = document.getElementById(k); if(!f) return true;
+  const v = f.value.trim();
+  let bad = !v;
+  if(k==='email' && v) bad = !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  if(k==='phone' && v) bad = v.replace(/\D/g,'').length < 10;
+  showErr(k, bad); return !bad;
 }
+const STEP_RULES = {
+  1:()=>{ const ok=!!state.veh; showErr('vehicle',!ok); return ok; },
+  2:()=>{ const ok=!!state.pkg; showErr('package',!ok); return ok; },
+  3:()=>{ let ok=true;
+    if(!state.date){ showErr('bookDate',true); ok=false; }
+    if(!state.slot){ showErr('slot',true); ok=false; }
+    return ok; },
+  4:()=>{
+    let ok = ['firstName','lastName','email','phone'].map(validateField).every(Boolean);
+    const c=document.getElementById('terms'), box=document.getElementById('termsBox');
+    showErr('terms',!c.checked); box.classList.toggle('err',!c.checked);
+    if(!c.checked) ok=false;
+    return ok; }
+};
 
+/* ---- step navigation ---- */
+let curStep = 1;
+function goStep(n){
+  curStep = n;
+  $$('.step').forEach(s => s.classList.toggle('on', +s.dataset.step === n));
+  $$('.progress .seg').forEach(s => s.classList.toggle('on', +s.dataset.seg <= n));
+  $('#stepCur').textContent = n;
+  document.querySelector('.card').scrollIntoView({behavior:'smooth',block:'start'});
+}
+$$('[data-next]').forEach(b => b.addEventListener('click',()=>{
+  if(!STEP_RULES[curStep]()){
+    const first = document.querySelector('.step.on .err-msg.show');
+    if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  goStep(curStep + 1);
+}));
+$$('[data-back]').forEach(b => b.addEventListener('click',()=>goStep(curStep - 1)));
+
+/* ---- phone formatting ---- */
+const phoneEl = $('#phone');
+phoneEl.addEventListener('input',()=>{
+  let d = phoneEl.value.replace(/\D/g,'').slice(0,10);
+  phoneEl.value = d.length>6 ? `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`
+    : d.length>3 ? `(${d.slice(0,3)}) ${d.slice(3)}` : d;
+});
+
+/* ---- reference code ---- */
 function genRef(){
-  const a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';let s='';
-  for(let i=0;i<6;i++)s+=a[Math.floor(Math.random()*a.length)];
+  const a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let s=''; for(let i=0;i<6;i++) s+=a[Math.floor(Math.random()*a.length)];
   return 'NEBO-'+s;
 }
 
+/* ---- submit ---- */
 document.getElementById('bookForm').addEventListener('submit',async e=>{
   e.preventDefault();
-  let ok=['firstName','lastName','email','phone'].map(vf).every(Boolean);
-  const c=document.getElementById('terms'),b=document.getElementById('termsBox');
-  showErr('terms',!c.checked);b.classList.toggle('err',!c.checked);
-  if(!c.checked) ok=false;
-  if(!ok){const first=document.querySelector('.step.on .err-msg.show');if(first) first.scrollIntoView({behavior:'smooth',block:'center'});return;}
-  const btn=e.target.querySelector('button[type="submit"]');
-  btn.disabled=true; btn.textContent='Confirming…';
-  const data={
+  if(!STEP_RULES[4]()){
+    const first = document.querySelector('.step.on .err-msg.show');
+    if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  const btn = $('#submitBtn');
+  const original = btn.textContent;
+  btn.disabled = true; btn.textContent = 'Booking…';
+
+  const data = {
     ...Object.fromEntries(new FormData(e.target).entries()),
-    vehicle:state.veh, vehMult:state.vehMult, package:state.pkg, packageBase:state.pkgBase,
-    estPrice:state.price, date:state.date, slot:state.slot,
+    vehicle:state.veh, vehicleMultiplier:state.mult,
+    package:state.pkg, packageBase:state.base, estimatedPrice:state.price,
+    date:state.date, slot:state.slot,
     referenceCode:genRef(), submittedAt:new Date().toISOString()
   };
+
   try{
-    if(!SUBMIT.DEMO){const r=await fetch(SUBMIT.ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});if(!r.ok) throw 0;}
-    else{console.log('[DEMO] booking',data);await new Promise(r=>setTimeout(r,700));}
-    document.getElementById('refCode').textContent=data.referenceCode;
-    document.getElementById('okVeh').textContent=state.veh||'—';
-    document.getElementById('okPkg').textContent=state.pkg||'—';
-    const w=state.date?new Date(state.date+'T00:00:00').toLocaleDateString('en-CA',{weekday:'short',month:'short',day:'numeric'}):'';
-    document.getElementById('okWhen').textContent=(w+' · '+state.slot).trim();
-    document.getElementById('okPrice').textContent=fmt(state.price)+' (est.)';
-    const ov=document.getElementById('okOverlay');ov.classList.add('on');
-    requestAnimationFrame(()=>ov.scrollTop=0);
-  }catch(err){btn.disabled=false;btn.textContent='Confirm My Booking';alert('Something went wrong. Please try again.');}
+    if(!SUBMIT.DEMO){
+      const r = await fetch(SUBMIT.ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+      if(!r.ok) throw new Error('bad response');
+    } else {
+      console.log('[DEMO] booking', data);
+      await new Promise(res=>setTimeout(res,650));
+    }
+    sessionStorage.setItem('nebo_booking', JSON.stringify({
+      referenceCode:data.referenceCode,
+      firstName:data.firstName, lastName:data.lastName,
+      email:data.email, phone:data.phone,
+      vehicle:state.veh, package:state.pkg,
+      when:whenLabel(), price:state.price
+    }));
+    window.location.href = '/detailing/confirmed';
+  }catch(err){
+    btn.disabled = false; btn.textContent = original;
+    alert('Something went wrong. Please try again or call us.');
+  }
 });
 
-updatePkgPrices();
+/* init */
+syncSummary();
 </script>
 </body>
 </html>

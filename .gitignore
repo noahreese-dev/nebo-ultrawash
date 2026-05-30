@@ -9,3 +9,4 @@ _*.mjs
 *.tmp
 # internal-only assets (don't publish)
 assets/whatsapp-thread.jpg
+.env*.local

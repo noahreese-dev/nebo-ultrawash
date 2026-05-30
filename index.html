@@ -77,7 +77,7 @@
   .bg{position:absolute;top:0;left:0;right:0;height:480px;z-index:-1;pointer-events:none;
     background:linear-gradient(180deg,#1340de 0%,#0d3fd6 60%,#06208f 100%)}
   .bg:before{content:"";position:absolute;inset:0;
-    background:url("assets/bg-bubbles.jpg") repeat;background-size:560px auto;opacity:.78;
+    background:url("assets/bg-bubbles.jpg") repeat;background-size:560px auto;opacity:.3;
     -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 180px,transparent 380px);
     mask-image:linear-gradient(to bottom,#000 0,#000 180px,transparent 380px)}
   @media(min-width:880px){
@@ -108,20 +108,14 @@
       drop-shadow(0 0 18px rgba(54,204,255,.28))}
   @media(max-width:520px){.logo{height:76px}}
   .hero h1{margin:18px 0 4px}
-  .hero h1 .pct{font-size:clamp(72px,21vw,132px);display:block;color:#fff;
-    text-shadow:
-      0 1px 0 #bcd2ff,0 2px 0 #6f93f0,0 3px 0 #3f6ae0,0 4px 0 #2b53d2,
-      0 6px 0 #1f43c0,0 8px 0 #163399,0 10px 0 #102a80,0 13px 0 #0a1f66,
-      0 16px 24px rgba(2,10,46,.55),0 0 38px rgba(54,204,255,.55)}
-  .hero h1 .fin{font-size:clamp(38px,10.5vw,66px);display:block;color:#fff;margin-top:2px;
-    text-shadow:
-      0 1px 0 #bcd2ff,0 2px 0 #5f84ec,0 3px 0 #2f59d4,0 5px 0 #1d40bb,
-      0 7px 0 #14318f,0 9px 0 #0d2470,0 12px 18px rgba(2,10,46,.5),
-      0 0 26px rgba(54,204,255,.5)}
+  .hero h1 .pct{font-size:clamp(78px,22vw,136px);display:block;color:#fff;
+    text-shadow:0 8px 26px rgba(2,10,46,.4)}
+  .hero h1 .fin{font-size:clamp(36px,10vw,62px);display:block;color:#fff;margin-top:4px;
+    text-shadow:0 5px 18px rgba(2,10,46,.35)}
   .tagpill{display:inline-block;background:var(--gold);color:#3a2600;
-    font-weight:800;font-size:13px;letter-spacing:.04em;padding:8px 16px;border-radius:999px;
-    transform:skew(-7deg);margin-top:12px;text-transform:uppercase}
-  .tagpill span{display:inline-block;transform:skew(7deg)}
+    font-weight:800;font-size:11.5px;letter-spacing:.06em;padding:8px 16px;border-radius:999px;
+    margin-top:16px;text-transform:uppercase}
+  .tagpill span{display:inline-block}
   /* services as a clean text line — no chips, no button feel */
   .svc-line{margin-top:18px;font-family:"Archivo";font-style:italic;font-weight:800;
     font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(220,235,255,.88);
@@ -129,14 +123,12 @@
   .svc-line span{display:inline-block}
   .svc-line i{display:inline-block;width:5px;height:5px;border-radius:50%;
     background:var(--cyan);vertical-align:middle;margin:0 9px 3px;opacity:.75}
-  .trust{display:flex;gap:10px;margin-top:22px}
-  .trust>div{flex:1;text-align:center;padding:15px 8px 13px;border-radius:14px;
-    background:linear-gradient(180deg,rgba(255,255,255,.12),rgba(255,255,255,.03));
-    box-shadow:0 1px 0 rgba(255,255,255,.14) inset,0 0 0 1px rgba(120,200,255,.22),
-      0 12px 22px -14px rgba(0,8,40,.7)}
-  .trust .t{font-family:"Archivo";font-style:italic;font-weight:900;font-size:21px;color:#fff;line-height:1}
-  .trust .s{display:block;font-size:10px;color:var(--cyan);font-weight:800;
-    letter-spacing:.16em;text-transform:uppercase;margin-top:7px}
+  .trust{display:flex;gap:9px;margin-top:26px}
+  .trust>div{flex:1;text-align:center;padding:13px 8px 11px;border-radius:12px;
+    background:rgba(255,255,255,.055);border:1px solid rgba(120,200,255,.15)}
+  .trust .t{font-family:"Archivo";font-style:italic;font-weight:900;font-size:19px;color:#fff;line-height:1}
+  .trust .s{display:block;font-size:9px;color:var(--cyan);font-weight:800;
+    letter-spacing:.18em;text-transform:uppercase;margin-top:6px}
 
   /* ---- form card ---- */
   .card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
@@ -171,10 +163,10 @@
   /* service selector cards */
   .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
   /* selectable service tile — clearly NOT a CTA button */
-  .svc{position:relative;cursor:pointer;border:1.5px solid #e2e8f3;border-radius:14px;
-    padding:18px 16px 16px;text-align:center;user-select:none;background:#fff;
+  .svc{position:relative;cursor:pointer;border:1px solid #e7ecf6;border-radius:14px;
+    padding:20px 14px 16px;text-align:center;user-select:none;background:#fff;
     transition:border-color .18s,background .18s,box-shadow .18s}
-  .svc:hover{border-color:#b9c8ee;background:#fafcff}
+  .svc:hover{border-color:#c2cfee;background:#fbfcff}
   .svc input{position:absolute;opacity:0;pointer-events:none}
   /* persistent checkbox affordance — empty circle, becomes filled on select */
   .svc .chk{position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:50%;
@@ -186,7 +178,7 @@
   .svc.on .chk{border-color:var(--blue);background:var(--blue)}
   .svc.on .chk:after{transform:rotate(45deg) scale(1);opacity:1}
   /* approved NEBO service badge — transparent PNG, rests directly in the tile */
-  .svc .badge{display:block;width:100%;max-width:260px;height:74px;margin:8px auto 14px;
+  .svc .badge{display:block;width:100%;max-width:230px;height:62px;margin:6px auto 13px;
     object-fit:contain;object-position:center}
   .svc .nm{font-family:"Archivo";font-style:italic;font-weight:800;font-size:15px;color:var(--ink);text-transform:uppercase;letter-spacing:.01em}
   .svc .ds{font-size:11.5px;color:var(--mut);margin-top:3px}
@@ -281,9 +273,13 @@
   /* ---- signature pad ---- */
   .sig-block{margin-top:18px}
   .sig-wrap{position:relative;background:#fff;border:1.5px solid var(--field-line);border-radius:10px;
-    overflow:hidden;touch-action:none}
+    overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none;
+    -webkit-touch-callout:none}
   .sig-wrap.err{border-color:var(--magenta);background:#fff5f8}
-  .sig-wrap canvas{display:block;width:100%;height:160px;cursor:crosshair;touch-action:none}
+  .sig-wrap canvas{display:block;width:100%;height:160px;cursor:crosshair;touch-action:none;
+    -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+  /* during active signing, freeze body scroll so finger drift off-canvas can't pan the page */
+  body.sig-active{overflow:hidden;position:fixed;width:100%}
   .sig-watermark{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:12px;
     color:#b5becf;font-style:italic;pointer-events:none;user-select:none}
   .sig-clear{position:absolute;top:8px;right:10px;font:inherit;font-size:11px;font-weight:700;
@@ -334,27 +330,62 @@
     font-size:clamp(20px,6.2vw,26px);letter-spacing:.04em;color:var(--blue);user-select:all;
     word-break:break-all}
 
-  /* ---- cinematic entrance loader ---- */
+  /* ---- cinematic entrance loader: bubbles → squeegee → reveal ---- */
   .loader{position:fixed;inset:0;z-index:200;display:grid;place-items:center;overflow:hidden;
-    background:
-      radial-gradient(120% 90% at 50% 30%,#1a4fe6 0%,#0c34b8 34%,#061c72 66%,#030f44 86%,#020a30 100%);
+    background-color:#082598;
+    background-image: radial-gradient(ellipse 100% 60% at 50% 0%,
+      rgba(54,204,255,0.24) 0%,
+      rgba(54,204,255,0.06) 35%,
+      rgba(54,204,255,0) 75%);
+    background-repeat:no-repeat;
     transition:transform .8s cubic-bezier(.7,0,.18,1),visibility .8s}
   /* slow studio-light bloom behind everything */
   .loader:before{content:"";position:absolute;width:140vmax;height:140vmax;
-    background:conic-gradient(from 0deg,transparent 0 18%,rgba(120,180,255,.10) 26%,transparent 34% 70%,rgba(120,180,255,.07) 80%,transparent 88%);
-    animation:studio 7s linear infinite;opacity:.8}
+    background:conic-gradient(from 0deg,transparent 0 18%,rgba(120,180,255,.08) 26%,transparent 34% 70%,rgba(120,180,255,.05) 80%,transparent 88%);
+    animation:studio 7s linear infinite;opacity:.7}
   @keyframes studio{to{transform:rotate(360deg)}}
   /* premium hairline frame draws in */
   .l-frame{position:absolute;inset:18px;border-radius:18px;
     border:1px solid rgba(150,200,255,.16);opacity:0;
     animation:frameIn .9s ease-out .15s forwards}
   @keyframes frameIn{0%{opacity:0;transform:scale(1.02)}100%{opacity:1;transform:scale(1)}}
-  /* specular light-rake across a glossy panel (the car cue) */
-  .l-sheen{position:absolute;top:-20%;bottom:-20%;left:-40%;width:32%;
-    background:linear-gradient(100deg,transparent,rgba(190,225,255,.16) 36%,rgba(255,255,255,.5) 50%,rgba(190,225,255,.16) 64%,transparent);
-    transform:skewX(-14deg);filter:blur(3px);opacity:0;
-    animation:rake 1.55s cubic-bezier(.5,0,.2,1) .35s forwards}
-  @keyframes rake{0%{left:-40%;opacity:0}22%{opacity:1}78%{opacity:1}100%{left:135%;opacity:0}}
+  /* BUBBLES — crisp SVG circles for visible NEBO brand texture.
+     Fade in fast, hold while logo strikes, then squeegee crosses and wipes them clean. */
+  .l-bubbles{position:absolute;inset:0;
+    pointer-events:none;
+    opacity:0;
+    animation:bubbleLife 2.3s cubic-bezier(.5,0,.25,1) 0s forwards;
+    will-change:opacity,transform}
+  .l-bubbles svg{width:100%;height:100%;display:block;}
+  @keyframes bubbleLife{
+    0%   {opacity:0;   transform:scale(1.04)}
+    18%  {opacity:1;   transform:scale(1)}    /* fully visible by ~0.4s */
+    55%  {opacity:1;   transform:scale(1)}    /* hold until 1.27s (squeegee starts) */
+    95%  {opacity:0;   transform:scale(1)}    /* cleaned by 2.2s */
+    100% {opacity:0;   transform:scale(1)}
+  }
+  @keyframes bubbleBob{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-6px)}
+  }
+  /* SQUEEGEE — bright leading edge, cobalt trailing edge = "wiped" look */
+  .l-sheen{position:absolute;top:-20%;bottom:-20%;left:-45%;width:42%;
+    background:linear-gradient(100deg,
+      transparent 0%,
+      rgba(190,225,255,.20) 25%,
+      rgba(255,255,255,.78) 48%,
+      rgba(150,210,255,.50) 56%,
+      rgba(20,55,170,.55) 68%,
+      rgba(10,38,128,.30) 82%,
+      transparent 100%);
+    transform:skewX(-14deg);filter:blur(2px);opacity:0;
+    animation:squeegee 1.0s cubic-bezier(.5,0,.2,1) 1.27s forwards}
+  @keyframes squeegee{
+    0%{left:-45%;opacity:0}
+    14%{opacity:1}
+    86%{opacity:1}
+    100%{left:140%;opacity:0}
+  }
   /* glossy squeegee wipe-away */
   .loader.done{transform:translateY(-101%);visibility:hidden}
   .loader.done:after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:14px;
@@ -400,7 +431,8 @@
   @media(prefers-reduced-motion:reduce){
     .loader{display:none}
     .reveal{opacity:1;transform:none;transition:none}
-    .loader:before,.l-frame,.l-sheen,.l-logo,.l-flash,.l-ring,.l-mark:before{animation:none;opacity:1}
+    .loader:before,.l-frame,.l-sheen,.l-bubbles,.l-logo,.l-flash,.l-ring,.l-mark:before{animation:none;opacity:1}
+    .l-bubbles{opacity:0}
   }
 
   /* ---- premium-branded confirmation overlay (fully fluid) ---- */
@@ -487,7 +519,7 @@
       box-shadow:36px 0 90px -28px rgba(0,8,40,.85)}
     .hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
       overflow:hidden;
-      background:url("assets/bg-bubbles.jpg") repeat;background-size:640px auto;opacity:.6}
+      background:url("assets/bg-bubbles.jpg") repeat;background-size:640px auto;opacity:.24}
     .hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
       background:
         radial-gradient(ellipse at 50% 30%,rgba(54,204,255,.18),transparent 55%),
@@ -516,11 +548,60 @@
 <div class="bg"></div>
 
 <div class="loader" id="loader">
+  <div class="l-bubbles" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="bubGloss" cx="35%" cy="30%" r="65%">
+          <stop offset="0%" stop-color="#dcf5ff" stop-opacity="0.4"/>
+          <stop offset="55%" stop-color="#78d2ff" stop-opacity="0.12"/>
+          <stop offset="100%" stop-color="#36ccff" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <g fill="url(#bubGloss)" stroke="#7adfff" stroke-width="2.5" stroke-opacity="0.9">
+        <circle cx="150"  cy="180" r="58"/>
+        <circle cx="380"  cy="90"  r="42"/>
+        <circle cx="560"  cy="240" r="72"/>
+        <circle cx="820"  cy="120" r="36"/>
+        <circle cx="1040" cy="200" r="56"/>
+        <circle cx="1250" cy="80"  r="48"/>
+        <circle cx="1340" cy="290" r="38"/>
+        <circle cx="80"   cy="400" r="40"/>
+        <circle cx="260"  cy="540" r="64"/>
+        <circle cx="480"  cy="450" r="34"/>
+        <circle cx="700"  cy="540" r="80"/>
+        <circle cx="920"  cy="430" r="44"/>
+        <circle cx="1150" cy="500" r="58"/>
+        <circle cx="1350" cy="430" r="32"/>
+        <circle cx="160"  cy="730" r="50"/>
+        <circle cx="370"  cy="800" r="36"/>
+        <circle cx="600"  cy="780" r="46"/>
+        <circle cx="850"  cy="730" r="56"/>
+        <circle cx="1080" cy="800" r="38"/>
+        <circle cx="1290" cy="700" r="62"/>
+      </g>
+      <!-- tiny micro bubbles for depth -->
+      <g fill="rgba(160,230,255,0.55)" stroke="none">
+        <circle cx="220"  cy="280" r="3"/>
+        <circle cx="510"  cy="60"  r="2.5"/>
+        <circle cx="780"  cy="320" r="3.5"/>
+        <circle cx="1180" cy="290" r="2.5"/>
+        <circle cx="60"   cy="600" r="3"/>
+        <circle cx="430"  cy="640" r="2.5"/>
+        <circle cx="630"  cy="380" r="3.5"/>
+        <circle cx="990"  cy="610" r="3"/>
+        <circle cx="1250" cy="610" r="3.5"/>
+        <circle cx="320"  cy="120" r="2.5"/>
+        <circle cx="540"  cy="160" r="3"/>
+        <circle cx="900"  cy="240" r="2.5"/>
+        <circle cx="1080" cy="90"  r="3"/>
+      </g>
+    </svg>
+  </div>
   <div class="l-frame"></div>
   <div class="l-flash"></div>
   <div class="l-ring"></div>
   <div class="l-ring r2"></div>
-  <div class="l-sheen"></div>
+  <div class="l-sheen" aria-hidden="true"></div>
   <div class="loader-core">
     <div class="l-mark"><img class="l-logo" src="assets/nebo-logo.png" alt="NEBO UltraWash" width="239" height="114"></div>
   </div>
@@ -663,15 +744,15 @@
             <div class="err-msg" data-for="plan" style="margin-top:10px">Pick a plan length</div>
           </div>
 
-          <!-- Live price summary: total → 20% deposit → remaining → monthly -->
+          <!-- Live price summary: estimated total → 20% deposit → remaining → monthly -->
           <div class="price-card" id="priceCard" aria-live="polite">
-            <div class="pc-head"><span>Your Plan</span><span class="live"><i></i>Updates as you choose</span></div>
-            <div class="price-row"><span>Service total</span><b id="priceTotal">$0</b></div>
+            <div class="pc-head"><span>Your Plan <em style="font-style:italic;font-weight:600;opacity:0.7">· estimate</em></span><span class="live"><i></i>Updates as you choose</span></div>
+            <div class="price-row"><span>Estimated total</span><b id="priceTotal">$0</b></div>
             <div class="price-row big"><span>Deposit today (20%)</span><b id="priceDeposit">$0</b></div>
             <div class="price-row"><span>Remaining (0% interest)</span><b id="priceRemaining">$0</b></div>
             <div class="price-row"><span>Monthly payment <span class="muted" id="priceMonths">(12 months)</span></span><b id="priceMonthly">$0</b></div>
           </div>
-          <div class="est-note">Estimates pending confirmed per-service pricing. Final amounts shown before payment.</div>
+          <div class="est-note">These numbers are estimates. We confirm the final price at drop-off. Your deposit comes off that total, and the remaining amount is what splits into your monthly payments.</div>
 
           <div class="nav-row">
             <button type="button" class="btn-back" data-back>← Back</button>
@@ -777,8 +858,9 @@
             <span><span class="ck">✓</span> 0% interest</span>
           </div>
           <div class="fineprint">
-            20% deposit secures your appointment and approves your 0% financing plan instantly.
-            Remaining balance split into equal monthly payments on the agreed schedule. No interest when paid on time.
+            Your 20% deposit is based on the estimate above. It locks in your appointment and approves your 0% financing instantly.
+            <b>At drop-off, we confirm the final price. Your deposit comes off the total, and you pay the rest in equal monthly payments at 0% interest.</b>
+            No work begins until you approve the final price.
           </div>
         </div>
 
@@ -844,8 +926,8 @@ const SUBMIT = { DEMO:true, ENDPOINT:"/api/financing-apply" };
     document.getElementById('loader').classList.add('done');
     document.body.classList.add('in');
   };
-  // fixed cinematic beat so strike→rings→light-rake→glint complete before the wipe
-  setTimeout(reveal,2050);
+  // fixed cinematic beat: bubbles fade in (0.7s) → logo strike (1.2s) → squeegee sweep cleans bubbles (.9-2.65s) → reveal
+  setTimeout(reveal,2400);
 })();
 
 const form=document.getElementById('finForm');
@@ -1003,13 +1085,28 @@ function genRef(){
     strokes.forEach(s=>{ctx.beginPath();s.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke();});
   }
   function pos(e){const r=c.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top};}
-  function start(e){e.preventDefault();c.setPointerCapture&&c.setPointerCapture(e.pointerId);drawing=true;cur=[pos(e)];strokes.push(cur);wm.style.display='none';}
+  let savedScrollY=0;
+  function lockBody(){
+    savedScrollY=window.scrollY||window.pageYOffset||0;
+    document.body.style.top=(-savedScrollY)+'px';
+    document.body.classList.add('sig-active');
+  }
+  function unlockBody(){
+    document.body.classList.remove('sig-active');
+    document.body.style.top='';
+    window.scrollTo(0,savedScrollY);
+  }
+  function start(e){e.preventDefault();c.setPointerCapture&&c.setPointerCapture(e.pointerId);drawing=true;cur=[pos(e)];strokes.push(cur);wm.style.display='none';lockBody();}
   function move(e){if(!drawing)return;e.preventDefault();cur.push(pos(e));redraw();}
-  function endStroke(){if(!drawing)return;drawing=false;hidden.value=c.toDataURL('image/png');}
+  function endStroke(){if(!drawing)return;drawing=false;hidden.value=c.toDataURL('image/png');unlockBody();}
   c.addEventListener('pointerdown',start);
   c.addEventListener('pointermove',move);
   c.addEventListener('pointerup',endStroke);
   c.addEventListener('pointercancel',endStroke);
+  /* iOS Safari: passive:false touch listeners are the only reliable way to suppress page-scroll while drawing */
+  c.addEventListener('touchstart',e=>e.preventDefault(),{passive:false});
+  c.addEventListener('touchmove',e=>e.preventDefault(),{passive:false});
+  c.addEventListener('touchend',e=>e.preventDefault(),{passive:false});
   clearBtn.addEventListener('click',()=>{strokes=[];hidden.value='';wm.style.display='';wrap.classList.remove('err');showErr('signature',false);redraw();});
   let ro=null;
   if('ResizeObserver' in window){ro=new ResizeObserver(setup);ro.observe(c);}

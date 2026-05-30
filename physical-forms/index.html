@@ -2,266 +2,238 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Physical Form Mockups — NEBO UltraWash</title>
-<meta name="robots" content="noindex,nofollow">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:ital,wght@0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NEBO 0% Financing — Form Variants</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Archivo:ital,wght@0,700;0,800;0,900;1,800;1,900&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --blue:#0d3fd6;--cyan:#36ccff;--gold:#ffc21a;
-    --ink:#0a1530;--mut:#8b97a4;--dim:#5d6873;
-    --bg:#0a0c10;--panel:#11161d;--line:#222a34;--hair:#1a2029;
-    --txt:#e9eef4;
-  }
-  *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:"Inter",system-ui,sans-serif;background:var(--bg);color:var(--txt);
-    line-height:1.55;-webkit-font-smoothing:antialiased}
-  a{color:var(--blue);text-decoration:none}
+  :root { --ink:#0a1530; --ink-soft:#2d3a55; --mute:#5d6b8f; --hair:#e2e8f3;
+          --cobalt:#0d3fd6; --cyan:#36ccff; --magenta:#ff2e6e; }
+  *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+  html,body { background:#f3f6ff; color:var(--ink); }
+  body { font-family:"Inter",-apple-system,Arial,sans-serif; -webkit-font-smoothing:antialiased;
+         line-height:1.45; padding: 40px 28px 80px; }
+  .wrap { max-width: 1380px; margin: 0 auto; }
+  header.top { text-align:center; margin-bottom: 38px; }
+  header.top h1 { font-family:"Archivo"; font-style:italic; font-weight:900;
+    font-size: clamp(28px,4vw,40px); letter-spacing:-0.5px; color:var(--ink); }
+  header.top h1 .pct { color: var(--cobalt); }
+  header.top p { color: var(--mute); font-size: 14.5px; margin-top: 6px; max-width: 640px; margin-left:auto; margin-right:auto; }
 
-  .topbar{position:sticky;top:0;z-index:50;background:rgba(10,12,16,.85);backdrop-filter:blur(10px);border-bottom:1px solid var(--hair)}
-  .topbar .inner{max-width:1180px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap}
-  .topbar .brand{font-family:"Archivo";font-style:italic;font-weight:900;font-size:15px;letter-spacing:-.2px;display:flex;align-items:center;gap:9px}
-  .topbar .brand .dot{width:8px;height:8px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 4px rgba(54,204,255,.18)}
-  .topbar .nav a{font-size:13px;font-weight:600;color:var(--mut);margin-left:14px}
-  .topbar .nav a:hover{color:var(--txt)}
+  .toolbar { display:flex; justify-content:center; gap: 8px; margin-bottom: 28px; flex-wrap:wrap; }
+  .toolbar button { background:#fff; border:1.5px solid var(--hair); color: var(--ink-soft);
+    font: inherit; font-weight: 700; font-size: 13px; letter-spacing: 0.4px;
+    padding: 8px 16px; border-radius: 99px; cursor: pointer; transition: all 0.15s; }
+  .toolbar button:hover { border-color: var(--cobalt); color: var(--cobalt); }
+  .toolbar button.active { background: var(--cobalt); border-color: var(--cobalt); color:#fff; }
 
-  .hero{padding:48px 22px 30px;max-width:1180px;margin:0 auto}
-  .eyebrow{display:inline-flex;align-items:center;gap:7px;font-size:11px;font-weight:800;color:var(--cyan);
-    background:rgba(54,204,255,.10);border:1px solid rgba(54,204,255,.25);padding:5px 12px;border-radius:999px;
-    letter-spacing:.16em;text-transform:uppercase}
-  .hero h1{font-family:"Archivo";font-style:italic;font-weight:900;font-size:clamp(28px,4vw,42px);
-    letter-spacing:-.6px;line-height:1.1;margin:18px 0 10px}
-  .hero p{color:var(--mut);max-width:65ch;font-size:15px;line-height:1.6}
+  .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(360px, 1fr)); gap: 28px; }
+  .card { background:#fff; border:1.5px solid var(--hair); border-radius: 16px; overflow:hidden;
+    box-shadow: 0 8px 28px -16px rgba(13,63,214,0.18); transition: all 0.2s; display:flex; flex-direction:column; }
+  .card:hover { border-color: var(--cobalt); box-shadow: 0 14px 36px -14px rgba(13,63,214,0.32); transform: translateY(-3px); }
+  .card .preview { position: relative; background:#f3f6ff; aspect-ratio: 8.5/11; overflow:hidden; cursor:zoom-in; }
+  .card .preview img { width: 100%; height: 100%; object-fit: contain; object-position: top center; display:block; }
+  .card .meta { padding: 18px 20px 20px; border-top: 1px solid var(--hair); }
+  .card .meta .title { font-family:"Archivo"; font-style:italic; font-weight:900; font-size: 17px;
+    color:var(--ink); letter-spacing: -0.2px; }
+  .card .meta .sub { color: var(--mute); font-size: 13px; margin-top: 4px; }
+  .card .tags { margin-top: 10px; display:flex; gap: 6px; flex-wrap:wrap; }
+  .tag { font-size: 10.5px; font-weight: 700; letter-spacing: 0.6px; text-transform: uppercase;
+    padding: 3px 8px; border-radius: 99px; background: #eaf0ff; color: var(--cobalt); }
+  .tag.alt { background: #fff5f8; color: var(--magenta); }
+  .tag.cyan { background: #e0f5ff; color: #0288c2; }
+  .actions { margin-top: 16px; display:flex; gap: 8px; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; gap: 6px;
+    text-decoration:none; font: inherit; font-weight: 700; font-size: 12.5px; letter-spacing: 0.3px;
+    padding: 9px 14px; border-radius: 10px; cursor: pointer; flex:1; transition: all 0.15s; }
+  .btn-primary { background: var(--cobalt); color:#fff; border:1.5px solid var(--cobalt); }
+  .btn-primary:hover { background:#0a32a8; border-color:#0a32a8; }
+  .btn-secondary { background:#fff; color: var(--ink); border:1.5px solid var(--hair); }
+  .btn-secondary:hover { border-color: var(--cobalt); color: var(--cobalt); }
 
-  .grid{max-width:1180px;margin:0 auto;padding:18px 18px 60px;display:grid;
-    grid-template-columns:1fr;gap:24px}
-  @media(min-width:880px){.grid{grid-template-columns:1fr 1fr;gap:30px}}
+  .lb { position: fixed; inset: 0; background: rgba(10,21,48,0.92); display:none; align-items:center;
+    justify-content:center; padding: 40px; z-index:100; cursor:zoom-out; }
+  .lb.open { display:flex; }
+  .lb img { max-width:100%; max-height:100%; object-fit:contain;
+    box-shadow: 0 30px 80px -20px rgba(0,0,0,0.8); border-radius: 6px; }
+  .lb .close { position: absolute; top:20px; right:24px; color:#fff; font-size:32px;
+    background:none; border:none; cursor:pointer; line-height:1; opacity:0.8; }
+  .lb .close:hover { opacity:1; }
 
-  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;overflow:hidden;
-    box-shadow:0 20px 50px -20px rgba(0,0,0,.6)}
-  .card .label{padding:16px 20px 12px;border-bottom:1px solid var(--hair);display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap}
-  .card .label h3{font-family:"Archivo";font-style:italic;font-weight:800;font-size:18px;letter-spacing:-.2px}
-  .card .label .tag{font-size:10.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;
-    color:var(--cyan);background:rgba(54,204,255,.10);border:1px solid rgba(54,204,255,.25);padding:3px 9px;border-radius:6px}
-  .card .label .note{display:block;width:100%;font-size:12.5px;color:var(--mut);margin-top:4px;line-height:1.5}
-  .shot{display:block;cursor:zoom-in;position:relative;background:#000}
-  .shot img{display:block;width:100%;height:auto}
-  .shot .zoom{position:absolute;bottom:10px;right:12px;font-size:11px;font-weight:700;color:var(--cyan);
-    background:rgba(10,12,16,.7);padding:4px 9px;border-radius:6px;letter-spacing:.06em;text-transform:uppercase}
-
-  /* lightbox */
-  .lb{position:fixed;inset:0;z-index:100;background:rgba(5,7,10,.94);backdrop-filter:blur(6px);
-    display:none;align-items:flex-start;justify-content:center;padding:24px;overflow:auto;cursor:zoom-out}
-  .lb.on{display:flex}
-  .lb img{max-width:1400px;width:100%;height:auto;border-radius:10px;border:1px solid var(--line);
-    box-shadow:0 30px 80px -20px rgba(0,0,0,.9)}
-  .lb .x{position:fixed;top:18px;right:24px;font-size:24px;color:var(--mut);cursor:pointer;line-height:1}
-  .lb .x:hover{color:#fff}
-  .lb .cap{position:fixed;top:22px;left:24px;font-size:13px;font-weight:600;color:var(--mut)}
-
-  footer{max-width:1180px;margin:0 auto;padding:40px 22px;color:var(--dim);font-size:12.5px;border-top:1px solid var(--hair)}
+  footer { text-align:center; margin-top: 60px; color: var(--mute); font-size: 12.5px; }
+  footer a { color: var(--cobalt); text-decoration: none; font-weight: 700; }
+  footer a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
 
-<div class="topbar">
-  <div class="inner">
-    <span class="brand"><span class="dot"></span>NEBO · Physical Form Mockups</span>
-    <nav class="nav"><a href="/">/financing</a><a href="/detailing">/detailing</a></nav>
-  </div>
-</div>
+<div class="wrap">
 
-<header class="hero">
-  <span class="eyebrow">Internal · iteration round 4</span>
-  <h1>Physical form — base direction <span style="color:#36ccff">I · Narrative</span>, refined.</h1>
-  <p>Noah picked <b style="color:#fff">I · Narrative</b> as the base. Round 4 refines it: <b style="color:#fff">terse vehicle labels</b> (no more "Year + Make + Model" crowding), <b style="color:#fff">helper text moves BELOW the field</b> (never on the input line), <b style="color:#fff">one-line section subtitles</b>, tighter typography. Logic spec at <a href="/physical-forms/FORM_SPEC.md" style="color:#36ccff">/physical-forms/FORM_SPEC.md</a>.</p>
-</header>
+  <header class="top">
+    <h1>NEBO <span class="pct">0%</span> Financing — Form Variants</h1>
+    <p>Click any preview to zoom. Open the PDF for the print-ready version. All variants single page, real NEBO logo, "from $X" pricing placeholders, deposit-credit policy in the terms.</p>
+  </header>
 
-<section style="max-width:1180px;margin:0 auto;padding:0 22px">
-  <div style="font-family:'Archivo';font-style:italic;font-weight:900;font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:#36ccff;margin-bottom:14px">⚡ Round 4 — refined narrative</div>
-</section>
-
-<div class="grid">
-
-  <div class="card">
-    <div class="label">
-      <h3>K · Narrative tight</h3><span class="tag" style="color:#ffc21a;border-color:rgba(255,194,26,.35);background:rgba(255,194,26,.10)">Round 4 · NEW</span>
-      <span class="note">Max concision. Section subtitles single-line. Field labels stripped to "Year / Make / Model / VIN / Colour / Plate" each on its own short line or compact 2-up. Generous whitespace because labels are short.</span>
-    </div>
-    <a class="shot" data-cap="Variant K · Narrative tight (round 4)" href="/assets/physical-forms/v3-narrative-tight.jpg">
-      <img src="/assets/physical-forms/v3-narrative-tight.jpg" alt="Variant K narrative tight" loading="lazy">
-      <span class="zoom">⤢ zoom</span>
-    </a>
+  <div class="toolbar" id="filter">
+    <button data-tag="all" class="active">All variants</button>
+    <button data-tag="invoice">Invoice-style</button>
+    <button data-tag="standard">Standard form</button>
+    <button data-tag="branded">NEBO-branded</button>
   </div>
 
-  <div class="card">
-    <div class="label">
-      <h3>L · Print-master candidate</h3><span class="tag" style="color:#36ccff;border-color:rgba(54,204,255,.55);background:rgba(54,204,255,.18)">⭐ Final-form candidate</span>
-      <span class="note">Same as K plus typographic polish — hairline cobalt rules between sections, baseline grid, all-caps letterspaced labels, real legible Terms paragraph (not lorem). The print-master leaning version.</span>
-    </div>
-    <a class="shot" data-cap="Variant L · Print-master candidate (round 4)" href="/assets/physical-forms/v3-narrative-print.jpg">
-      <img src="/assets/physical-forms/v3-narrative-print.jpg" alt="Variant L print-master" loading="lazy">
-      <span class="zoom">⤢ zoom</span>
-    </a>
+  <div class="grid" id="grid">
+
+    <article class="card" data-tags="invoice branded">
+      <div class="preview"><img src="previews/k-invoice-d-nebo.png" alt="NEBO-branded invoice variant"></div>
+      <div class="meta">
+        <div class="title">D · NEBO-Branded Invoice</div>
+        <div class="sub">Cobalt+bubble header band, real service badges (Ceramic Coating, PPF, Vinyl Wrap, Window Tinting). Full NEBO brand language.</div>
+        <div class="tags">
+          <span class="tag">Brand assets</span>
+          <span class="tag cyan">Cobalt header</span>
+          <span class="tag alt">Boldest</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="k-invoice-d-nebo.pdf" target="_blank">Open PDF</a>
+          <a class="btn btn-secondary" href="k-invoice-d-nebo.html" target="_blank">Live HTML</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="invoice">
+      <div class="preview"><img src="previews/k-invoice-a-bold.png" alt="Bold geometric invoice variant"></div>
+      <div class="meta">
+        <div class="title">A · Bold Geometric</div>
+        <div class="sub">Codexo-inspired. Cyan+cobalt triangle corner, dark navy services table band, cobalt totals panel with cyan TERM accent.</div>
+        <div class="tags">
+          <span class="tag">Geometric corner</span>
+          <span class="tag cyan">Dark band</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="k-invoice-a-bold.pdf" target="_blank">Open PDF</a>
+          <a class="btn btn-secondary" href="k-invoice-a-bold.html" target="_blank">Live HTML</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="invoice">
+      <div class="preview"><img src="previews/k-invoice-b-soft.png" alt="Soft polygon invoice variant"></div>
+      <div class="meta">
+        <div class="title">B · Soft Polygon</div>
+        <div class="sub">Mailbox-inspired. Lighter polygons in top-right + bottom-left corners. Cyan-band services table, white totals panel.</div>
+        <div class="tags">
+          <span class="tag">Dual corners</span>
+          <span class="tag cyan">Cyan band</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="k-invoice-b-soft.pdf" target="_blank">Open PDF</a>
+          <a class="btn btn-secondary" href="k-invoice-b-soft.html" target="_blank">Live HTML</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="invoice">
+      <div class="preview"><img src="previews/k-invoice-c-clean.png" alt="Minimal clean invoice variant"></div>
+      <div class="meta">
+        <div class="title">C · Minimal Clean</div>
+        <div class="sub">Stripe/Mercury-restraint. No geometric chrome. Thin navy rules around the services table. Outlined totals panel with subtle cyan accent.</div>
+        <div class="tags">
+          <span class="tag">Minimal</span>
+          <span class="tag cyan">Outline only</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="k-invoice-c-clean.pdf" target="_blank">Open PDF</a>
+          <a class="btn btn-secondary" href="k-invoice-c-clean.html" target="_blank">Live HTML</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="standard">
+      <div class="preview"><img src="previews/k-tight.png" alt="K-tight standard form"></div>
+      <div class="meta">
+        <div class="title">K · Tight (Standard)</div>
+        <div class="sub">Single-column, numbered sections, logo top-right (180×80). Title on one line. Most compact of the standards.</div>
+        <div class="tags">
+          <span class="tag">Single column</span>
+          <span class="tag cyan">180px logo</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="k-tight.pdf" target="_blank">Open PDF</a>
+          <a class="btn btn-secondary" href="k-tight.html" target="_blank">Live HTML</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="standard">
+      <div class="preview"><img src="previews/k-tight-v2.png" alt="K-tight v2 bigger logo"></div>
+      <div class="meta">
+        <div class="title">K · Tight v2 (Bigger Logo)</div>
+        <div class="sub">Same structure as K-Tight but logo bumped to 220×100. Title breaks to two lines. More balanced visual mass.</div>
+        <div class="tags">
+          <span class="tag">Single column</span>
+          <span class="tag cyan">220px logo</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="k-tight-v2.pdf" target="_blank">Open PDF</a>
+          <a class="btn btn-secondary" href="k-tight-v2.html" target="_blank">Live HTML</a>
+        </div>
+      </div>
+    </article>
+
+    <article class="card" data-tags="standard">
+      <div class="preview"><img src="previews/l-print-master.png" alt="L two-column print master"></div>
+      <div class="meta">
+        <div class="title">L · Print Master (2-Col)</div>
+        <div class="sub">Two-column layout. Customer + Vehicle on the left, Services + Plan + Terms on the right. Roomier for handwriting, print-shop classic.</div>
+        <div class="tags">
+          <span class="tag">Two column</span>
+          <span class="tag cyan">Roomy</span>
+        </div>
+        <div class="actions">
+          <a class="btn btn-primary" href="l-print-master.pdf" target="_blank">Open PDF</a>
+          <a class="btn btn-secondary" href="l-print-master.html" target="_blank">Live HTML</a>
+        </div>
+      </div>
+    </article>
+
   </div>
 
-</div>
-
-<section style="max-width:1180px;margin:30px auto 0;padding:0 22px">
-  <div style="font-family:'Archivo';font-style:italic;font-weight:900;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#5d6873;margin-bottom:14px;padding-top:24px;border-top:1px solid #1a2029">Round 3 — paper-only iterations (reference)</div>
-</section>
-
-<div class="grid">
-
-  <div class="card">
-    <div class="label">
-      <h3>H · Coach (v2)</h3><span class="tag" style="color:#ffc21a;border-color:rgba(255,194,26,.35);background:rgba(255,194,26,.10)">Round 3 · NEW</span>
-      <span class="note">Friendly hand-holding. Cobalt "PRO TIP" callouts next to the email and VIN fields. Italic helper text under field labels. Same visual checkbox grid for services with printed prices.</span>
-    </div>
-    <a class="shot" data-cap="Variant H · Coach v2 (round 3)" href="/assets/physical-forms/v2-coach.jpg">
-      <img src="/assets/physical-forms/v2-coach.jpg" alt="Variant H coach v2" loading="lazy">
-      <span class="zoom">⤢ zoom</span>
-    </a>
-  </div>
-
-  <div class="card">
-    <div class="label">
-      <h3>I · Narrative (v2)</h3><span class="tag" style="color:#36ccff;border-color:rgba(54,204,255,.55);background:rgba(54,204,255,.18)">⭐ Locked base (refined in round 4)</span>
-      <span class="note">Most informative. 2-line section subtitles (what + why). Service cells include description + price. Numbered footnotes (¹ ² ³) at the bottom for APR/cancellation/deposit.</span>
-    </div>
-    <a class="shot" data-cap="Variant I · Narrative v2 (round 3)" href="/assets/physical-forms/v2-narrative.jpg">
-      <img src="/assets/physical-forms/v2-narrative.jpg" alt="Variant I narrative v2" loading="lazy">
-      <span class="zoom">⤢ zoom</span>
-    </a>
-  </div>
-
-  <div class="card">
-    <div class="label">
-      <h3>J · Clean hybrid</h3><span class="tag" style="color:#36ccff;border-color:rgba(54,204,255,.35);background:rgba(54,204,255,.10)">Round 3 · production-leaning</span>
-      <span class="note">Minimal helper text — just section subtitles. Big cobalt circle numerals (1–6) on the left margin. Generous whitespace. Refined. This is the print-master candidate.</span>
-    </div>
-    <a class="shot" data-cap="Variant J · Clean hybrid (round 3)" href="/assets/physical-forms/v2-clean.jpg">
-      <img src="/assets/physical-forms/v2-clean.jpg" alt="Variant J clean hybrid" loading="lazy">
-      <span class="zoom">⤢ zoom</span>
-    </a>
-  </div>
-
-</div>
-
-<section style="max-width:1180px;margin:30px auto 0;padding:0 22px">
-  <div style="font-family:'Archivo';font-style:italic;font-weight:900;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#5d6873;margin-bottom:14px;padding-top:24px;border-top:1px solid #1a2029">Round 2 — descriptive (reference)</div>
-</section>
-
-<div class="grid">
-
-  <div class="card">
-    <div class="label">
-      <h3>F · Coach</h3><span class="tag" style="color:#ffc21a;border-color:rgba(255,194,26,.35);background:rgba(255,194,26,.10)">Round 2 · NEW</span>
-      <span class="note">Visual grid + 'coach' guidance. Cobalt italic subtitles above each section explain what the user's about to do. Italic gray helper text under every field label. Pro-tip callouts in cobalt next to important fields. Numbered cobalt step-circles. Welcome line at the top. The form holds your hand without being condescending.</span>
-    </div>
-    <a class="shot" data-cap="Variant F · Coach (round 2)" href="/assets/physical-forms/descriptive-coach.jpg">
-      <img src="/assets/physical-forms/descriptive-coach.jpg" alt="Variant F coach descriptive">
-      <span class="zoom">⤢ zoom</span>
-    </a>
-  </div>
-
-  <div class="card">
-    <div class="label">
-      <h3>G · Narrative</h3><span class="tag" style="color:#ffc21a;border-color:rgba(255,194,26,.35);background:rgba(255,194,26,.10)">Round 2 · NEW</span>
-      <span class="note">Visual grid + narrative voice. Each section header has a 2-line subtitle: WHAT to fill + WHY. Friendly intro paragraph at the top ('3 minutes from start to approved…'). Service cards include short descriptions + average price. Footnotes at the bottom for APR / cancellation. Most informative of the bunch.</span>
-    </div>
-    <a class="shot" data-cap="Variant G · Narrative (round 2)" href="/assets/physical-forms/descriptive-narrative.jpg">
-      <img src="/assets/physical-forms/descriptive-narrative.jpg" alt="Variant G narrative descriptive">
-      <span class="zoom">⤢ zoom</span>
-    </a>
-  </div>
-
-</div>
-
-<section style="max-width:1180px;margin:30px auto 0;padding:0 22px">
-  <div style="font-family:'Archivo';font-style:italic;font-weight:900;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:#5d6873;margin-bottom:14px;padding-top:24px;border-top:1px solid #1a2029">Round 1 — earlier directions (reference)</div>
-</section>
-
-<div class="grid">
-
-  <div class="card">
-    <div class="label">
-      <h3>A · Classic two-column</h3><span class="tag">Conservative</span>
-      <span class="note">Two-column traditional legal-document feel. Cobalt only as section underlines. Tidy field lines. Safe, professional, won't surprise anyone.</span>
-    </div>
-    <a class="shot" data-cap="Variant A · Classic two-column" href="/assets/physical-forms/classic.jpg">
-      <img src="/assets/physical-forms/classic.jpg" alt="Classic two-column variant">
-      <span class="zoom">⤢ zoom</span>
-    </a>
-  </div>
-
-  <div class="card">
-    <div class="label">
-      <h3>B · Branded header band</h3><span class="tag">On-brand</span>
-      <span class="note">Bold cobalt band across the top with the NEBO logo and the application title in heavy italic. Strongest brand presence — feels like the digital form's print cousin.</span>
-    </div>
-    <a class="shot" data-cap="Variant B · Branded header band" href="/assets/physical-forms/branded-header.jpg">
-      <img src="/assets/physical-forms/branded-header.jpg" alt="Branded header variant">
-      <span class="zoom">⤢ zoom</span>
-    </a>
-  </div>
-
-  <div class="card">
-    <div class="label">
-      <h3>C · Visual checkbox grid</h3><span class="tag" style="color:#36ccff;border-color:rgba(54,204,255,.55);background:rgba(54,204,255,.18)">⭐ Locked base</span>
-      <span class="note">Services laid out as a 2×2 visual checkbox grid (matching the digital form's service cards). Easier for the customer to scan and pick at the counter.</span>
-    </div>
-    <a class="shot" data-cap="Variant C · Visual checkbox grid" href="/assets/physical-forms/checkbox-grid.jpg">
-      <img src="/assets/physical-forms/checkbox-grid.jpg" alt="Checkbox grid variant">
-      <span class="zoom">⤢ zoom</span>
-    </a>
-  </div>
-
-  <div class="card">
-    <div class="label">
-      <h3>D · Modern minimal</h3><span class="tag">Apple/Stripe</span>
-      <span class="note">Lots of whitespace, thin cobalt rules between sections, uppercase letterspaced labels. Premium, restrained — the design-forward direction.</span>
-    </div>
-    <a class="shot" data-cap="Variant D · Modern minimal" href="/assets/physical-forms/modern-minimal.jpg">
-      <img src="/assets/physical-forms/modern-minimal.jpg" alt="Modern minimal variant">
-      <span class="zoom">⤢ zoom</span>
-    </a>
-  </div>
-
-  <div class="card">
-    <div class="label">
-      <h3>E · Tear-off ticket stub</h3><span class="tag">Memorable</span>
-      <span class="note">Perforated bottom stub the customer keeps with their reference code — print mirror of the digital "you're approved" reference card. Tactile + functional.</span>
-    </div>
-    <a class="shot" data-cap="Variant E · Tear-off ticket stub" href="/assets/physical-forms/ticket-style.jpg">
-      <img src="/assets/physical-forms/ticket-style.jpg" alt="Ticket-style variant">
-      <span class="zoom">⤢ zoom</span>
-    </a>
-  </div>
+  <footer>
+    <p>Forms ready for print · all share the same deposit-credit policy in the Terms section. <a href="/" target="_blank">Back to digital financing form</a></p>
+  </footer>
 
 </div>
-
-<footer>
-  <p>5 directions generated via Gemini 2.5 Flash Image. Each is a starting concept — once you pick a direction we refine the typography, field structure, and any details that didn't render quite right in the AI mockup. Final master will be a print-ready PDF.</p>
-  <p style="margin-top:10px">Generated 2026-05-20. Tell me a letter (A/B/C/D/E) and I'll lock that direction + start the print master.</p>
-</footer>
 
 <div class="lb" id="lb">
-  <span class="cap" id="lbCap"></span>
-  <span class="x">✕</span>
-  <img id="lbImg" src="" alt="">
+  <button class="close" id="lbClose" aria-label="Close">×</button>
+  <img id="lbImg" alt="">
 </div>
 
 <script>
-  var lb=document.getElementById('lb'),lbImg=document.getElementById('lbImg'),lbCap=document.getElementById('lbCap');
-  document.querySelectorAll('.shot').forEach(function(s){
-    s.addEventListener('click',function(e){e.preventDefault();lbImg.src=s.getAttribute('href');lbCap.textContent=s.dataset.cap;lb.classList.add('on');});
+  const filter = document.getElementById('filter');
+  const grid = document.getElementById('grid');
+  filter.addEventListener('click', e => {
+    if (e.target.tagName !== 'BUTTON') return;
+    filter.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    const tag = e.target.dataset.tag;
+    grid.querySelectorAll('.card').forEach(card => {
+      const tags = card.dataset.tags.split(' ');
+      card.style.display = (tag === 'all' || tags.includes(tag)) ? '' : 'none';
+    });
   });
-  function closeLb(){lb.classList.remove('on');lbImg.src='';}
-  lb.addEventListener('click',closeLb);
-  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeLb();});
+
+  const lb = document.getElementById('lb');
+  const lbImg = document.getElementById('lbImg');
+  const lbClose = document.getElementById('lbClose');
+  document.querySelectorAll('.card .preview').forEach(p => {
+    p.addEventListener('click', () => {
+      lbImg.src = p.querySelector('img').src;
+      lb.classList.add('open');
+    });
+  });
+  lb.addEventListener('click', e => { if (e.target === lb || e.target === lbClose) lb.classList.remove('open'); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') lb.classList.remove('open'); });
 </script>
+
 </body>
 </html>
