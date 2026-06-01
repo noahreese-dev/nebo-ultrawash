@@ -358,26 +358,12 @@
     filter:drop-shadow(0 0 16px rgba(54,204,255,.5));
     animation:logoIn .8s cubic-bezier(.16,1,.3,1) both}
   @keyframes logoIn{0%{opacity:0;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
-  /* the "ching" sparkle — 8-point starburst + lens-flare bloom + hot core */
-  .spark{position:absolute;z-index:5;pointer-events:none;opacity:0}
-  .spark .bloom{position:absolute;left:50%;top:50%;width:165%;height:165%;transform:translate(-50%,-50%);
-    border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.95) 0%,rgba(185,238,255,.5) 13%,rgba(54,204,255,.16) 34%,rgba(54,204,255,0) 60%)}
-  .spark .ray{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);filter:drop-shadow(0 0 4px rgba(190,240,255,.9))}
-  .spark .rv{width:2.4px;height:100%;background:linear-gradient(180deg,transparent,#fff 50%,transparent)}
-  .spark .rh{height:2.4px;width:100%;background:linear-gradient(90deg,transparent,#fff 50%,transparent)}
-  .spark .rd1,.spark .rd2{width:1.5px;height:56%;background:linear-gradient(180deg,transparent,rgba(255,255,255,.78) 50%,transparent)}
-  .spark .rd1{transform:translate(-50%,-50%) rotate(45deg)}
-  .spark .rd2{transform:translate(-50%,-50%) rotate(-45deg)}
-  .spark .core{position:absolute;left:50%;top:50%;width:9px;height:9px;border-radius:50%;transform:translate(-50%,-50%);
-    background:radial-gradient(circle,#fff 38%,rgba(255,255,255,0) 74%);box-shadow:0 0 12px 3px rgba(255,255,255,.9)}
-  .s1{width:88px;height:88px;top:-12%;left:71%; animation:ching .72s cubic-bezier(.15,.9,.3,1) 2.65s both}
-  .s2{width:42px;height:42px;top:8%;left:83%; animation:ching .6s cubic-bezier(.15,.9,.3,1) 2.89s both}
-  @keyframes ching{
-    0%  {opacity:0;transform:scale(0)   rotate(-120deg)}
-    42% {opacity:1;transform:scale(1.18) rotate(0)}
-    60% {opacity:1;transform:scale(.92) rotate(4deg)}
-    78% {opacity:.9;transform:scale(1.0)}
-    100%{opacity:0;transform:scale(.55) rotate(16deg)}}
+  /* horizontal flash — a quick bright light sweeps across the logo at the end */
+  .l-flash{position:absolute;top:-20%;bottom:-20%;left:-48%;width:40%;z-index:3;pointer-events:none;
+    background:linear-gradient(105deg,transparent,rgba(255,255,255,.5) 40%,rgba(255,255,255,.92) 50%,rgba(215,243,255,.5) 60%,transparent);
+    transform:skewX(-16deg);opacity:0;filter:blur(.4px) drop-shadow(0 0 10px rgba(190,240,255,.85));
+    animation:flashSweep .5s cubic-bezier(.45,0,.3,1) 2.65s both}
+  @keyframes flashSweep{0%{left:-48%;opacity:0}22%{opacity:1}78%{opacity:1}100%{left:158%;opacity:0}}
   /* natural loading bar — slim, calm, premium */
   .bar{position:relative;width:min(210px,54vw);height:3px;margin:30px auto 0;border-radius:99px;
     background:rgba(255,255,255,.16);overflow:hidden}
@@ -518,8 +504,7 @@
   <div class="l-core">
     <div class="l-mark">
       <img class="l-logo" src="assets/nebo-logo-hi.png" alt="NEBO UltraWash" width="900" height="421">
-      <span class="spark s1"><span class="bloom"></span><span class="ray rv"></span><span class="ray rh"></span><span class="ray rd1"></span><span class="ray rd2"></span><span class="core"></span></span>
-      <span class="spark s2"><span class="bloom"></span><span class="ray rv"></span><span class="ray rh"></span><span class="ray rd1"></span><span class="ray rd2"></span><span class="core"></span></span>
+      <span class="l-flash" aria-hidden="true"></span>
     </div>
     <div class="bar"><div class="fill"></div></div>
     <div class="cap">0% Interest Financing</div>
