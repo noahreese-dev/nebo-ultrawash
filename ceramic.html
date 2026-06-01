@@ -373,10 +373,10 @@
   .l-glaze{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;
     -webkit-mask:url('assets/nebo-logo-hi.png') center/contain no-repeat;
     mask:url('assets/nebo-logo-hi.png') center/contain no-repeat}
-  .l-shine{position:absolute;top:-15%;bottom:-15%;left:-55%;width:46%;
-    background:linear-gradient(105deg,transparent,rgba(180,230,255,0) 34%,rgba(255,255,255,.95) 50%,rgba(150,220,255,.55) 62%,transparent);
-    transform:skewX(-16deg);opacity:0;filter:blur(.3px);
-    animation:flashSweep .55s cubic-bezier(.45,0,.3,1) 2.65s both}
+  .l-shine{position:absolute;top:-15%;bottom:-15%;left:-58%;width:56%;
+    background:linear-gradient(105deg,transparent,rgba(255,255,255,.45) 34%,#ffffff 47%,#ffffff 53%,rgba(205,240,255,.6) 64%,transparent);
+    transform:skewX(-16deg);opacity:0;filter:blur(.2px) brightness(1.6) drop-shadow(0 0 6px rgba(255,255,255,.95));
+    animation:flashSweep .6s cubic-bezier(.4,0,.3,1) 2.65s both}
   @keyframes flashSweep{0%{left:-55%;opacity:0}22%{opacity:1}78%{opacity:1}100%{left:165%;opacity:0}}
   /* natural loading bar — slim, calm, premium */
   .bar{position:relative;width:min(210px,54vw);height:3px;margin:30px auto 0;border-radius:99px;
