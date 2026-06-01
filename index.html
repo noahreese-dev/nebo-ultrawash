@@ -358,12 +358,15 @@
     filter:drop-shadow(0 0 16px rgba(54,204,255,.5));
     animation:logoIn .8s cubic-bezier(.16,1,.3,1) both}
   @keyframes logoIn{0%{opacity:0;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
-  /* horizontal flash — a quick bright light sweeps across the logo at the end */
-  .l-flash{position:absolute;top:-20%;bottom:-20%;left:-48%;width:40%;z-index:3;pointer-events:none;
-    background:linear-gradient(105deg,transparent,rgba(255,255,255,.5) 40%,rgba(255,255,255,.92) 50%,rgba(215,243,255,.5) 60%,transparent);
-    transform:skewX(-16deg);opacity:0;filter:blur(.4px) drop-shadow(0 0 10px rgba(190,240,255,.85));
-    animation:flashSweep .5s cubic-bezier(.45,0,.3,1) 2.65s both}
-  @keyframes flashSweep{0%{left:-48%;opacity:0}22%{opacity:1}78%{opacity:1}100%{left:158%;opacity:0}}
+  /* horizontal glaze — a bright shine glides across, masked to the logo's exact shape */
+  .l-glaze{position:absolute;inset:0;z-index:3;pointer-events:none;overflow:hidden;
+    -webkit-mask:url('assets/nebo-logo-hi.png') center/contain no-repeat;
+    mask:url('assets/nebo-logo-hi.png') center/contain no-repeat}
+  .l-shine{position:absolute;top:-15%;bottom:-15%;left:-55%;width:46%;
+    background:linear-gradient(105deg,transparent,rgba(180,230,255,0) 34%,rgba(255,255,255,.95) 50%,rgba(150,220,255,.55) 62%,transparent);
+    transform:skewX(-16deg);opacity:0;filter:blur(.3px);
+    animation:flashSweep .55s cubic-bezier(.45,0,.3,1) 2.65s both}
+  @keyframes flashSweep{0%{left:-55%;opacity:0}22%{opacity:1}78%{opacity:1}100%{left:165%;opacity:0}}
   /* natural loading bar — slim, calm, premium */
   .bar{position:relative;width:min(210px,54vw);height:3px;margin:30px auto 0;border-radius:99px;
     background:rgba(255,255,255,.16);overflow:hidden}
@@ -504,7 +507,7 @@
   <div class="l-core">
     <div class="l-mark">
       <img class="l-logo" src="assets/nebo-logo-hi.png" alt="NEBO UltraWash" width="900" height="421">
-      <span class="l-flash" aria-hidden="true"></span>
+      <span class="l-glaze" aria-hidden="true"><span class="l-shine"></span></span>
     </div>
     <div class="bar"><div class="fill"></div></div>
     <div class="cap">0% Interest Financing</div>
