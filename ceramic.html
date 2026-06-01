@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>0% Financing — NEBO UltraWash</title>
+<meta name="description" content="Finance your Ceramic Coating, PPF, Vinyl Wrap or Window Tint with 0% interest at NEBO UltraWash. Upgrade your ride, pay over time. Easy monthly payments, no interest.">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="theme-color" content="#0d3fd6">
+<link rel="canonical" href="https://nebo-financing-form.vercel.app/">
+<!-- Open Graph / social -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="NEBO UltraWash">
+<meta property="og:title" content="0% Financing — NEBO UltraWash">
+<meta property="og:description" content="Finance Ceramic Coating, PPF, Vinyl Wrap or Window Tint with 0% interest. Upgrade your ride, pay over time. Equal monthly payments, no interest.">
+<meta property="og:image" content="https://nebo-financing-form.vercel.app/assets/nebo-financing-banner.jpg">
+<meta property="og:url" content="https://nebo-financing-form.vercel.app/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="0% Financing — NEBO UltraWash">
+<meta name="twitter:description" content="Ceramic Coating, PPF, Vinyl Wrap, Window Tint — 0% interest, pay over time.">
+<meta name="twitter:image" content="https://nebo-financing-form.vercel.app/assets/nebo-financing-banner.jpg">
+<!-- Structured data: machine-readable for search + AI answer engines -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "AutomotiveBusiness",
+  "name": "NEBO UltraWash",
+  "url": "https://nebo-financing-form.vercel.app/",
+  "logo": "https://nebo-financing-form.vercel.app/assets/nebo-logo-hi.png",
+  "image": "https://nebo-financing-form.vercel.app/assets/nebo-financing-banner.jpg",
+  "description": "Premium auto detailing offering Ceramic Coating, Paint Protection Film (PPF), Vinyl Wrap and Window Tinting with 0% interest financing.",
+  "makesOffer": {
+    "@type": "Offer",
+    "name": "0% Financing",
+    "description": "0% interest financing on detailing services. Pay over time with easy monthly payments and no interest when paid on the agreed schedule.",
+    "priceSpecification": {
+      "@type": "PriceSpecification",
+      "description": "0% interest, equal monthly payments over 3, 6 or 12 months on approved application."
+    },
+    "itemOffered": [
+      { "@type": "Service", "name": "Ceramic Coating", "description": "Long-term paint protection and gloss." },
+      { "@type": "Service", "name": "Paint Protection Film (PPF)", "description": "Self-healing protective film for vehicle paint." },
+      { "@type": "Service", "name": "Vinyl Wrap", "description": "Full or partial vehicle colour change." },
+      { "@type": "Service", "name": "Window Tinting", "description": "Heat and UV rejection window film." }
+    ]
+  }
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Archivo:ital,wght@0,600;0,700;0,800;1,800;1,900&display=swap" rel="stylesheet">
+<style>
+  /* ============ NEBO UltraWash brand system ============ */
+  :root{
+    --blue:#0d3fd6; --blue-deep:#06208f; --blue-bright:#1f63ff;
+    --cyan:#36ccff; --cyan-soft:rgba(54,204,255,.5);
+    --gold:#ffc21a; --magenta:#ff2e6e;
+    --ink:#0a1530; --white:#ffffff;
+    --field-bg:#f3f6ff; --field-line:#cfd9f5; --field-line-on:#1f63ff;
+    --txt:#0a1530; --mut:#5d6b8f; --good:#16a34a;
+    --r:16px; --rs:12px;
+    --shadow:0 10px 30px -8px rgba(6,32,143,.35);
+    --glow:0 0 0 3px rgba(54,204,255,.25),0 8px 24px -6px rgba(13,63,214,.45);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{-webkit-text-size-adjust:100%}
+  body{
+    font-family:"Inter",system-ui,sans-serif;color:var(--txt);
+    background:#06208f;
+    -webkit-font-smoothing:antialiased;line-height:1.55;
+  }
+  img{max-width:100%;display:block}
+  .display{font-family:"Archivo",system-ui,sans-serif;font-style:italic;font-weight:900;letter-spacing:-.02em;line-height:.92}
+
+  /* Bubble texture lives at the TOP of the page only and SCROLLS with content.
+     Body's solid cobalt covers everything below. */
+  .bg{position:absolute;top:0;left:0;right:0;height:480px;z-index:-1;pointer-events:none;
+    background:#06208f url("assets/nebo-bg-2-raw.jpg") top center/cover no-repeat;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 220px,transparent 470px);
+    mask-image:linear-gradient(to bottom,#000 0,#000 220px,transparent 470px)}
+  .bg:before{display:none}
+  @media(min-width:880px){
+    .bg{height:760px}
+    .bg:before{background-size:700px auto;
+      -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 320px,transparent 620px);
+      mask-image:linear-gradient(to bottom,#000 0,#000 320px,transparent 620px)}
+  }
+
+  /* layout */
+  .shell{max-width:1180px;margin:0 auto;padding:18px 16px 60px}
+  .grid{display:grid;grid-template-columns:1fr;gap:18px}
+
+  /* ---- hero panel ---- */
+  .hero{
+    position:relative;border-radius:var(--r);overflow:hidden;
+    background:transparent;
+    color:#fff;text-align:center;
+  }
+  .hero .hero-inner{padding:68px 22px 26px;position:relative;z-index:2}
+  .logo{height:88px;width:auto;display:block;margin:0 auto 4px;
+    /* clean hi-res logo: just a light lift + faint cyan brand glow, no heavy halo/box */
+    filter:drop-shadow(0 2px 7px rgba(0,8,40,.30)) drop-shadow(0 0 11px rgba(54,204,255,.16))}
+  @media(max-width:520px){.logo{height:76px}}
+  .hero h1{margin:18px 0 4px}
+  .hero h1 .pct{font-size:clamp(78px,22vw,136px);display:block;color:#fff;
+    text-shadow:0 8px 26px rgba(2,10,46,.4)}
+  .hero h1 .fin{font-size:clamp(36px,10vw,62px);display:block;color:#fff;margin-top:4px;
+    text-shadow:0 5px 18px rgba(2,10,46,.35)}
+  .tagpill{display:inline-block;background:var(--gold);color:#3a2600;
+    font-weight:800;font-size:11.5px;letter-spacing:.06em;padding:8px 16px;border-radius:999px;
+    margin-top:16px;text-transform:uppercase}
+  .tagpill span{display:inline-block}
+  /* services as a clean text line — no chips, no button feel */
+  .svc-line{margin-top:18px;font-family:"Archivo";font-style:italic;font-weight:800;
+    font-size:11.5px;letter-spacing:.16em;text-transform:uppercase;color:rgba(220,235,255,.88);
+    line-height:1.7}
+  .svc-line span{display:inline-block}
+  .svc-line i{display:inline-block;width:5px;height:5px;border-radius:50%;
+    background:var(--cyan);vertical-align:middle;margin:0 9px 3px;opacity:.75}
+  .trust{display:flex;gap:9px;margin-top:26px}
+  .trust>div{flex:1;text-align:center;padding:13px 8px 11px;border-radius:12px;
+    background:rgba(255,255,255,.055);border:1px solid rgba(120,200,255,.15)}
+  .trust .t{font-family:"Archivo";font-style:italic;font-weight:900;font-size:19px;color:#fff;line-height:1}
+  .trust .s{display:block;font-size:9px;color:var(--cyan);font-weight:800;
+    letter-spacing:.18em;text-transform:uppercase;margin-top:6px}
+
+  /* ---- form card ---- */
+  .card{background:#fff;border-radius:var(--r);box-shadow:var(--shadow);overflow:hidden}
+  .card-head{padding:24px 22px 18px;background:linear-gradient(180deg,#f5f8ff,#fff);border-bottom:1px solid #eef2fb}
+  .card-head h2{font-family:"Archivo";font-style:italic;font-weight:800;font-size:24px;color:var(--ink);letter-spacing:-.02em}
+  .card-head p{color:var(--mut);font-size:14px;margin-top:5px}
+  form{padding:22px}
+  .sec{margin-bottom:26px}
+  .sec:last-of-type{margin-bottom:14px}
+  .sec-title{display:flex;align-items:center;gap:10px;font-family:"Archivo";font-style:italic;
+    font-weight:800;font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--blue);margin-bottom:14px}
+  .sec-title .n{display:grid;place-items:center;width:24px;height:24px;border-radius:7px;
+    background:var(--blue);color:#fff;font-size:12px;font-weight:800;font-style:normal}
+
+  .row{display:grid;grid-template-columns:1fr;gap:14px}
+  .row.two{grid-template-columns:1fr 1fr}
+  .row.three{grid-template-columns:1fr 1fr 1fr}
+  .field-label{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+  .field-label .req{color:var(--magenta)}
+  .field-input{
+    width:100%;font:inherit;font-size:16px;color:var(--ink);
+    background:var(--field-bg);border:1.5px solid var(--field-line);
+    border-radius:var(--rs);padding:13px 14px;transition:.16s;outline:none;-webkit-appearance:none;appearance:none
+  }
+  select.field-input{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%235d6b8f' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:38px}
+  .field-input:focus{border-color:var(--field-line-on);box-shadow:var(--glow);background:#fff}
+  .field-input::placeholder{color:#9aa6c5}
+  .field-input.err{border-color:var(--magenta);background:#fff5f8}
+  .err-msg{display:none;color:var(--magenta);font-size:12px;font-weight:600;margin-top:5px}
+  .err-msg.show{display:block}
+
+  /* service selector cards */
+  .svc-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  /* ceramic product cards (single-select, Gtechniq-branded) */
+  .svc-grid.cer{grid-template-columns:1fr}
+  .svc.prod{display:flex;align-items:center;text-align:left;padding:15px 16px 15px 46px;gap:10px}
+  .svc.prod .chk{top:50%;left:16px;right:auto;margin-top:-11px}
+  .svc.prod .prod-main{flex:1;display:block}
+  .svc.prod .gt{display:block;font-size:10px;font-weight:800;letter-spacing:.05em;text-transform:uppercase;color:#138a4a}
+  .svc.prod .nm{display:block;font-family:"Archivo";font-style:italic;font-weight:800;font-size:16px;color:var(--ink);margin-top:2px;text-transform:none}
+  .svc.prod .ds{display:block;font-size:11.5px;color:var(--mut);margin-top:4px;line-height:1.4;text-transform:none}
+  .svc.prod .prod-price{flex:none;text-align:right}
+  .svc.prod .prod-price .mo{font-size:13px;font-weight:800;color:var(--blue);background:none;margin:0;padding:0}
+  .svc.prod .tag{position:absolute;top:-9px;right:14px;background:var(--blue);color:#fff;font-size:9.5px;font-weight:800;letter-spacing:.04em;text-transform:uppercase;padding:3px 9px;border-radius:999px}
+  /* selectable service tile — clearly NOT a CTA button */
+  .svc{position:relative;cursor:pointer;border:1px solid #e7ecf6;border-radius:14px;
+    padding:20px 14px 16px;text-align:center;user-select:none;background:#fff;
+    transition:border-color .18s,background .18s,box-shadow .18s}
+  .svc:hover{border-color:#c2cfee;background:#fbfcff}
+  .svc input{position:absolute;opacity:0;pointer-events:none}
+  /* persistent checkbox affordance — empty circle, becomes filled on select */
+  .svc .chk{position:absolute;top:12px;right:12px;width:22px;height:22px;border-radius:50%;
+    border:2px solid #c6d0e3;background:#fff;transition:.18s;display:grid;place-items:center}
+  .svc .chk:after{content:"";width:7px;height:11px;border:solid #fff;border-width:0 2.5px 2.5px 0;
+    transform:rotate(45deg) scale(0);opacity:0;margin-top:-2px;transition:.18s}
+  .svc.on{border-color:var(--blue);background:#f3f6ff;
+    box-shadow:0 0 0 3px rgba(31,99,255,.18)}
+  .svc.on .chk{border-color:var(--blue);background:var(--blue)}
+  .svc.on .chk:after{transform:rotate(45deg) scale(1);opacity:1}
+  /* approved NEBO service badge — transparent PNG, rests directly in the tile */
+  .svc .badge{display:block;width:100%;max-width:230px;height:62px;margin:6px auto 13px;
+    object-fit:contain;object-position:center}
+  .svc .nm{font-family:"Archivo";font-style:italic;font-weight:800;font-size:15px;color:var(--ink);text-transform:uppercase;letter-spacing:.01em}
+  .svc .ds{font-size:11.5px;color:var(--mut);margin-top:3px}
+
+  /* plan radio cards */
+  .plan-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+  .plan{cursor:pointer;border:1.5px solid var(--field-line);border-radius:var(--rs);
+    padding:14px 8px;text-align:center;background:var(--field-bg);transition:.16s}
+  .plan input{position:absolute;opacity:0}
+  .plan .big{font-family:"Archivo";font-style:italic;font-weight:900;font-size:22px;color:var(--ink)}
+  .plan .lbl{font-size:11px;color:var(--mut);font-weight:600;text-transform:uppercase;letter-spacing:.04em;margin-top:2px}
+  .plan.on{border-color:var(--blue);background:#eaf0ff;box-shadow:var(--glow)}
+  .plan.on .big{color:var(--blue)}
+
+  /* consent + submit — compact rows */
+  .consent{display:flex;gap:9px;align-items:flex-start;background:var(--field-bg);
+    border:1px solid var(--field-line);border-radius:10px;padding:9px 12px;font-size:12px;color:var(--mut);line-height:1.45}
+  .consent input{width:17px;height:17px;margin-top:1px;accent-color:var(--blue);flex:none}
+  .consent.err{border-color:var(--magenta);background:#fff5f8}
+  .consent-stack{display:flex;flex-direction:column;gap:6px}
+  .consent-stack .err-msg{margin-top:-2px;margin-left:30px;font-size:11.5px}
+  .consent-link{color:var(--blue);font-weight:600;text-decoration:underline;text-underline-offset:2px}
+  .btn{
+    width:100%;margin-top:18px;font-family:"Archivo";font-style:italic;font-weight:900;
+    font-size:19px;letter-spacing:.01em;text-transform:uppercase;color:#fff;cursor:pointer;
+    background:linear-gradient(180deg,#ff5b8e,#ff2e6e);border:0;border-radius:14px;padding:18px;
+    box-shadow:0 10px 22px -6px rgba(255,46,110,.55);transition:.16s
+  }
+  .btn:hover{transform:translateY(-1px);box-shadow:0 14px 26px -6px rgba(255,46,110,.6)}
+  .btn:active{transform:translateY(0)}
+  .btn[disabled]{opacity:.7;cursor:wait}
+  .fineprint{font-size:11.5px;color:var(--mut);text-align:center;margin-top:14px;line-height:1.6}
+
+  /* ---- 3-step flow ---- */
+  .head-pill{display:inline-flex;align-items:center;gap:7px;font-size:11.5px;font-weight:800;
+    color:var(--blue);background:#e7eeff;border-radius:999px;padding:5px 12px;letter-spacing:.04em;
+    text-transform:uppercase;margin-bottom:10px}
+  .head-pill .dot{width:6px;height:6px;border-radius:50%;background:var(--good);
+    box-shadow:0 0 0 3px rgba(22,163,74,.18);animation:pulse 1.8s ease-in-out infinite}
+  @keyframes pulse{50%{box-shadow:0 0 0 6px rgba(22,163,74,0)}}
+
+  .progress{display:flex;gap:8px;margin:0 0 20px;align-items:center}
+  .progress .seg{flex:1;height:6px;border-radius:99px;background:#eaeef9;overflow:hidden;position:relative}
+  .progress .seg i{position:absolute;inset:0;background:linear-gradient(90deg,#1f63ff,#36ccff);
+    transform:translateX(-100%);transition:transform .45s cubic-bezier(.2,.85,.25,1)}
+  .progress .seg.on i{transform:translateX(0)}
+  .progress .lbl{font-size:12px;font-weight:700;color:var(--mut);white-space:nowrap;letter-spacing:.02em}
+  .progress .lbl b{color:var(--blue)}
+
+  .step{display:none;animation:stepIn .35s cubic-bezier(.2,.85,.25,1)}
+  .step.on{display:block}
+  @keyframes stepIn{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+  .step-h{font-family:"Archivo";font-style:italic;font-weight:800;font-size:20px;color:var(--ink);
+    letter-spacing:-.01em;margin-bottom:4px}
+  .step-sub{color:var(--mut);font-size:13.5px;margin-bottom:18px}
+
+  /* monthly estimate tag on service card */
+  .svc .mo{margin-top:7px;display:inline-block;font-size:11.5px;font-weight:800;color:var(--blue);
+    background:#e7eeff;border-radius:7px;padding:3px 8px;letter-spacing:.02em}
+  .svc.on .mo{background:#fff;color:var(--blue)}
+
+  /* Most Popular badge on plan card */
+  .plan{position:relative;overflow:visible}
+  .plan .pop{position:absolute;top:-10px;left:50%;transform:translateX(-50%);
+    font-family:"Archivo";font-style:italic;font-weight:900;font-size:10px;letter-spacing:.1em;
+    text-transform:uppercase;color:#fff;background:linear-gradient(180deg,#ff5b8e,#ff2e6e);
+    padding:4px 10px;border-radius:7px;white-space:nowrap;
+    box-shadow:0 4px 10px -2px rgba(255,46,110,.55)}
+  .plan .save{display:block;font-size:11px;color:var(--mut);font-weight:700;margin-top:4px;letter-spacing:.02em}
+
+  /* step navigation */
+  .nav-row{display:flex;gap:10px;margin-top:18px}
+  .btn-next{flex:1;font-family:"Archivo";font-style:italic;font-weight:900;font-size:17px;
+    letter-spacing:.01em;text-transform:uppercase;color:#fff;cursor:pointer;
+    background:linear-gradient(180deg,#3a78ff,#0d3fd6);border:0;border-radius:13px;padding:16px;
+    box-shadow:0 10px 22px -8px rgba(13,63,214,.55);transition:.16s}
+  .btn-next:hover{transform:translateY(-1px);box-shadow:0 14px 26px -8px rgba(13,63,214,.6)}
+  .btn-back{font:inherit;font-size:14px;font-weight:700;color:var(--mut);cursor:pointer;
+    background:transparent;border:1.5px solid var(--field-line);border-radius:13px;padding:14px 22px;transition:.16s}
+  .btn-back:hover{color:var(--ink);border-color:#a8b6dc}
+
+  /* trust microcopy under CTA */
+  .trust-line{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap;
+    margin-top:14px;font-size:12.5px;font-weight:600;color:var(--mut)}
+  .trust-line span{display:inline-flex;align-items:center;gap:6px}
+  .trust-line .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);
+    font-size:10px;font-weight:900;display:grid;place-items:center}
+
+  /* fine print disclaimer for estimates */
+  .est-note{font-size:11px;color:var(--mut);margin-top:10px;text-align:center;font-style:italic}
+
+  /* ---- signature pad ---- */
+  .sig-block{margin-top:18px}
+  .sig-wrap{position:relative;background:#fff;border:1.5px solid var(--field-line);border-radius:10px;
+    overflow:hidden;touch-action:none;-webkit-user-select:none;user-select:none;
+    -webkit-touch-callout:none}
+  .sig-wrap.err{border-color:var(--magenta);background:#fff5f8}
+  .sig-wrap canvas{display:block;width:100%;height:160px;cursor:crosshair;touch-action:none;
+    -webkit-user-select:none;user-select:none;-webkit-tap-highlight-color:transparent}
+  /* during active signing, freeze body scroll so finger drift off-canvas can't pan the page */
+  body.sig-active{overflow:hidden;position:fixed;width:100%}
+  .sig-watermark{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:12px;
+    color:#b5becf;font-style:italic;pointer-events:none;user-select:none}
+  .sig-clear{position:absolute;top:8px;right:10px;font:inherit;font-size:11px;font-weight:700;
+    color:var(--mut);background:#f3f6ff;border:1px solid var(--field-line);border-radius:6px;
+    padding:4px 10px;cursor:pointer}
+  .sig-clear:hover{color:var(--ink);border-color:#a8b6dc}
+
+  /* ---- price summary card (step 2) ---- */
+  .price-card{margin-top:22px;border-radius:14px;overflow:hidden;
+    background:linear-gradient(160deg,#0d3fd6,#06208f);color:#fff;
+    box-shadow:0 14px 30px -14px rgba(13,63,214,.55)}
+  .price-card .pc-head{padding:13px 18px;display:flex;justify-content:space-between;align-items:center;
+    border-bottom:1px solid rgba(255,255,255,.12);
+    font-family:"Archivo";font-style:italic;font-weight:800;font-size:11px;
+    letter-spacing:.14em;text-transform:uppercase;color:#bfd6ff}
+  .price-card .pc-head .live{display:inline-flex;align-items:center;gap:6px;font-size:10px;color:var(--cyan)}
+  .price-card .pc-head .live i{width:5px;height:5px;border-radius:50%;background:var(--cyan);
+    box-shadow:0 0 0 3px rgba(54,204,255,.22)}
+  .price-row{display:flex;justify-content:space-between;align-items:baseline;padding:10px 18px;font-size:14px;color:rgba(220,235,255,.8)}
+  .price-row b{font-family:"Archivo";font-style:italic;font-weight:900;color:#fff;font-size:17px}
+  .price-row.big{background:rgba(54,204,255,.10);padding:14px 18px;border-top:1px solid rgba(255,255,255,.10);border-bottom:1px solid rgba(255,255,255,.10)}
+  .price-row.big span{color:#fff;font-weight:600;font-size:15px}
+  .price-row.big b{font-size:24px;color:var(--cyan)}
+  .price-row .muted{font-size:11px;color:rgba(220,235,255,.55);font-weight:500}
+
+  /* ---- payment method picker (step 3) ---- */
+  .pay-method{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:6px}
+  .pay-opt{position:relative;cursor:pointer;border:1.5px solid #e2e8f3;border-radius:12px;
+    padding:14px;text-align:center;background:#fff;
+    display:flex;flex-direction:column;align-items:center;gap:6px;
+    transition:border-color .16s,background .16s,box-shadow .16s;user-select:none}
+  .pay-opt:hover{border-color:#b9c8ee;background:#fafcff}
+  .pay-opt input{position:absolute;opacity:0;pointer-events:none}
+  .pay-opt .pay-ic{width:32px;height:24px;display:grid;place-items:center;
+    font-family:"Archivo";font-style:italic;font-weight:900;font-size:14px;color:var(--blue)}
+  .pay-opt .pay-ic svg{width:30px;height:22px}
+  .pay-opt .pay-lbl{font-size:13px;font-weight:700;color:var(--ink);letter-spacing:.01em}
+  .pay-opt.on{border-color:var(--blue);background:#f3f6ff;
+    box-shadow:0 0 0 3px rgba(31,99,255,.18)}
+  .pay-opt.on .pay-ic{color:#fff;background:var(--blue);border-radius:6px}
+  /* branded payment marks — Visa + Mastercard, and the PayPal logo */
+  .card-brands{display:inline-flex;align-items:center;gap:7px;height:25px}
+  .card-brands .visa{font:italic 900 14px/1 Arial,Helvetica,sans-serif;color:#1a1f71;letter-spacing:.3px}
+  .card-brands .mc{position:relative;width:31px;height:20px}
+  .card-brands .mc i{position:absolute;top:0;width:20px;height:20px;border-radius:50%}
+  .card-brands .mc i.r{left:0;background:#eb001b}
+  .card-brands .mc i.o{right:0;background:#f79e1b;mix-blend-mode:multiply}
+  .pp-logo{display:inline-flex;align-items:center;gap:5px;height:25px}
+  .pp-mark{display:block;flex:none}
+  .pp-word{font:italic 800 17px/1 Arial,Helvetica,sans-serif;letter-spacing:-.2px}
+  .pp-word .a{color:#253b80}.pp-word .b{color:#179bd7}
+
+  /* ---- reference code in success (fluid) ---- */
+  .ref-block{margin:clamp(12px,3vw,18px) 0 0;background:#f3f6ff;border:1.5px dashed #b9c8ee;
+    border-radius:12px;padding:clamp(11px,3vw,16px);text-align:center}
+  .ref-block .ref-lbl{font-size:clamp(10px,2.6vw,11px);font-weight:800;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--mut);margin-bottom:4px}
+  .ref-code{font-family:"Archivo";font-style:italic;font-weight:900;
+    font-size:clamp(20px,6.2vw,26px);letter-spacing:.04em;color:var(--blue);user-select:all;
+    word-break:break-all}
+
+  /* ---- loader: natural load -> big squeegee wipes the bubbles -> shine -> reveal ---- */
+  .loader{position:fixed;inset:0;z-index:200;display:grid;place-items:center;overflow:hidden;
+    background:linear-gradient(180deg,#00b3f2 0%,#0187c6 12%,#0a64a2 25%,#1c4585 40%,#1d2f6d 55%,#14205c 70%,#0a1148 85%,#0c0f44 100%);
+    transition:transform .8s cubic-bezier(.7,0,.18,1),visibility .8s}
+  /* bubble layer over the colour base — one big squeegee wipes it off, leaving just the colour */
+  .bubbles{position:absolute;inset:0;z-index:1;background:url('assets/nebo-bg-2-raw.jpg') center/cover no-repeat;clip-path:inset(0 0 0 0)}
+  .loader.wipe .bubbles{animation:wipeBubbles .85s cubic-bezier(.55,0,.2,1) forwards}
+  @keyframes wipeBubbles{to{clip-path:inset(100% 0 0 0)}}
+  .squeegee{position:absolute;left:-3%;right:-3%;height:46px;top:-8%;z-index:4;opacity:0;pointer-events:none;
+    background:linear-gradient(180deg,rgba(190,240,255,0),rgba(165,228,255,.35) 26%,#ffffff 52%,#e7f8ff 62%,rgba(120,210,255,.55) 82%,rgba(120,210,255,0));
+    box-shadow:0 0 72px 22px rgba(150,235,255,.92),0 0 155px 62px rgba(54,160,255,.5);filter:blur(.5px)}
+  .loader.wipe .squeegee{animation:squeegeeDown .85s cubic-bezier(.55,0,.2,1) forwards}
+  @keyframes squeegeeDown{0%{opacity:0;top:-5%}9%{opacity:1}88%{opacity:1}100%{top:105%;opacity:0}}
+  .loader.done{transform:translateY(-101%);visibility:hidden}
+  .loader.done:after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:14px;
+    background:linear-gradient(180deg,rgba(190,240,255,0),rgba(190,240,255,.55) 55%,#eafaff 78%,rgba(190,240,255,.2));
+    box-shadow:0 0 40px 10px rgba(120,225,255,.9),0 0 90px 30px rgba(54,150,255,.4);filter:blur(.4px)}
+  .l-core{position:relative;z-index:2;text-align:center;width:min(330px,76vw)}
+  .l-mark{position:relative;display:inline-block;line-height:0}
+  .l-logo{width:clamp(210px,50vw,300px);height:auto;display:block;
+    filter:drop-shadow(0 0 16px rgba(54,204,255,.5));
+    animation:logoIn .8s cubic-bezier(.16,1,.3,1) both}
+  @keyframes logoIn{0%{opacity:0;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
+  /* horizontal flash — a quick bright light sweeps across the logo at the end */
+  .l-flash{position:absolute;top:-20%;bottom:-20%;left:-48%;width:40%;z-index:3;pointer-events:none;
+    background:linear-gradient(105deg,transparent,rgba(255,255,255,.5) 40%,rgba(255,255,255,.92) 50%,rgba(215,243,255,.5) 60%,transparent);
+    transform:skewX(-16deg);opacity:0;filter:blur(.4px) drop-shadow(0 0 10px rgba(190,240,255,.85));
+    animation:flashSweep .5s cubic-bezier(.45,0,.3,1) 2.65s both}
+  @keyframes flashSweep{0%{left:-48%;opacity:0}22%{opacity:1}78%{opacity:1}100%{left:158%;opacity:0}}
+  /* natural loading bar — slim, calm, premium */
+  .bar{position:relative;width:min(210px,54vw);height:3px;margin:30px auto 0;border-radius:99px;
+    background:rgba(255,255,255,.16);overflow:hidden}
+  .fill{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:99px;
+    background:linear-gradient(90deg,#1f8dff,#36ccff 60%,#eafbff);box-shadow:0 0 10px rgba(54,204,255,.85);
+    animation:fill 1.15s cubic-bezier(.42,.1,.3,1) .2s forwards}
+  @keyframes fill{to{width:100%}}
+  .cap{margin-top:15px;font-family:Archivo;font-style:italic;font-weight:800;font-size:11px;letter-spacing:.2em;
+    text-transform:uppercase;color:rgba(200,228,255,.72)}
+
+  /* staggered reveal */
+  .reveal{opacity:0;transform:translateY(26px) scale(.992);
+    transition:opacity .65s ease,transform .7s cubic-bezier(.2,.85,.25,1)}
+  body.in .reveal{opacity:1;transform:none}
+  body.in .hero{transition-delay:.04s}
+  body.in .card{transition-delay:.14s}
+
+  @media(prefers-reduced-motion:reduce){
+    .loader{display:none}
+    .reveal{opacity:1;transform:none;transition:none}
+  }
+
+  /* ---- premium-branded confirmation overlay (fully fluid) ---- */
+  .ok{position:fixed;inset:0;z-index:100;background:rgba(6,32,143,.65);backdrop-filter:blur(8px);
+    display:none;
+    padding:clamp(14px,4vw,28px) clamp(8px,3vw,22px);overflow-y:auto;overflow-x:hidden;
+    -webkit-overflow-scrolling:touch}
+  .ok.on{display:block;animation:fade .25s ease}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  .ok-box{background:#fff;border-radius:clamp(14px,3vw,22px);max-width:440px;width:100%;
+    margin:0 auto;text-align:center;overflow:hidden;
+    box-shadow:0 30px 70px -16px rgba(0,0,0,.5);animation:pop .4s cubic-bezier(.2,1.2,.3,1)}
+  /* On taller viewports where the modal fits comfortably, push it down toward visual center */
+  @media(min-height:780px){.ok-box{margin-top:clamp(40px,8vh,140px)}}
+  @keyframes pop{from{transform:scale(.92);opacity:0}to{transform:scale(1);opacity:1}}
+  /* cobalt-bubble brand header inside the modal */
+  .ok-head{position:relative;padding:clamp(20px,5vw,30px) clamp(18px,4vw,26px);
+    background:linear-gradient(160deg,#1a4cf0,#0a2db0);color:#fff;overflow:hidden}
+  .ok-head:before{content:"";position:absolute;inset:0;
+    background:url("assets/bg-bubbles.jpg") repeat;background-size:120% auto;opacity:.55;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 70%,transparent 100%);
+    mask-image:linear-gradient(to bottom,#000 0,#000 70%,transparent 100%)}
+  .ok-head>*{position:relative;z-index:2}
+  .ok-logo{height:clamp(38px,11vw,52px);width:auto;display:block;margin:0 auto clamp(10px,3vw,16px);
+    filter:drop-shadow(0 2px 6px rgba(0,8,40,.5))}
+  .ok-check{width:clamp(54px,16vw,72px);height:clamp(54px,16vw,72px);border-radius:50%;
+    margin:clamp(2px,1vw,6px) auto clamp(8px,3vw,14px);
+    background:linear-gradient(180deg,#36ccff,#1f63ff);display:grid;place-items:center;
+    color:#fff;font-size:clamp(26px,8vw,36px);font-weight:900;line-height:1;
+    box-shadow:0 0 0 6px rgba(54,204,255,.22),0 10px 24px -8px rgba(13,63,214,.6)}
+  .ok-head h3{font-family:"Archivo";font-style:italic;font-weight:900;
+    font-size:clamp(22px,6vw,30px);letter-spacing:-.02em;line-height:1.1}
+  .ok-head .ok-tag{display:inline-block;background:var(--gold);color:#3a2600;
+    font-weight:800;font-size:clamp(10px,2.8vw,12px);letter-spacing:.08em;
+    padding:5px clamp(9px,2.4vw,12px);border-radius:999px;
+    text-transform:uppercase;margin-top:clamp(8px,2.4vw,12px)}
+  /* body */
+  .ok-body{padding:clamp(16px,4vw,24px) clamp(16px,4vw,24px) clamp(14px,3.5vw,20px);
+    text-align:left;color:var(--ink)}
+  .ok-body>p{color:var(--mut);font-size:clamp(13px,3.5vw,14.5px);text-align:center;
+    margin-bottom:clamp(14px,3.5vw,20px);line-height:1.55}
+  .ok-body>p b{color:var(--ink)}
+  .ok-steps{list-style:none;display:flex;flex-direction:column;gap:clamp(7px,1.8vw,10px);margin:0 0 clamp(12px,3vw,18px)}
+  .ok-steps li{display:flex;align-items:center;gap:clamp(9px,2.5vw,12px);
+    font-size:clamp(12.5px,3.4vw,14px);color:var(--ink);
+    background:#f3f6ff;border:1px solid #e2e8f3;border-radius:11px;
+    padding:clamp(8px,2.4vw,11px) clamp(10px,2.8vw,13px);line-height:1.4}
+  .ok-steps li .n{flex:none;width:clamp(22px,5.8vw,26px);height:clamp(22px,5.8vw,26px);border-radius:50%;
+    background:linear-gradient(160deg,#3a78ff,#0d3fd6);color:#fff;display:grid;place-items:center;
+    font-family:"Archivo";font-style:italic;font-weight:900;font-size:clamp(12px,3vw,13.5px)}
+  .ok-trust{display:flex;justify-content:center;gap:clamp(10px,2.6vw,16px);flex-wrap:wrap;
+    margin-top:clamp(12px,3vw,16px);padding-top:clamp(12px,3vw,16px);
+    border-top:1px solid #eef2fb;font-size:clamp(11px,3vw,12.5px);font-weight:600;color:var(--mut)}
+  .ok-trust span{display:inline-flex;align-items:center;gap:5px;white-space:nowrap}
+  .ok-trust .ck{width:14px;height:14px;border-radius:50%;background:#dcf3e3;color:var(--good);
+    font-size:9px;font-weight:900;display:grid;place-items:center}
+
+  /* slight optical-centering nudge for the italic FINANCING wordmark */
+  .hero h1 .fin{transform:translateX(-3px)}
+
+  /* Hero divider is desktop-only — keep it fully out of the document on mobile */
+  .hero-divider{display:none}
+
+  /* ---- desktop: fixed full-bleed hero on the left, form scrolls on the right ---- */
+  @media(min-width:880px){
+    /* Hide the page-wide bubble layer at desktop — bubbles move onto the hero panel */
+    .bg, .bg:before{display:none}
+    /* Gradational cobalt on the right side — depth instead of flat */
+    body{
+      background:
+        radial-gradient(ellipse 80% 60% at 70% 30%,rgba(54,204,255,.10),transparent 60%),
+        linear-gradient(180deg,#1340de 0%,#0d3fd6 30%,#06208f 70%,#04165d 100%);
+      background-attachment:fixed;
+      padding-left:clamp(440px,38vw,600px)}
+    .shell{max-width:820px;padding:60px 40px 90px;margin:0 auto}
+    .grid{display:block;gap:0}
+
+    /* Hero — fixed to left edge, full viewport height, edge-to-edge */
+    .hero{position:fixed;top:0;left:0;
+      width:clamp(440px,38vw,600px);height:100vh;
+      margin:0;border-radius:0;overflow:visible;
+      display:flex;align-items:center;justify-content:center;
+      background:linear-gradient(160deg,#1a4cf0 0%,#0d3fd6 55%,#06208f 100%);
+      box-shadow:36px 0 90px -28px rgba(0,8,40,.85)}
+    .hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+      overflow:hidden;
+      background:url("assets/nebo-bg-2-raw.jpg") top center/cover no-repeat;opacity:.9}
+    .hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
+      background:
+        radial-gradient(ellipse at 50% 30%,rgba(54,204,255,.18),transparent 55%),
+        linear-gradient(180deg,transparent 60%,rgba(6,32,143,.5))}
+    /* Organic S-curve divider — SVG, water-flow feel with cyan gradient + glow */
+    .hero-divider{display:block;position:absolute;top:0;right:-30px;bottom:0;width:60px;z-index:3;pointer-events:none;
+      overflow:visible}
+    .hero-divider svg{width:100%;height:100%;display:block;filter:drop-shadow(0 0 12px rgba(54,204,255,.55)) drop-shadow(0 0 28px rgba(54,204,255,.25))}
+    .hero .hero-inner{padding:0 44px;position:relative;z-index:2;width:100%;max-width:520px}
+    .hero h1 .pct{font-size:clamp(96px,7.5vw,148px)}
+    .hero h1 .fin{font-size:clamp(50px,4.4vw,78px)}
+
+    .row.two,.row.three{gap:18px}
+    form{padding:34px 38px}
+    .card-head{padding:34px 38px 24px}
+    .svc-grid{grid-template-columns:1fr 1fr}
+  }
+  @media(max-width:420px){
+    .row.three{grid-template-columns:1fr}
+    .plan-grid{grid-template-columns:1fr}
+    .svc-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<div class="bg"></div>
+
+<div class="loader" id="loader">
+  <div class="bubbles"></div>
+  <div class="squeegee"></div>
+  <div class="l-core">
+    <div class="l-mark">
+      <img class="l-logo" src="assets/nebo-logo-hi.png" alt="NEBO UltraWash" width="900" height="421">
+      <span class="l-flash" aria-hidden="true"></span>
+    </div>
+    <div class="bar"><div class="fill"></div></div>
+    <div class="cap">0% Interest Financing</div>
+  </div>
+</div>
+
+<div class="shell">
+  <div class="grid">
+
+    <!-- HERO -->
+    <aside class="hero reveal">
+      <span class="hero-divider" aria-hidden="true">
+        <svg viewBox="0 0 60 1000" preserveAspectRatio="none">
+          <defs>
+            <linearGradient id="dvg-stroke" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#36ccff" stop-opacity="0"/>
+              <stop offset="12%" stop-color="#36ccff" stop-opacity=".35"/>
+              <stop offset="40%" stop-color="#9fe5ff" stop-opacity=".95"/>
+              <stop offset="60%" stop-color="#9fe5ff" stop-opacity=".95"/>
+              <stop offset="88%" stop-color="#36ccff" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#36ccff" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="dvg-thin" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#9fe5ff" stop-opacity="0"/>
+              <stop offset="25%" stop-color="#9fe5ff" stop-opacity=".4"/>
+              <stop offset="50%" stop-color="#ffffff" stop-opacity=".8"/>
+              <stop offset="75%" stop-color="#9fe5ff" stop-opacity=".4"/>
+              <stop offset="100%" stop-color="#9fe5ff" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- Soft outer curve (wider, blurred glow line) -->
+          <path d="M30 0 C44 180 16 360 30 500 C44 640 16 820 30 1000" stroke="url(#dvg-stroke)" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <!-- Inner bright accent -->
+          <path d="M30 0 C44 180 16 360 30 500 C44 640 16 820 30 1000" stroke="url(#dvg-thin)" stroke-width="1" fill="none" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <div class="hero-inner">
+        <img class="logo" src="assets/nebo-logo-hi.png" alt="NEBO UltraWash" width="900" height="421">
+
+        <h1 class="display">
+          <span class="pct">0%</span>
+          <span class="fin">FINANCING</span>
+        </h1>
+        <div class="tagpill"><span>Upgrade your ride. Pay over time.</span></div>
+        <div class="svc-line">
+          <span>Gtechniq Accredited</span><i></i><span>Certified Detailer</span><i></i><span>0% Financing</span>
+        </div>
+        <div class="trust">
+          <div><div class="t">Quick</div><div class="s">To Apply</div></div>
+          <div><div class="t">Easy</div><div class="s">Payments</div></div>
+          <div><div class="t">0%</div><div class="s">Interest</div></div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- FORM -->
+    <main class="card reveal">
+      <div class="card-head">
+        <span class="head-pill"><span class="dot"></span>0% Interest · Apply in ~90 seconds</span>
+        <h2>Ceramic Coating &middot; 0% Financing</h2>
+        <p>Choose your Gtechniq ceramic coating, see your plan, pay a <b>20% deposit</b> to reserve. Driver's license verified at drop-off.</p>
+      </div>
+
+      <form id="finForm" novalidate>
+
+        <div class="progress" aria-label="Application progress">
+          <div class="seg on" data-seg="1"><i></i></div>
+          <div class="seg" data-seg="2"><i></i></div>
+          <div class="seg" data-seg="3"><i></i></div>
+          <div class="lbl">Step <b id="stepCur">1</b>/3</div>
+        </div>
+
+        <!-- STEP 1 · SERVICE (front-loaded, visual, low-stakes) -->
+        <div class="step on" data-step="1">
+          <div class="step-h">Choose your ceramic coating</div>
+          <div class="step-sub">All applied by Gtechniq-accredited detailers. Each comes with 0% financing.</div>
+          <div class="svc-grid cer" id="svcGrid">
+            <label class="svc prod"><input type="radio" name="service" value="Ceramic — Crystal Serum Light" data-price="700">
+              <span class="chk" aria-hidden="true"></span>
+              <span class="prod-main">
+                <span class="gt">Gtechniq &middot; 5-Year Protection</span>
+                <span class="nm">Crystal Serum Light</span>
+                <span class="ds">Pro-grade ceramic — deep gloss, strong water beading, easier washing.</span>
+              </span>
+              <span class="prod-price"><span class="mo">from $47/mo</span></span></label>
+            <label class="svc prod on"><input type="radio" name="service" value="Ceramic — Crystal Serum Ultra" data-price="1200" checked>
+              <span class="tag">Most Popular</span>
+              <span class="chk" aria-hidden="true"></span>
+              <span class="prod-main">
+                <span class="gt">Gtechniq &middot; 9-Year Protection</span>
+                <span class="nm">Crystal Serum Ultra</span>
+                <span class="ds">Our flagship — the hardest, longest-lasting finish, applied only by accredited detailers.</span>
+              </span>
+              <span class="prod-price"><span class="mo">from $80/mo</span></span></label>
+            <label class="svc prod"><input type="radio" name="service" value="Ceramic — Crystal Serum Ultra + EXO V5" data-price="1500">
+              <span class="chk" aria-hidden="true"></span>
+              <span class="prod-main">
+                <span class="gt">Gtechniq &middot; 9-Year + Topcoat</span>
+                <span class="nm">Crystal Serum Ultra + EXO V5</span>
+                <span class="ds">CSU plus an EXO hydrophobic topcoat — maximum slickness and self-cleaning.</span>
+              </span>
+              <span class="prod-price"><span class="mo">from $100/mo</span></span></label>
+          </div>
+          <div class="err-msg" data-for="service" style="margin-top:10px">Choose a coating</div>
+          <div class="est-note">Placeholder prices — real Gtechniq menu pricing drops in next. Final price confirmed at drop-off.</div>
+          <div class="nav-row"><button type="button" class="btn-next" data-next>Continue →</button></div>
+        </div>
+
+        <!-- STEP 2 · VEHICLE + PLAN -->
+        <div class="step" data-step="2">
+          <div class="step-h">Your car &amp; how you want to pay</div>
+          <div class="step-sub">Equal monthly payments. 0% interest. Pick the plan that fits.</div>
+
+          <div class="row three">
+            <div>
+              <label class="field-label" for="vYear">Year <span class="req">*</span></label>
+              <input class="field-input" id="vYear" name="vYear" inputmode="numeric" placeholder="2021" autocomplete="off">
+              <div class="err-msg" data-for="vYear">Enter the year</div>
+            </div>
+            <div>
+              <label class="field-label" for="vMake">Make <span class="req">*</span></label>
+              <input class="field-input" id="vMake" name="vMake" placeholder="BMW" autocomplete="off">
+              <div class="err-msg" data-for="vMake">Enter the make</div>
+            </div>
+            <div>
+              <label class="field-label" for="vModel">Model <span class="req">*</span></label>
+              <input class="field-input" id="vModel" name="vModel" placeholder="M3" autocomplete="off">
+              <div class="err-msg" data-for="vModel">Enter the model</div>
+            </div>
+          </div>
+
+          <div style="margin-top:22px">
+            <label class="field-label" style="margin-bottom:10px;display:block">Plan length</label>
+            <div class="plan-grid" id="planGrid">
+              <label class="plan"><input type="radio" name="plan" value="3 months">
+                <div class="big">3</div><div class="lbl">Months</div>
+                <div class="save">Higher monthly</div></label>
+              <label class="plan"><input type="radio" name="plan" value="6 months">
+                <div class="big">6</div><div class="lbl">Months</div>
+                <div class="save">Balanced</div></label>
+              <label class="plan on"><input type="radio" name="plan" value="12 months" checked>
+                <div class="pop">Most Popular</div>
+                <div class="big">12</div><div class="lbl">Months</div>
+                <div class="save">Lowest monthly</div></label>
+            </div>
+            <div class="err-msg" data-for="plan" style="margin-top:10px">Pick a plan length</div>
+          </div>
+
+          <!-- Live price summary: estimated total → 20% deposit → remaining → monthly -->
+          <div class="price-card" id="priceCard" aria-live="polite">
+            <div class="pc-head"><span>Your Plan <em style="font-style:italic;font-weight:600;opacity:0.7">· estimate</em></span><span class="live"><i></i>Updates as you choose</span></div>
+            <div class="price-row"><span>Estimated total</span><b id="priceTotal">$0</b></div>
+            <div class="price-row big"><span>Deposit today (20%)</span><b id="priceDeposit">$0</b></div>
+            <div class="price-row"><span>Remaining (0% interest)</span><b id="priceRemaining">$0</b></div>
+            <div class="price-row"><span>Monthly payment <span class="muted" id="priceMonths">(12 months)</span></span><b id="priceMonthly">$0</b></div>
+          </div>
+          <div class="est-note">These numbers are estimates. We confirm the final price at drop-off. Your deposit comes off that total, and the remaining amount is what splits into your monthly payments.</div>
+
+          <div class="nav-row">
+            <button type="button" class="btn-back" data-back>← Back</button>
+            <button type="button" class="btn-next" data-next>Continue →</button>
+          </div>
+        </div>
+
+        <!-- STEP 3 · CONTACT + PAY DEPOSIT (deposit + plan confirmation) -->
+        <div class="step" data-step="3">
+          <div class="step-h">Your details &amp; deposit</div>
+          <div class="step-sub">Final step — pay your <b>20% deposit</b> to reserve your appointment.</div>
+
+          <div class="row two">
+            <div>
+              <label class="field-label" for="firstName">First Name <span class="req">*</span></label>
+              <input class="field-input" id="firstName" name="firstName" placeholder="Ahmad" autocomplete="given-name">
+              <div class="err-msg" data-for="firstName">Enter your first name</div>
+            </div>
+            <div>
+              <label class="field-label" for="lastName">Last Name <span class="req">*</span></label>
+              <input class="field-input" id="lastName" name="lastName" placeholder="Khalil" autocomplete="family-name">
+              <div class="err-msg" data-for="lastName">Enter your last name</div>
+            </div>
+          </div>
+          <div class="row two" style="margin-top:14px">
+            <div>
+              <label class="field-label" for="email">Email <span class="req">*</span></label>
+              <input class="field-input" type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email">
+              <div class="err-msg" data-for="email">Enter a valid email</div>
+            </div>
+            <div>
+              <label class="field-label" for="phone">Phone <span class="req">*</span></label>
+              <input class="field-input" type="tel" id="phone" name="phone" placeholder="(519) 555-0142" autocomplete="tel">
+              <div class="err-msg" data-for="phone">Enter your phone number</div>
+            </div>
+          </div>
+          <div class="row" style="margin-top:14px">
+            <div>
+              <label class="field-label" for="city">City</label>
+              <input class="field-input" id="city" name="city" placeholder="Windsor" autocomplete="address-level2">
+            </div>
+          </div>
+          <div class="row" style="margin-top:14px">
+            <div>
+              <label class="field-label" for="notes">Anything else? (optional)</label>
+              <textarea class="field-input" id="notes" name="notes" rows="3" placeholder="Tell us about your car or what you're looking for…"></textarea>
+            </div>
+          </div>
+
+          <!-- Payment method picker — 20% deposit goes through here -->
+          <div style="margin-top:18px">
+            <label class="field-label" style="margin-bottom:10px;display:block">Pay 20% deposit with</label>
+            <div class="pay-method" id="payMethod">
+              <label class="pay-opt on"><input type="radio" name="payMethod" value="card" checked>
+                <span class="card-brands" aria-hidden="true">
+                  <span class="visa">VISA</span>
+                  <span class="mc"><i class="r"></i><i class="o"></i></span>
+                </span>
+                <span class="pay-lbl">Credit / Debit Card</span></label>
+              <label class="pay-opt"><input type="radio" name="payMethod" value="paypal">
+                <span class="pp-logo" aria-label="PayPal">
+                  <svg class="pp-mark" viewBox="0 0 24 24" width="23" height="23" aria-hidden="true"><path fill="#003087" d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.026.382 5.474 0 5.998 0h7.46c2.57 0 4.578.543 5.69 1.81 1.01 1.15 1.304 2.42 1.012 4.287-.023.143-.047.288-.077.437-.983 5.05-4.349 6.797-8.647 6.797h-2.19c-.524 0-.968.382-1.05.9l-1.12 7.106zm14.146-14.42a3.35 3.35 0 0 0-.607-.541c-.013.076-.026.175-.041.254-.93 4.778-4.005 7.201-9.138 7.201h-2.19a.563.563 0 0 0-.556.479l-1.187 7.527h-.506l-.24 1.516a.56.56 0 0 0 .554.647h3.882c.46 0 .85-.334.922-.788.06-.26.76-4.852.816-5.09a.932.932 0 0 1 .923-.788h.58c3.76 0 6.705-1.528 7.565-5.946.36-1.847.174-3.388-.777-4.471z"/></svg>
+                  <span class="pp-word"><span class="a">Pay</span><span class="b">Pal</span></span>
+                </span>
+                <span class="pay-lbl" style="opacity:.6">Pay with PayPal</span></label>
+            </div>
+          </div>
+
+          <div class="consent-stack" style="margin-top:20px">
+            <label class="consent" id="ageBox">
+              <input type="checkbox" id="ageOk" name="ageOk">
+              <span>I confirm I'm <b>18 or older</b> and reside in Canada.</span>
+            </label>
+            <div class="err-msg" data-for="ageOk">Please confirm you're 18+</div>
+
+            <label class="consent" id="termsBox">
+              <input type="checkbox" id="terms" name="terms">
+              <span>I've read and agree to the <a href="#" class="consent-link">Terms</a> &amp; <a href="#" class="consent-link">Privacy Policy</a>.</span>
+            </label>
+            <div class="err-msg" data-for="terms">Please agree to the Terms &amp; Privacy Policy</div>
+          </div>
+
+          <!-- Digital signature -->
+          <div class="sig-block">
+            <label class="field-label">Sign to confirm <span class="req">*</span></label>
+            <div class="sig-wrap" id="sigWrap">
+              <canvas id="sigCanvas"></canvas>
+              <button type="button" class="sig-clear" id="sigClear" aria-label="Clear signature">Clear</button>
+              <span class="sig-watermark" id="sigWatermark">Sign here with your finger or mouse</span>
+            </div>
+            <input type="hidden" name="signatureImage" id="signatureImage">
+            <div class="err-msg" data-for="signature">Please sign above</div>
+          </div>
+
+          <div class="nav-row">
+            <button type="button" class="btn-back" data-back>← Back</button>
+            <button class="btn" type="submit" id="submitBtn" style="flex:1.8;margin-top:0">Get My 0% Financing</button>
+          </div>
+          <div class="trust-line">
+            <span><span class="ck">✓</span> Equal monthly payments</span>
+            <span><span class="ck">✓</span> No interest, ever</span>
+            <span><span class="ck">✓</span> 0% interest</span>
+          </div>
+          <div class="fineprint">
+            Your 20% deposit is based on the estimate above. It reserves your appointment.
+            <b>At drop-off, we confirm the final price. Your deposit comes off the total, and you pay the rest in equal monthly payments at 0% interest.</b>
+            No work begins until you approve the final price.
+          </div>
+        </div>
+
+        <input type="hidden" name="ref" id="refTag" value="">
+      </form>
+    </main>
+
+  </div>
+</div>
+
+<!-- success -->
+<div class="ok" id="okOverlay">
+  <div class="ok-box">
+    <div class="ok-head">
+      <img class="ok-logo" src="assets/nebo-logo-hi.png" alt="NEBO UltraWash">
+      <div class="ok-check">✓</div>
+      <h3>Application Received</h3>
+      <span class="ok-tag">Appointment Reserved</span>
+    </div>
+    <div class="ok-body">
+      <p>Deposit received — your appointment is reserved. <b id="okDepositAmt">$0</b> paid today; equal monthly payments at 0% interest start after your appointment.</p>
+      <div class="ref-block">
+        <div class="ref-lbl">Your Reference Code</div>
+        <div class="ref-code" id="refCode">NEBO-XXXXXX</div>
+      </div>
+      <ol class="ok-steps">
+        <li><span class="n">1</span>Confirmation email sent with your ref code</li>
+        <li><span class="n">2</span>We'll reach out to schedule your appointment</li>
+        <li><span class="n">3</span>Drop off your car — we verify ID, start your service</li>
+      </ol>
+      <div class="ok-trust">
+        <span><span class="ck">✓</span>0% interest</span>
+        <span><span class="ck">✓</span>Reserved</span>
+        <span><span class="ck">✓</span>No surprises</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   SUBMIT ENDPOINT — single swappable point.
+   Prototype runs in DEMO mode (no backend wired). To go live:
+     1. Set DEMO:false
+     2. Point ENDPOINT at the handler (SiteGround PHP, Formspree,
+        Web3Forms, or partner webhook).
+   The handler must:
+     (a) email the application to NEBO (instant lead) — SMS the
+         applicant the same link if not already prequalified.
+     (b) send the applicant an auto-confirmation email (Resend/
+         SiteGround SMTP) — sets the 12-hour follow-up expectation.
+   Payload includes: service[], plan, vYear/Make/Model, firstName,
+   lastName, email, phone, city, notes, consent, ref (entry source),
+   submittedAt. The hidden #refTag distinguishes ad vs rep entries.
+   ============================================================ */
+const SUBMIT = { DEMO:true, ENDPOINT:"/api/financing-apply" };
+
+/* loader: natural load -> big squeegee wipes the bubbles -> shine -> reveal. Cinematic plays once per session. */
+(function(){
+  var loader=document.getElementById('loader');
+  var done=false;
+  function reveal(){ if(done) return; done=true; if(loader) loader.classList.add('done'); document.body.classList.add('in'); }
+  setTimeout(reveal, 4600);                 // safety: the form is never left hidden
+  if(!loader){ reveal(); return; }
+  var seen=false; try{ seen=!!sessionStorage.getItem('neboLoaderSeen'); }catch(e){}
+  if(seen){ loader.style.transition='none'; reveal(); return; }   // repeat visit: reveal instantly
+  try{ sessionStorage.setItem('neboLoaderSeen','1'); }catch(e){}
+  setTimeout(function(){ loader.classList.add('wipe'); }, 1750);  // big squeegee wipes the bubbles off
+  setTimeout(reveal, 3400);                                       // shine fires ~2.65s via CSS, then reveal
+})();
+
+const form=document.getElementById('finForm');
+const btn=document.getElementById('submitBtn');
+
+/* capture entry source (?ref=ad / ?ref=rep / utm_source) for one-form-two-entries flow */
+(function(){
+  const q=new URLSearchParams(location.search);
+  const ref=q.get('ref')||q.get('utm_source')||'';
+  if(ref) document.getElementById('refTag').value=ref.slice(0,40);
+})();
+
+/* ---- live price calculator ----
+   Sums selected service base prices, computes 20% deposit, splits the remainder
+   over the selected plan length, updates the visible price card + submit CTA. */
+function fmt(n){ return '$'+Math.round(n).toLocaleString(); }
+function calcPrice(){
+  const sel=[...document.querySelectorAll('input[name="service"]:checked')];
+  const total=sel.reduce((s,c)=>s+(+c.dataset.price||0),0);
+  const deposit=Math.round(total*0.20);
+  const remaining=total-deposit;
+  const planVal=(document.querySelector('input[name="plan"]:checked')?.value)||'12 months';
+  const months=parseInt(planVal,10)||12;
+  const monthly=months?Math.round(remaining/months):0;
+  document.getElementById('priceTotal').textContent=fmt(total);
+  document.getElementById('priceDeposit').textContent=fmt(deposit);
+  document.getElementById('priceRemaining').textContent=fmt(remaining);
+  document.getElementById('priceMonthly').textContent=fmt(monthly);
+  document.getElementById('priceMonths').textContent='('+months+' months)';
+}
+
+/* selectable service cards */
+document.querySelectorAll('.svc').forEach(el=>{
+  const cb=el.querySelector('input');
+  cb.addEventListener('change',()=>{
+    document.querySelectorAll('.svc').forEach(s=>s.classList.toggle('on', s.querySelector('input').checked));
+    showErr('service',false);
+    calcPrice();
+  });
+});
+/* plan radios — 12mo pre-selected in markup; sync .on on change */
+document.querySelectorAll('.plan input').forEach(r=>{
+  r.addEventListener('change',()=>{
+    document.querySelectorAll('.plan').forEach(p=>p.classList.remove('on'));
+    r.closest('.plan').classList.add('on');
+    showErr('plan',false);
+    calcPrice();
+  });
+});
+/* payment method picker selection state */
+document.querySelectorAll('.pay-opt input').forEach(r=>{
+  r.addEventListener('change',()=>{
+    document.querySelectorAll('.pay-opt').forEach(p=>p.classList.remove('on'));
+    r.closest('.pay-opt').classList.add('on');
+  });
+});
+calcPrice();
+
+/* light phone formatting (NA) */
+const phoneEl=document.getElementById('phone');
+phoneEl.addEventListener('input',()=>{
+  let d=phoneEl.value.replace(/\D/g,'').slice(0,10);
+  phoneEl.value = d.length>6 ? `(${d.slice(0,3)}) ${d.slice(3,6)}-${d.slice(6)}`
+    : d.length>3 ? `(${d.slice(0,3)}) ${d.slice(3)}`
+    : d;
+});
+
+function showErr(key,on){
+  const m=document.querySelector('.err-msg[data-for="'+key+'"]');
+  if(m) m.classList.toggle('show',on);
+  const f=document.getElementById(key);
+  if(f) f.classList.toggle('err',on);
+}
+function validateField(k){
+  const f=document.getElementById(k); if(!f) return true;
+  const v=f.value.trim();
+  let bad=!v;
+  if(k==='email'&&v) bad=!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+  if(k==='phone'&&v) bad=v.replace(/\D/g,'').length<10;
+  showErr(k,bad); return !bad;
+}
+
+/* per-step validation */
+const STEP_RULES={
+  1:()=>{const ok=document.querySelectorAll('input[name="service"]:checked').length>0;
+        showErr('service',!ok);return ok;},
+  2:()=>{let ok=['vYear','vMake','vModel'].map(validateField).every(Boolean);
+        const plan=document.querySelector('input[name="plan"]:checked');
+        showErr('plan',!plan); if(!plan) ok=false; return ok;},
+  3:()=>{let ok=['firstName','lastName','email','phone'].map(validateField).every(Boolean);
+        const checks=[
+          ['ageOk','ageBox'],
+          ['terms','termsBox']
+        ];
+        checks.forEach(([id,boxId])=>{
+          const c=document.getElementById(id), box=document.getElementById(boxId);
+          showErr(id,!c.checked); box.classList.toggle('err',!c.checked);
+          if(!c.checked) ok=false;
+        });
+        // signature required
+        const sigOk=window.sigHasDrawn && window.sigHasDrawn();
+        showErr('signature',!sigOk);
+        document.getElementById('sigWrap').classList.toggle('err',!sigOk);
+        if(!sigOk) ok=false;
+        return ok;}
+};
+
+/* step navigation */
+let curStep=1;
+function goStep(n){
+  document.querySelectorAll('.step').forEach(s=>s.classList.toggle('on', +s.dataset.step===n));
+  document.querySelectorAll('.progress .seg').forEach(s=>s.classList.toggle('on', +s.dataset.seg<=n));
+  document.getElementById('stepCur').textContent=n;
+  curStep=n;
+  document.querySelector('.card').scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.querySelectorAll('[data-next]').forEach(b=>b.addEventListener('click',()=>{
+  if(!STEP_RULES[curStep]()){
+    const first=document.querySelector('.step.on .err-msg.show');
+    if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  goStep(curStep+1);
+}));
+document.querySelectorAll('[data-back]').forEach(b=>b.addEventListener('click',()=>goStep(curStep-1)));
+
+/* generate a clean reference code (no easily confused chars) */
+function genRef(){
+  const a='ABCDEFGHJKLMNPQRSTUVWXYZ23456789';
+  let s=''; for(let i=0;i<6;i++) s+=a[Math.floor(Math.random()*a.length)];
+  return 'NEBO-'+s;
+}
+
+/* ---- signature pad ---- */
+(function sigPad(){
+  const c=document.getElementById('sigCanvas');
+  if(!c) return;
+  const wrap=document.getElementById('sigWrap');
+  const wm=document.getElementById('sigWatermark');
+  const clearBtn=document.getElementById('sigClear');
+  const hidden=document.getElementById('signatureImage');
+  const ctx=c.getContext('2d');
+  let drawing=false,strokes=[],cur=null;
+  function setup(){
+    const r=c.getBoundingClientRect();
+    const dpr=window.devicePixelRatio||1;
+    c.width=r.width*dpr; c.height=r.height*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+    ctx.lineCap='round'; ctx.lineJoin='round'; ctx.lineWidth=2.4; ctx.strokeStyle='#0a1530';
+    redraw();
+  }
+  function redraw(){
+    const r=c.getBoundingClientRect();
+    ctx.clearRect(0,0,r.width,r.height);
+    strokes.forEach(s=>{ctx.beginPath();s.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke();});
+  }
+  function pos(e){const r=c.getBoundingClientRect();return {x:e.clientX-r.left,y:e.clientY-r.top};}
+  let savedScrollY=0;
+  function lockBody(){
+    savedScrollY=window.scrollY||window.pageYOffset||0;
+    document.body.style.top=(-savedScrollY)+'px';
+    document.body.classList.add('sig-active');
+  }
+  function unlockBody(){
+    document.body.classList.remove('sig-active');
+    document.body.style.top='';
+    window.scrollTo(0,savedScrollY);
+  }
+  function start(e){e.preventDefault();c.setPointerCapture&&c.setPointerCapture(e.pointerId);drawing=true;cur=[pos(e)];strokes.push(cur);wm.style.display='none';lockBody();}
+  function move(e){if(!drawing)return;e.preventDefault();cur.push(pos(e));redraw();}
+  function endStroke(){if(!drawing)return;drawing=false;hidden.value=c.toDataURL('image/png');unlockBody();}
+  c.addEventListener('pointerdown',start);
+  c.addEventListener('pointermove',move);
+  c.addEventListener('pointerup',endStroke);
+  c.addEventListener('pointercancel',endStroke);
+  /* iOS Safari: passive:false touch listeners are the only reliable way to suppress page-scroll while drawing */
+  c.addEventListener('touchstart',e=>e.preventDefault(),{passive:false});
+  c.addEventListener('touchmove',e=>e.preventDefault(),{passive:false});
+  c.addEventListener('touchend',e=>e.preventDefault(),{passive:false});
+  clearBtn.addEventListener('click',()=>{strokes=[];hidden.value='';wm.style.display='';wrap.classList.remove('err');showErr('signature',false);redraw();});
+  let ro=null;
+  if('ResizeObserver' in window){ro=new ResizeObserver(setup);ro.observe(c);}
+  setup();
+  window.sigHasDrawn=()=>strokes.length>0;
+})();
+
+form.addEventListener('submit',async e=>{
+  e.preventDefault();
+  if(!STEP_RULES[3]()){
+    const first=document.querySelector('.step.on .err-msg.show');
+    if(first) first.scrollIntoView({behavior:'smooth',block:'center'});
+    return;
+  }
+  const originalBtnText=btn.textContent;
+  btn.disabled=true; btn.textContent='Processing payment…';
+
+  const data=Object.fromEntries(new FormData(form).entries());
+  data.service=[...document.querySelectorAll('input[name="service"]:checked')].map(x=>x.value);
+  data.submittedAt=new Date().toISOString();
+  // attach pricing details
+  const sel=[...document.querySelectorAll('input[name="service"]:checked')];
+  data.serviceTotal=sel.reduce((s,c)=>s+(+c.dataset.price||0),0);
+  data.deposit=Math.round(data.serviceTotal*0.20);
+  data.remaining=data.serviceTotal-data.deposit;
+  const months=parseInt((document.querySelector('input[name="plan"]:checked')?.value)||'12 months',10);
+  data.monthly=months?Math.round(data.remaining/months):0;
+  data.referenceCode=genRef();
+
+  /* MYFC-mirror flow: in production this is where we'd POST to /api/create-checkout
+     and redirect to Stripe Checkout. Stripe's success redirect then lands on /confirmed.
+     In DEMO mode we skip the Stripe hop and go straight to /confirmed with the payload
+     stored in sessionStorage so the success page can render personalized content. */
+  try{
+    if(!SUBMIT.DEMO){
+      // LIVE: POST the application → handler emails the customer a confirmation + NEBO the lead (Resend)
+      const r=await fetch(SUBMIT.ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
+      if(!r.ok) throw new Error('bad response');
+    } else {
+      console.log('[DEMO] application',data);
+      await new Promise(res=>setTimeout(res,650));
+    }
+    // store the confirmation payload + route to the success page (both modes)
+    sessionStorage.setItem('nebo_confirmation',JSON.stringify({
+      referenceCode:data.referenceCode,
+      firstName:data.firstName, lastName:data.lastName,
+      email:data.email, phone:data.phone,
+      vehicle:`${data.vYear||''} ${data.vMake||''} ${data.vModel||''}`.trim(),
+      services:data.service, plan:data.plan,
+      serviceTotal:data.serviceTotal, deposit:data.deposit,
+      remaining:data.remaining, monthly:data.monthly,
+      signatureImage:document.getElementById('signatureImage').value||'',
+      payMethod:data.payMethod||'card',
+      submittedAt:data.submittedAt
+    }));
+    window.location.href='/confirmed';
+  }catch(err){
+    btn.disabled=false; btn.textContent=originalBtnText;
+    alert('Something went wrong submitting your application. Please try again or call us.');
+  }
+});
+</script>
+</body>
+</html>
