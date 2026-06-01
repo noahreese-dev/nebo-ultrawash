@@ -1,11 +1,11 @@
 // NEBO UltraWash — financing application handler.
-// Receives the application payload, emails the customer a branded confirmation
-// and emails NEBO the lead, both via Resend. Config via env vars (set on Vercel):
+// On submit: emails the customer a branded confirmation and emails NEBO a branded
+// lead notification, both via Resend. Config via env vars (set on Vercel):
 //   RESEND_API_KEY  — required. From resend.com → API Keys.
-//   MAIL_FROM       — e.g. "NEBO UltraWash <noreply@yourdomain.com>".
-//                     Until a domain is verified in Resend, use "onboarding@resend.dev"
-//                     (test mode: can only deliver to your Resend account email).
-//   NEBO_NOTIFY     — internal address that should receive each new application.
+//   MAIL_FROM       — e.g. "NEBO UltraWash <noreply@ultrawash.com>" once the domain
+//                     is verified; until then "onboarding@resend.dev" (test mode:
+//                     can only deliver to the Resend account's own email).
+//   NEBO_NOTIFY     — internal address that receives each new application.
 const money = (n) => '$' + (Number(n) || 0).toLocaleString('en-CA');
 
 export default async function handler(req, res) {
@@ -24,28 +24,35 @@ export default async function handler(req, res) {
   if (typeof d === 'string') { try { d = JSON.parse(d); } catch (e) { d = {}; } }
   d = d || {};
 
-  const vehicle = `${d.vYear || ''} ${d.vMake || ''} ${d.vModel || ''}`.trim() || 'your vehicle';
+  const vehicle = `${d.vYear || ''} ${d.vMake || ''} ${d.vModel || ''}`.trim() || 'their vehicle';
   const services = Array.isArray(d.service) ? d.service.join(', ') : (d.service || '');
+  let submitted = '';
+  try { submitted = d.submittedAt ? new Date(d.submittedAt).toLocaleString('en-CA') : ''; } catch (e) {}
   const fields = {
-    firstName: d.firstName || 'there',
+    firstName: d.firstName || 'there', lastName: d.lastName || '',
+    email: d.email || '', phone: d.phone || '', city: d.city || '—',
     vehicle, services, plan: d.plan || '',
-    serviceTotal: money(d.serviceTotal),
-    deposit: money(d.deposit),
-    monthly: money(d.monthly),
+    serviceTotal: money(d.serviceTotal), deposit: money(d.deposit), monthly: money(d.monthly),
+    payMethod: d.payMethod === 'paypal' ? 'PayPal' : 'Credit / Debit card',
+    ref: d.ref || 'direct',
+    notes: ((d.notes || '').toString().trim()) || '—',
     referenceCode: d.referenceCode || 'NEBO',
+    submittedAt: submitted,
   };
 
-  // Customer confirmation: pull the branded template and fill {{placeholders}}.
-  let custHtml;
-  try {
-    const host = req.headers['x-forwarded-host'] || req.headers.host;
-    const proto = req.headers['x-forwarded-proto'] || 'https';
-    const tpl = await fetch(`${proto}://${host}/assets/email-confirmation.html`).then((r) => r.text());
-    custHtml = tpl.replace(/\{\{(\w+)\}\}/g, (_, k) => (fields[k] != null ? String(fields[k]) : ''));
-  } catch (e) {
-    custHtml = `<p>Hi ${fields.firstName}, your NEBO UltraWash 0% financing application is received.</p>
-      <p>Reference: <b>${fields.referenceCode}</b>. A NEBO team member will reach out to schedule your appointment.</p>`;
+  const host = req.headers['x-forwarded-host'] || req.headers.host;
+  const proto = req.headers['x-forwarded-proto'] || 'https';
+  const base = `${proto}://${host}`;
+  const fill = (t) => t.replace(/\{\{(\w+)\}\}/g, (_, k) => (fields[k] != null ? String(fields[k]) : ''));
+  async function tpl(name, fallback) {
+    try { return fill(await fetch(`${base}/assets/${name}`).then((r) => r.text())); }
+    catch (e) { return fallback; }
   }
+
+  const custHtml = await tpl('email-confirmation.html',
+    `<p>Hi ${fields.firstName}, your NEBO UltraWash 0% financing application is received. Reference ${fields.referenceCode}. A NEBO team member will reach out to schedule your appointment.</p>`);
+  const leadHtml = await tpl('email-lead.html',
+    `<p>New application: ${fields.firstName} ${fields.lastName} — ${fields.services} — deposit ${fields.deposit}. Email ${fields.email}, phone ${fields.phone}. Ref ${fields.referenceCode}.</p>`);
 
   const send = (to, subject, html, replyTo) =>
     fetch('https://api.resend.com/emails', {
@@ -55,25 +62,12 @@ export default async function handler(req, res) {
     }).then(async (r) => ({ ok: r.ok, status: r.status, body: await r.text().catch(() => '') }));
 
   const results = {};
-  if (d.email) {
-    results.customer = await send(d.email, 'Your NEBO UltraWash 0% Financing application', custHtml);
-  }
-  if (NOTIFY) {
-    const lead = `<h2 style="font-family:Arial">New 0% financing application</h2>
-      <p><b>Ref:</b> ${fields.referenceCode}</p>
-      <p><b>Name:</b> ${d.firstName || ''} ${d.lastName || ''}<br>
-         <b>Email:</b> ${d.email || ''}<br><b>Phone:</b> ${d.phone || ''}<br><b>City:</b> ${d.city || ''}</p>
-      <p><b>Vehicle:</b> ${vehicle}<br><b>Services:</b> ${services}<br><b>Plan:</b> ${fields.plan}</p>
-      <p><b>Est. total:</b> ${fields.serviceTotal} &middot; <b>Deposit (20%):</b> ${fields.deposit} &middot; <b>Est. monthly:</b> ${fields.monthly}</p>
-      <p><b>Pay method:</b> ${d.payMethod || ''}<br><b>Source:</b> ${d.ref || 'direct'}</p>
-      <p><b>Notes:</b> ${(d.notes || '—')}</p>`;
-    results.nebo = await send(
-      NOTIFY,
-      `New financing application — ${(d.firstName || '')} ${(d.lastName || '')} (${fields.referenceCode})`,
-      lead,
-      d.email || undefined
-    );
-  }
+  if (d.email) results.customer = await send(d.email, 'Your NEBO UltraWash 0% Financing application', custHtml);
+  if (NOTIFY) results.nebo = await send(
+    NOTIFY,
+    `New financing application — ${fields.firstName} ${fields.lastName} (${fields.referenceCode})`,
+    leadHtml, d.email || undefined
+  );
 
   const ok = (!d.email || results.customer?.ok) && (!NOTIFY || results.nebo?.ok);
   res.status(ok ? 200 : 502).json({ ok, results });
