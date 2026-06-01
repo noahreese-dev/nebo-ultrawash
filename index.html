@@ -314,6 +314,20 @@
   .pay-opt.on{border-color:var(--blue);background:#f3f6ff;
     box-shadow:0 0 0 3px rgba(31,99,255,.18)}
   .pay-opt.on .pay-ic{color:#fff;background:var(--blue);border-radius:6px}
+  /* branded payment marks — Visa + Mastercard, and the PayPal logo */
+  .card-brands{display:inline-flex;align-items:center;gap:7px;height:25px}
+  .card-brands .visa{font:italic 900 14px/1 Arial,Helvetica,sans-serif;color:#1a1f71;letter-spacing:.3px}
+  .card-brands .mc{position:relative;width:31px;height:20px}
+  .card-brands .mc i{position:absolute;top:0;width:20px;height:20px;border-radius:50%}
+  .card-brands .mc i.r{left:0;background:#eb001b}
+  .card-brands .mc i.o{right:0;background:#f79e1b;mix-blend-mode:multiply}
+  .pp-logo{display:inline-flex;align-items:center;gap:5px;height:25px}
+  .pp-mark{position:relative;width:22px;height:24px}
+  .pp-mark b{position:absolute;top:0;font:italic 900 25px/1 Arial,Helvetica,sans-serif}
+  .pp-mark .p1{left:0;color:#001c64}
+  .pp-mark .p2{left:7px;color:#0070e0}
+  .pp-word{font:italic 800 17px/1 Arial,Helvetica,sans-serif;letter-spacing:-.2px}
+  .pp-word .a{color:#253b80}.pp-word .b{color:#179bd7}
 
   /* ---- reference code in success (fluid) ---- */
   .ref-block{margin:clamp(12px,3vw,18px) 0 0;background:#f3f6ff;border:1.5px dashed #b9c8ee;
@@ -715,18 +729,17 @@
             <label class="field-label" style="margin-bottom:10px;display:block">Pay 20% deposit with</label>
             <div class="pay-method" id="payMethod">
               <label class="pay-opt on"><input type="radio" name="payMethod" value="card" checked>
-                <span class="pay-ic"><svg viewBox="0 0 32 22" fill="none" aria-hidden="true">
-                  <rect x="1" y="1" width="30" height="20" rx="3" stroke="currentColor" stroke-width="2"/>
-                  <rect x="1" y="6" width="30" height="4" fill="currentColor"/>
-                  <rect x="5" y="14" width="10" height="2" fill="currentColor"/>
-                </svg></span>
+                <span class="card-brands" aria-hidden="true">
+                  <span class="visa">VISA</span>
+                  <span class="mc"><i class="r"></i><i class="o"></i></span>
+                </span>
                 <span class="pay-lbl">Credit / Debit Card</span></label>
               <label class="pay-opt"><input type="radio" name="payMethod" value="paypal">
-                <span class="pay-ic"><svg viewBox="0 0 32 22" fill="none" aria-hidden="true">
-                  <path d="M7 4h10a5 5 0 010 10h-6l-1 5H6L7 4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                  <path d="M11 9h7a4 4 0 010 8h-4" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                </svg></span>
-                <span class="pay-lbl">PayPal</span></label>
+                <span class="pp-logo" aria-label="PayPal">
+                  <span class="pp-mark" aria-hidden="true"><b class="p1">P</b><b class="p2">P</b></span>
+                  <span class="pp-word"><span class="a">Pay</span><span class="b">Pal</span></span>
+                </span>
+                <span class="pay-lbl" style="opacity:.6">Pay with PayPal</span></label>
             </div>
           </div>
 
