@@ -75,11 +75,10 @@
   /* Bubble texture lives at the TOP of the page only and SCROLLS with content.
      Body's solid cobalt covers everything below. */
   .bg{position:absolute;top:0;left:0;right:0;height:480px;z-index:-1;pointer-events:none;
-    background:linear-gradient(180deg,#1340de 0%,#0d3fd6 60%,#06208f 100%)}
-  .bg:before{content:"";position:absolute;inset:0;
-    background:url("assets/bg-bubbles.jpg") repeat;background-size:560px auto;opacity:.3;
-    -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 180px,transparent 380px);
-    mask-image:linear-gradient(to bottom,#000 0,#000 180px,transparent 380px)}
+    background:#06208f url("assets/nebo-bg-2-hi.jpg") top center/cover no-repeat;
+    -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 220px,transparent 470px);
+    mask-image:linear-gradient(to bottom,#000 0,#000 220px,transparent 470px)}
+  .bg:before{display:none}
   @media(min-width:880px){
     .bg{height:760px}
     .bg:before{background-size:700px auto;
@@ -479,7 +478,7 @@
       box-shadow:36px 0 90px -28px rgba(0,8,40,.85)}
     .hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
       overflow:hidden;
-      background:url("assets/bg-bubbles.jpg") repeat;background-size:640px auto;opacity:.24}
+      background:url("assets/nebo-bg-2-hi.jpg") top center/cover no-repeat;opacity:.9}
     .hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
       background:
         radial-gradient(ellipse at 50% 30%,rgba(54,204,255,.18),transparent 55%),
