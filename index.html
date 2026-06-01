@@ -75,7 +75,7 @@
   /* Bubble texture lives at the TOP of the page only and SCROLLS with content.
      Body's solid cobalt covers everything below. */
   .bg{position:absolute;top:0;left:0;right:0;height:480px;z-index:-1;pointer-events:none;
-    background:#06208f url("assets/nebo-bg-2-hi.jpg") top center/cover no-repeat;
+    background:#06208f url("assets/nebo-bg-2-raw.jpg") top center/cover no-repeat;
     -webkit-mask-image:linear-gradient(to bottom,#000 0,#000 220px,transparent 470px);
     mask-image:linear-gradient(to bottom,#000 0,#000 220px,transparent 470px)}
   .bg:before{display:none}
@@ -337,10 +337,10 @@
 
   /* ---- loader: natural load -> big squeegee wipes the bubbles -> shine -> reveal ---- */
   .loader{position:fixed;inset:0;z-index:200;display:grid;place-items:center;overflow:hidden;
-    background:linear-gradient(180deg,#00fcff 0%,#00b6ff 12%,#007eec 25%,#0649ba 40%,#082694 55%,#001179 70%,#000058 85%,#000040 100%);
+    background:linear-gradient(180deg,#00b3f2 0%,#0187c6 12%,#0a64a2 25%,#1c4585 40%,#1d2f6d 55%,#14205c 70%,#0a1148 85%,#0c0f44 100%);
     transition:transform .8s cubic-bezier(.7,0,.18,1),visibility .8s}
   /* bubble layer over the colour base — one big squeegee wipes it off, leaving just the colour */
-  .bubbles{position:absolute;inset:0;z-index:1;background:url('assets/nebo-bg-2-hi.jpg') center/cover no-repeat;clip-path:inset(0 0 0 0)}
+  .bubbles{position:absolute;inset:0;z-index:1;background:url('assets/nebo-bg-2-raw.jpg') center/cover no-repeat;clip-path:inset(0 0 0 0)}
   .loader.wipe .bubbles{animation:wipeBubbles .85s cubic-bezier(.55,0,.2,1) forwards}
   @keyframes wipeBubbles{to{clip-path:inset(100% 0 0 0)}}
   .squeegee{position:absolute;left:-3%;right:-3%;height:46px;top:-8%;z-index:4;opacity:0;pointer-events:none;
@@ -484,7 +484,7 @@
       box-shadow:36px 0 90px -28px rgba(0,8,40,.85)}
     .hero:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
       overflow:hidden;
-      background:url("assets/nebo-bg-2-hi.jpg") top center/cover no-repeat;opacity:.9}
+      background:url("assets/nebo-bg-2-raw.jpg") top center/cover no-repeat;opacity:.9}
     .hero:after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;
       background:
         radial-gradient(ellipse at 50% 30%,rgba(54,204,255,.18),transparent 55%),
