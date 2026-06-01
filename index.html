@@ -1062,16 +1062,14 @@ form.addEventListener('submit',async e=>{
      stored in sessionStorage so the success page can render personalized content. */
   try{
     if(!SUBMIT.DEMO){
-      // PRODUCTION: POST to /api/create-checkout → get Stripe URL → redirect
+      // LIVE: POST the application → handler emails the customer a confirmation + NEBO the lead (Resend)
       const r=await fetch(SUBMIT.ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(data)});
       if(!r.ok) throw new Error('bad response');
-      const j=await r.json();
-      if(j && j.url){ window.location.href=j.url; return; }
-      throw new Error('no checkout url');
+    } else {
+      console.log('[DEMO] application',data);
+      await new Promise(res=>setTimeout(res,650));
     }
-    // DEMO: simulate payment latency then route to /confirmed
-    console.log('[DEMO] approved application',data);
-    await new Promise(res=>setTimeout(res,650));
+    // store the confirmation payload + route to the success page (both modes)
     sessionStorage.setItem('nebo_confirmation',JSON.stringify({
       referenceCode:data.referenceCode,
       firstName:data.firstName, lastName:data.lastName,
@@ -1087,7 +1085,7 @@ form.addEventListener('submit',async e=>{
     window.location.href='/confirmed';
   }catch(err){
     btn.disabled=false; btn.textContent=originalBtnText;
-    alert('Payment could not be processed. Please try again or call us.');
+    alert('Something went wrong submitting your application. Please try again or call us.');
   }
 });
 </script>
