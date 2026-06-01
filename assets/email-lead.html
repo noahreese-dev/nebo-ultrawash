@@ -1,77 +1,75 @@
 <!DOCTYPE html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>New Financing Application</title></head>
-<body style="margin:0;padding:0;background:#eef2fb;font-family:Arial,Helvetica,sans-serif;">
+<title>New financing application</title></head>
+<body style="margin:0;padding:0;background:#f4f6fb;-webkit-font-smoothing:antialiased;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;color:#0a1530;">
 <div style="display:none;max-height:0;overflow:hidden;opacity:0;">New application: {{firstName}} {{lastName}} — {{services}} — {{deposit}} deposit. Ref {{referenceCode}}.</div>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#eef2fb;padding:24px 12px;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f6fb;padding:28px 12px;">
 <tr><td align="center">
-<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#ffffff;border-radius:16px;overflow:hidden;box-shadow:0 18px 50px -18px rgba(6,32,143,.4);">
+<table role="presentation" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:100%;background:#ffffff;border-radius:18px;overflow:hidden;box-shadow:0 20px 56px -22px rgba(6,32,143,.34);">
 
   <!-- header -->
-  <tr><td style="background:#0a2bb0;background-image:linear-gradient(135deg,#1a4cf0,#0d3fd6 55%,#06208f);padding:22px 28px;">
+  <tr><td style="background:#0a2bb0;background-image:linear-gradient(135deg,#1a4cf0,#0d3fd6 58%,#06208f);padding:22px 28px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
-      <td style="font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:18px;color:#ffffff;letter-spacing:.3px;">NEBO <span style="color:#36ccff;">ULTRAWASH</span></td>
-      <td align="right"><span style="display:inline-block;background:#ffc21a;color:#3a2600;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:6px 13px;border-radius:999px;">New Application</span></td>
+      <td valign="middle"><img src="https://nebo-financing-form.vercel.app/assets/nebo-logo-hi.png" alt="NEBO UltraWash" width="120" style="display:block;width:120px;height:auto;"></td>
+      <td align="right" valign="middle"><span style="display:inline-block;background:#ffc21a;color:#3a2600;font-size:11px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;padding:7px 14px;border-radius:999px;">New application</span></td>
     </tr></table>
   </td></tr>
 
-  <!-- customer hero -->
-  <tr><td style="padding:26px 28px 6px;">
-    <div style="font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#1f63ff;">Lead · act fast</div>
-    <div style="font-family:Georgia,serif;font-style:italic;font-weight:900;font-size:30px;color:#0a1530;line-height:1.05;margin-top:6px;">{{firstName}} {{lastName}}</div>
-    <div style="font-size:15px;color:#5d6b8f;margin-top:6px;">wants <b style="color:#0a1530;">{{services}}</b> on a <b style="color:#0a1530;">{{plan}}</b> plan.</div>
+  <!-- customer -->
+  <tr><td style="padding:28px 32px 4px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:#1f63ff;">New lead &middot; reach out soon</div>
+    <div style="font-size:28px;font-weight:800;letter-spacing:-.4px;margin-top:8px;">{{firstName}} {{lastName}}</div>
+    <div style="font-size:15.5px;color:#5d6b8f;margin-top:7px;line-height:1.5;">Wants <b style="color:#0a1530;">{{services}}</b> on a <b style="color:#0a1530;">{{plan}}</b> plan.</div>
   </td></tr>
 
-  <!-- headline numbers -->
-  <tr><td style="padding:18px 28px 4px;">
+  <!-- numbers -->
+  <tr><td style="padding:18px 32px 6px;">
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0"><tr>
-      <td width="33%" style="background:#f3f6ff;border-radius:12px;padding:14px 10px;text-align:center;">
-        <div style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7c8aa8;">Deposit (20%)</div>
-        <div style="font-family:Georgia,serif;font-weight:900;font-size:22px;color:#0d3fd6;margin-top:4px;">{{deposit}}</div></td>
-      <td width="8"></td>
-      <td width="33%" style="background:#f3f6ff;border-radius:12px;padding:14px 10px;text-align:center;">
-        <div style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7c8aa8;">Est. total</div>
-        <div style="font-family:Georgia,serif;font-weight:900;font-size:22px;color:#0a1530;margin-top:4px;">{{serviceTotal}}</div></td>
-      <td width="8"></td>
-      <td width="33%" style="background:#f3f6ff;border-radius:12px;padding:14px 10px;text-align:center;">
-        <div style="font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#7c8aa8;">Est. / mo</div>
-        <div style="font-family:Georgia,serif;font-weight:900;font-size:22px;color:#0a1530;margin-top:4px;">{{monthly}}</div></td>
+      <td width="32%" style="background:#f3f6ff;border-radius:12px;padding:15px 8px;text-align:center;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7c8aa8;">Deposit 20%</div>
+        <div style="font-size:21px;font-weight:800;color:#0d3fd6;margin-top:5px;">{{deposit}}</div></td>
+      <td width="2%"></td>
+      <td width="32%" style="background:#f3f6ff;border-radius:12px;padding:15px 8px;text-align:center;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7c8aa8;">Est. total</div>
+        <div style="font-size:21px;font-weight:800;color:#0a1530;margin-top:5px;">{{serviceTotal}}</div></td>
+      <td width="2%"></td>
+      <td width="32%" style="background:#f3f6ff;border-radius:12px;padding:15px 8px;text-align:center;">
+        <div style="font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#7c8aa8;">Est. / mo</div>
+        <div style="font-size:21px;font-weight:800;color:#0a1530;margin-top:5px;">{{monthly}}</div></td>
     </tr></table>
   </td></tr>
 
-  <!-- contact (tappable) -->
-  <tr><td style="padding:20px 28px 6px;">
-    <div style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0a1530;margin-bottom:8px;">Contact</div>
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:15px;color:#0a1530;">
-      <tr><td style="padding:7px 0;border-bottom:1px solid #eef2fb;">📧 <a href="mailto:{{email}}" style="color:#0d3fd6;text-decoration:none;font-weight:700;">{{email}}</a></td></tr>
-      <tr><td style="padding:7px 0;border-bottom:1px solid #eef2fb;">📞 <a href="tel:{{phone}}" style="color:#0d3fd6;text-decoration:none;font-weight:700;">{{phone}}</a></td></tr>
-      <tr><td style="padding:7px 0;">📍 {{city}}</td></tr>
+  <!-- contact -->
+  <tr><td style="padding:22px 32px 4px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7c8aa8;margin-bottom:8px;">Contact</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:15px;">
+      <tr><td style="padding:8px 0;border-bottom:1px solid #eef2fb;color:#5d6b8f;width:34%;">Email</td><td align="right" style="padding:8px 0;border-bottom:1px solid #eef2fb;"><a href="mailto:{{email}}" style="color:#0d3fd6;text-decoration:none;font-weight:700;">{{email}}</a></td></tr>
+      <tr><td style="padding:8px 0;border-bottom:1px solid #eef2fb;color:#5d6b8f;">Phone</td><td align="right" style="padding:8px 0;border-bottom:1px solid #eef2fb;"><a href="tel:{{phone}}" style="color:#0d3fd6;text-decoration:none;font-weight:700;">{{phone}}</a></td></tr>
+      <tr><td style="padding:8px 0;color:#5d6b8f;">City</td><td align="right" style="padding:8px 0;font-weight:700;">{{city}}</td></tr>
     </table>
   </td></tr>
 
-  <!-- application details -->
-  <tr><td style="padding:18px 28px 6px;">
-    <div style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0a1530;margin-bottom:8px;">Application</div>
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;color:#0a1530;border:1px solid #eef2fb;border-radius:10px;overflow:hidden;">
-      <tr><td style="padding:11px 14px;background:#fafcff;color:#5d6b8f;width:42%;">Vehicle</td><td style="padding:11px 14px;font-weight:700;text-align:right;">{{vehicle}}</td></tr>
-      <tr><td style="padding:11px 14px;background:#fafcff;color:#5d6b8f;border-top:1px solid #eef2fb;">Services</td><td style="padding:11px 14px;font-weight:700;text-align:right;border-top:1px solid #eef2fb;">{{services}}</td></tr>
-      <tr><td style="padding:11px 14px;background:#fafcff;color:#5d6b8f;border-top:1px solid #eef2fb;">Plan</td><td style="padding:11px 14px;font-weight:700;text-align:right;border-top:1px solid #eef2fb;">{{plan}}</td></tr>
-      <tr><td style="padding:11px 14px;background:#fafcff;color:#5d6b8f;border-top:1px solid #eef2fb;">Pay method</td><td style="padding:11px 14px;font-weight:700;text-align:right;border-top:1px solid #eef2fb;">{{payMethod}}</td></tr>
-      <tr><td style="padding:11px 14px;background:#fafcff;color:#5d6b8f;border-top:1px solid #eef2fb;">Source</td><td style="padding:11px 14px;font-weight:700;text-align:right;border-top:1px solid #eef2fb;">{{ref}}</td></tr>
+  <!-- details -->
+  <tr><td style="padding:18px 32px 4px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7c8aa8;margin-bottom:8px;">Application</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:14.5px;">
+      <tr><td style="padding:8px 0;border-bottom:1px solid #eef2fb;color:#5d6b8f;width:42%;">Vehicle</td><td align="right" style="padding:8px 0;border-bottom:1px solid #eef2fb;font-weight:700;">{{vehicle}}</td></tr>
+      <tr><td style="padding:8px 0;border-bottom:1px solid #eef2fb;color:#5d6b8f;">Pay method</td><td align="right" style="padding:8px 0;border-bottom:1px solid #eef2fb;font-weight:700;">{{payMethod}}</td></tr>
+      <tr><td style="padding:8px 0;color:#5d6b8f;">Source</td><td align="right" style="padding:8px 0;font-weight:700;">{{ref}}</td></tr>
     </table>
   </td></tr>
 
   <!-- notes -->
-  <tr><td style="padding:14px 28px 6px;">
-    <div style="font-size:12px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#0a1530;margin-bottom:6px;">Notes from customer</div>
-    <div style="font-size:14px;color:#33415c;background:#f7f9ff;border-left:3px solid #36ccff;border-radius:6px;padding:12px 14px;line-height:1.55;">{{notes}}</div>
+  <tr><td style="padding:16px 32px 4px;">
+    <div style="font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:#7c8aa8;margin-bottom:7px;">Notes from customer</div>
+    <div style="font-size:14.5px;color:#33415c;background:#f0f9ff;border-radius:10px;padding:13px 15px;line-height:1.6;">{{notes}}</div>
   </td></tr>
 
   <!-- footer -->
-  <tr><td style="padding:18px 28px 26px;">
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="border-top:1px solid #eef2fb;padding-top:14px;">
-      <tr><td style="font-size:12.5px;color:#8a96a8;">Ref <b style="color:#0d3fd6;">{{referenceCode}}</b> · estimate only — final price set at drop-off.<br>Submitted {{submittedAt}}.</td></tr>
-    </table>
+  <tr><td style="padding:20px 32px 28px;">
+    <div style="border-top:1px solid #eef2fb;padding-top:15px;font-size:12.5px;color:#8a96a8;line-height:1.6;">
+      Ref <b style="color:#0d3fd6;">{{referenceCode}}</b> &middot; figures are estimates, final price set at drop-off.<br>Submitted {{submittedAt}}.
+    </div>
   </td></tr>
 
 </table>
